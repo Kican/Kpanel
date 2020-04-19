@@ -1,7 +1,7 @@
 import {Directive} from '@angular/core';
 
 @Directive({
-	selector: '[kSidebarContent]'
+	selector: 'k-sidebar-content'
 })
 export class SidebarContentDirective {
 
