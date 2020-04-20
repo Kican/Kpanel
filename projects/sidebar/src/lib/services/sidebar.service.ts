@@ -9,14 +9,26 @@ import {SidebarMode} from '../models/sidebar-mode.enum';
 	providedIn: 'root'
 })
 export class SidebarService {
-	statusChange = new BehaviorSubject<SidebarStatus>(this.config.initialState);
+	private statusChange = new BehaviorSubject<SidebarStatus>(this.config.initialState);
 	statusChange$ = this.statusChange.asObservable().pipe(distinctUntilChanged());
 
-	modeChange = new BehaviorSubject<SidebarMode>(SidebarMode.Over);
-	modeChange$ = this.statusChange.asObservable().pipe(distinctUntilChanged());
+	private modeChange = new BehaviorSubject<SidebarMode>(SidebarMode.Over);
+	modeChange$ = this.modeChange.asObservable().pipe(distinctUntilChanged());
 
-	hasBackdropChange = new BehaviorSubject<boolean>(false);
-	hasBackdropChange$ = this.statusChange.asObservable().pipe(distinctUntilChanged());
+	private hasBackdropChange = new BehaviorSubject<boolean>(false);
+	hasBackdropChange$ = this.hasBackdropChange.asObservable().pipe(distinctUntilChanged());
+
+	get status(): SidebarStatus {
+		return this.statusChange.getValue();
+	}
+
+	get mode(): SidebarMode {
+		return this.modeChange.getValue();
+	}
+
+	get hasBackdrop(): boolean {
+		return this.hasBackdropChange.getValue();
+	}
 
 	constructor(@Inject(SIDEBAR_CONFIG) private config: SidebarConfig) {
 	}
@@ -30,7 +42,7 @@ export class SidebarService {
 	}
 
 	toggle(): void {
-		this.statusChange.next(this.statusChange.getValue() === SidebarStatus.Opened ? SidebarStatus.Closed : SidebarStatus.Opened);
+		this.statusChange.next(this.status === SidebarStatus.Opened ? SidebarStatus.Closed : SidebarStatus.Opened);
 	}
 
 	changeMode(mode: SidebarMode): void {

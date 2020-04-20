@@ -1,11 +1,11 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostBinding, Inject, OnInit} from '@angular/core';
 import {SidebarService} from '../../services/sidebar.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {SIDEBAR_CONFIG, SidebarConfig} from '../../models/sidebar.config';
 
 @Component({
 	selector: 'k-back-drop',
 	templateUrl: './back-drop.component.html',
-	styleUrls: ['./back-drop.component.css'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	animations: [
 		trigger('backdrop', [
@@ -15,8 +15,14 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 	]
 })
 export class BackDropComponent implements OnInit {
+	position: string;
 
-	constructor(public sidebarService: SidebarService) {
+	constructor(
+		@Inject(SIDEBAR_CONFIG) config: SidebarConfig,
+		public sidebarService: SidebarService
+	) {
+		// TODO should have default value in component or configuration
+		this.position = config.fixedPosition ? 'fixed' : 'absolute';
 	}
 
 	ngOnInit(): void {

@@ -2,8 +2,8 @@ import {SidebarStatus} from './sidebar-status.enum';
 import {InjectionToken} from '@angular/core';
 
 export interface SidebarConfig {
-	width: number;
+	fixedPosition: boolean;
 	initialState: SidebarStatus;
 }
 
-export const SIDEBAR_CONFIG = new InjectionToken<SidebarConfig>('sidebar config');
+export const SIDEBAR_CONFIG = new InjectionToken<SidebarConfig>('sidebar configuration');

@@ -1,7 +1,7 @@
 import {Directive, HostBinding, OnInit} from '@angular/core';
 import {SidebarService} from '../../services/sidebar.service';
 import {SidebarStatus} from '../../models/sidebar-status.enum';
-import {concat} from 'rxjs';
+import {merge} from 'rxjs';
 import {SidebarMode} from '../../models/sidebar-mode.enum';
 
 @Directive({
@@ -9,7 +9,7 @@ import {SidebarMode} from '../../models/sidebar-mode.enum';
 })
 export class SidebarContentDirective implements OnInit {
 	@HostBinding('class')
-	sidebarContent = 'sidebar-content';
+	sidebarContent = 'k-sidebar-content';
 
 	@HostBinding('class.pushed')
 	pushed: boolean;
@@ -25,8 +25,8 @@ export class SidebarContentDirective implements OnInit {
 	}
 
 	ngOnInit(): void {
-		concat(this.sidebarService.statusChange$, this.sidebarService.modeChange$).subscribe(value => {
-			this.setClass(this.sidebarService.modeChange.getValue(), this.sidebarService.statusChange.getValue());
+		merge(this.sidebarService.statusChange$, this.sidebarService.modeChange$).subscribe(value => {
+			this.setClass(this.sidebarService.mode, this.sidebarService.status);
 		});
 	}
 

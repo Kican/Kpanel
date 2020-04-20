@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostBinding, Input} from '@angular/core';
 import {SidebarService} from '../../services/sidebar.service';
 import {SidebarMode} from '../../models/sidebar-mode.enum';
 
@@ -18,8 +18,10 @@ export class SidebarContainerComponent {
 		this.sidebarService.changeBackdrop(hasBackdrop);
 	}
 
-	constructor(
-		private sidebarService: SidebarService) {
+	@HostBinding('class')
+	sidebarContainer = 'k-sidebar-container';
+
+	constructor(private sidebarService: SidebarService) {
 	}
 
 	open(): void {
