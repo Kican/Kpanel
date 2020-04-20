@@ -2,7 +2,7 @@ import {Inject, Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {SidebarStatus} from '../models/sidebar-status.enum';
 import {distinctUntilChanged} from 'rxjs/operators';
-import {SIDEBAR_CONFIG, SidebarConfig} from '../models/sidebar.config';
+import {SIDEBAR_CONFIG, SidebarConfiguration} from '../models/sidebar.config';
 import {SidebarMode} from '../models/sidebar-mode.enum';
 
 @Injectable({
@@ -12,11 +12,17 @@ export class SidebarService {
 	private statusChange = new BehaviorSubject<SidebarStatus>(this.config.initialState);
 	statusChange$ = this.statusChange.asObservable().pipe(distinctUntilChanged());
 
-	private modeChange = new BehaviorSubject<SidebarMode>(SidebarMode.Over);
+	private modeChange = new BehaviorSubject<SidebarMode>(this.config.mode);
 	modeChange$ = this.modeChange.asObservable().pipe(distinctUntilChanged());
 
-	private hasBackdropChange = new BehaviorSubject<boolean>(false);
+	private hasBackdropChange = new BehaviorSubject<boolean>(this.config.hasBackdrop);
 	hasBackdropChange$ = this.hasBackdropChange.asObservable().pipe(distinctUntilChanged());
+
+	private isFixedChange = new BehaviorSubject<boolean>(this.config.isFixed);
+	isFixedChange$ = this.isFixedChange.asObservable().pipe(distinctUntilChanged());
+
+	private closeOnBackdropClickChange = new BehaviorSubject<boolean>(this.config.closeOnBackdropClick);
+	closeOnBackdropClickChange$ = this.closeOnBackdropClickChange.asObservable().pipe(distinctUntilChanged());
 
 	get status(): SidebarStatus {
 		return this.statusChange.getValue();
@@ -30,7 +36,19 @@ export class SidebarService {
 		return this.hasBackdropChange.getValue();
 	}
 
-	constructor(@Inject(SIDEBAR_CONFIG) private config: SidebarConfig) {
+	get isFixed(): boolean {
+		return this.isFixedChange.getValue();
+	}
+
+	get position(): string {
+		return this.isFixed ? 'fixed' : 'absolute';
+	}
+
+	get closeOnBackdropClick(): boolean {
+		return this.closeOnBackdropClickChange.getValue();
+	}
+
+	constructor(@Inject(SIDEBAR_CONFIG) private config: SidebarConfiguration) {
 	}
 
 	open(): void {
@@ -49,7 +67,15 @@ export class SidebarService {
 		this.modeChange.next(mode);
 	}
 
-	changeBackdrop(hasBackdrop: boolean) {
+	changeBackdrop(hasBackdrop: boolean): void {
 		this.hasBackdropChange.next(hasBackdrop);
+	}
+
+	changeIsFixed(isFixed: boolean): void {
+		this.isFixedChange.next(isFixed);
+	}
+
+	changeCloseOnBackdropClick(closeOnBackdropClick: boolean): void {
+		this.closeOnBackdropClickChange.next(closeOnBackdropClick);
 	}
 }

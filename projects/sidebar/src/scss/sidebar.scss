@@ -2,7 +2,7 @@ $sidebar-width: 230px;
 $transition: .2s ease-out;
 
 .k-sidebar-container {
-	display: block;;
+	display: block;
 }
 
 .k-sidebar {
@@ -11,7 +11,7 @@ $transition: .2s ease-out;
 	width: $sidebar-width;
 	transform: translate(-$sidebar-width, 0);
 	transition: $transition;
-	box-shadow: 0 2px 20px rgba(0, 0, 0, .03);
+	border-right: 1px solid;
 
 	&.opened {
 		transform: translate(0, 0);

@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component, HostBinding, Inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
 import {SidebarService} from '../../services/sidebar.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {SIDEBAR_CONFIG, SidebarConfig} from '../../models/sidebar.config';
+import {SidebarConfiguration, SIDEBAR_CONFIG} from '../../models/sidebar.config';
 
 @Component({
 	selector: 'k-back-drop',
@@ -18,17 +18,20 @@ export class BackDropComponent implements OnInit {
 	position: string;
 
 	constructor(
-		@Inject(SIDEBAR_CONFIG) config: SidebarConfig,
+		@Inject(SIDEBAR_CONFIG) private config: SidebarConfiguration,
 		public sidebarService: SidebarService
 	) {
-		// TODO should have default value in component or configuration
-		this.position = config.fixedPosition ? 'fixed' : 'absolute';
 	}
 
 	ngOnInit(): void {
+		this.sidebarService.isFixedChange$.subscribe(value => {
+			this.position = this.sidebarService.position;
+		});
 	}
 
 	close() {
-		this.sidebarService.close();
+		if (this.sidebarService.closeOnBackdropClick) {
+			this.sidebarService.close();
+		}
 	}
 }
