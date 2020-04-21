@@ -6,7 +6,7 @@ import {SidebarConfiguration, SIDEBAR_CONFIG} from '../../models/sidebar.config'
 @Directive({
 	selector: 'k-sidebar',
 })
-export class SidebarDirective implements OnInit {
+export class SidebarDirective {
 	@HostBinding('class')
 	sidebarClass = 'k-sidebar';
 
@@ -20,9 +20,6 @@ export class SidebarDirective implements OnInit {
 		@Inject(SIDEBAR_CONFIG) config: SidebarConfiguration,
 		private sidebarService: SidebarService
 	) {
-	}
-
-	ngOnInit(): void {
 		this.sidebarService.statusChange$.subscribe(value => {
 			this.opened = (value === SidebarStatus.Opened);
 		});
