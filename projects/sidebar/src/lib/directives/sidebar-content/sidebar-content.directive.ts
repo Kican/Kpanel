@@ -20,8 +20,7 @@ export class SidebarContentDirective implements OnInit {
 	@HostBinding('class.side')
 	side: boolean;
 
-	constructor(private sidebarService: SidebarService
-	) {
+	constructor(private sidebarService: SidebarService) {
 	}
 
 	ngOnInit(): void {

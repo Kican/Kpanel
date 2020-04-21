@@ -1,41 +1,67 @@
 $sidebar-width: 230px;
 $transition: .2s ease-out;
 
+@mixin padding($top, $right, $bottom, $left) {
+    padding: $top $right $bottom $left;
+
+    body[dir='rtl'] & {
+        padding: $top $left $bottom $right;
+    }
+}
+
+@mixin padding-left($value) {
+    padding-left: $value;
+
+    body[dir='rtl'] & {
+		padding-left: 0;
+        padding-right: $value;
+    }
+}
+
+@mixin transform-translate($x, $y) {
+    transform: translate($x, $y);
+
+    body[dir='rtl'] & {
+        transform: translate(-$x, $y);
+    }
+}
+
 .k-sidebar-container {
-	display: block;
+    display: block;
+    position: relative;
 }
 
 .k-sidebar {
-	z-index: 1;
-	height: 100%;
-	width: $sidebar-width;
-	transform: translate(-$sidebar-width, 0);
-	transition: $transition;
-	border-right: 1px solid;
+    z-index: 1;
+    height: 100%;
+    width: $sidebar-width;
+    @include transform-translate(-$sidebar-width, 0);
+    transition: $transition;
+    border-right: 1px solid;
 
-	&.opened {
-		transform: translate(0, 0);
-	}
+    &.opened {
+        @include transform-translate(0, 0);
+    }
 }
 
 .k-sidebar-content {
-	display: block;
-	transition: $transition;
+    display: block;
+    transition: $transition;
 
-	&.side {
-		transform: translate($sidebar-width, 0);
-	}
+    &.side {
+        @include transform-translate($sidebar-width, 0);
+    }
 
-	&.pushed {
-		padding-left: $sidebar-width;
-	}
+    &.pushed {
+        @include padding-left($sidebar-width);
+    }
 }
 
 .k-backdrop {
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.6);
-	transition: $transition;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: $transition;
 }
