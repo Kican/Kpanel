@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {SidebarService} from '../../services/sidebar.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
@@ -13,10 +13,13 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 		])
 	]
 })
-export class BackDropComponent {
+export class BackDropComponent implements OnInit {
 	position: string;
 
 	constructor(public sidebarService: SidebarService) {
+	}
+
+	ngOnInit(): void {
 		this.sidebarService.isFixedChange$.subscribe(value => {
 			this.position = this.sidebarService.position;
 		});

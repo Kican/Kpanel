@@ -7,7 +7,7 @@ import {SidebarMode} from '../../models/sidebar-mode.enum';
 @Directive({
 	selector: 'k-sidebar-content',
 })
-export class SidebarContentDirective {
+export class SidebarContentDirective implements OnInit {
 	@HostBinding('class')
 	sidebarContent = 'k-sidebar-content';
 
@@ -21,6 +21,9 @@ export class SidebarContentDirective {
 	side: boolean;
 
 	constructor(private sidebarService: SidebarService) {
+	}
+
+	ngOnInit(): void {
 		merge(this.sidebarService.statusChange$, this.sidebarService.modeChange$).subscribe(value => {
 			this.setClass(this.sidebarService.mode, this.sidebarService.status);
 		});

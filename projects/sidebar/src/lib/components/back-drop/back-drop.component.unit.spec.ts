@@ -9,6 +9,7 @@ describe('BackdropComponent', () => {
 
 	beforeEach(() => {
 		component = new BackDropComponent(service);
+		component.ngOnInit();
 	});
 
 	it('should set position property properly', () => {

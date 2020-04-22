@@ -1,4 +1,4 @@
-import {Attribute, ChangeDetectionStrategy, Component, HostBinding, Input} from '@angular/core';
+import {Attribute, ChangeDetectionStrategy, Component, HostBinding, Input, OnInit} from '@angular/core';
 import {SidebarService} from '../../services/sidebar.service';
 import {SidebarMode} from '../../models/sidebar-mode.enum';
 import {SidebarStatus} from '../../models/sidebar-status.enum';
@@ -9,7 +9,7 @@ import {SidebarStatus} from '../../models/sidebar-status.enum';
 	providers: [SidebarService],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SidebarContainerComponent {
+export class SidebarContainerComponent implements OnInit {
 	@Input()
 	set mode(mode: SidebarMode) {
 		this.sidebarService.changeMode(mode);
@@ -50,13 +50,15 @@ export class SidebarContainerComponent {
 	sidebarContainer = 'k-sidebar-container';
 
 	constructor(
-		@Attribute('initialState') initialState: SidebarStatus,
+		@Attribute('initialState') private initialState: SidebarStatus,
 		private sidebarService: SidebarService
 	) {
-		if (initialState === SidebarStatus.Opened) {
+	}
+
+	ngOnInit(): void {
+		if (this.initialState === SidebarStatus.Opened) {
 			this.open();
-		}
-		if (initialState === SidebarStatus.Closed) {
+		} else if (this.initialState === SidebarStatus.Closed) {
 			this.close();
 		}
 	}

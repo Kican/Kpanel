@@ -9,6 +9,7 @@ describe('SidebarDirectiveUnit', () => {
 
 	beforeEach(() => {
 		directive = new SidebarDirective(configuration, service);
+		directive.ngOnInit();
 	});
 
 	it('should set opened property to true when sidebar is opened', () => {

@@ -8,6 +8,7 @@ describe('SidebarContentDirective', () => {
 
 	beforeEach(() => {
 		directive = new SidebarContentDirective(sidebarService);
+		directive.ngOnInit();
 	});
 
 	it('should unset all classes when sidebarService observe status with closed value', () => {
