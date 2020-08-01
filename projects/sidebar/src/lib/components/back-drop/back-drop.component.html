@@ -1,7 +1,0 @@
-<div
-	class="k-backdrop"
-	[style.position]="position"
-	@backdrop
-	*ngIf="(sidebarService.hasBackdropChange$ | async) == true && (sidebarService.statusChange$ | async) === 'opened'"
-	(click)="close()">
-</div>
