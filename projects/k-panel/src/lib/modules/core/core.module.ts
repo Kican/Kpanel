@@ -1,5 +1,4 @@
 import {ErrorHandler, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {environment} from "../../../../../environments/environment";
 import {ErrorHandlerService} from "./providers/error-handler/error-handler.service";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";

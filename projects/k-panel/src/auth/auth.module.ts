@@ -25,6 +25,9 @@ const AuthRoutes: Routes = [
 	imports: [
 		CommonModule,
 		RouterModule.forRoot(AuthRoutes)
+	],
+	exports: [
+		RouterModule
 	]
 })
 export class AuthModule {

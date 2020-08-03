@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {DataTableConfig} from '../../../../lib/modules/share/modules/data-table/models/data-table-config.model';
-import {DtDataSource, HttpDtDataSource} from '../../../../lib/modules/share/modules/data-table/classes/dt-data-source';
+import {DataTableConfig} from '../../../lib/modules/share/modules/data-table/models/data-table-config.model';
+import {DtDataSource, HttpDtDataSource} from '../../../lib/modules/share/modules/data-table/classes/dt-data-source';
 import {EntityManagerHttpDataSource} from '../../services/entity-manager-http-data-source';
 import {FormGroup} from '@angular/forms';
-import {AutoToastrService} from '../../../../lib/modules/share/services/auto-toastr/auto-toastr.service';
-import {AutoDialogService} from '../../../../lib/modules/share/services/auto-dialog.service';
-import {AcceptDialogComponent} from '../../../../lib/components/_dialogs/accept-dialog/accept-dialog.component';
+import {AutoToastrService} from '../../../lib/modules/share/services/auto-toastr/auto-toastr.service';
+import {AutoDialogService} from '../../../lib/modules/share/services/auto-dialog.service';
+import {AcceptDialogComponent} from '../../../lib/components/_dialogs/accept-dialog/accept-dialog.component';
 import {filter, take} from 'rxjs/operators';
-import {DialogResult} from '../../../../lib/modules/share/enums/dialog-result.enum';
+import {DialogResult} from '../../../lib/modules/share/enums/dialog-result.enum';
 import {BsModalService} from 'ngx-bootstrap/modal';
 
 @Component({

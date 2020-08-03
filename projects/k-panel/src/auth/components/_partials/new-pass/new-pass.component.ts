@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {TranslateService} from '@ngx-translate/core';
 import {AccountService} from "../../../services/account.service";
-import {AppValidators} from "../../../../../lib/common/app-validators";
+import {AppValidators} from "../../../../lib/common/app-validators";
 
 @Component({
 	selector: 'app-new-pass',

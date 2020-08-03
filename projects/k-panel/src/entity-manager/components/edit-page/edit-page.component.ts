@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {IComponent, ILayoutComponent} from "../list-page/list-page.component";
 import {FormBuilderComponent} from "../form-builder/form-builder.component";
-import {AutoToastrService} from "../../../../lib/modules/share/services/auto-toastr/auto-toastr.service";
+import {AutoToastrService} from "../../../lib/modules/share/services/auto-toastr/auto-toastr.service";
 
 @Component({
 	selector: 'app-edit-page',

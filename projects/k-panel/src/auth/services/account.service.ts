@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpEvent, HttpRequest} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {ChangePassword} from "../models/change-password.model";
-import {User} from "../../../lib/modules/user/models/user";
+import {User} from "../../lib/modules/user/models/user";
 import {NewPassWithToken} from "../models/new-pass-with-token.model";
 
 @Injectable({

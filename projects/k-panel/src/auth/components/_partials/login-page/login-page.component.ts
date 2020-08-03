@@ -4,10 +4,9 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {NgxPermissionsService} from 'ngx-permissions';
 import {TranslateService} from '@ngx-translate/core';
-import {AppValidators} from "../../../../../lib/common/app-validators";
+import {AppValidators} from "../../../../lib/common/app-validators";
 import {AuthenticationService} from "../../../services/authentication.service";
 import {AccountService} from "../../../services/account.service";
-import {AutoToastrService} from "../../../../../lib/modules/share/services/auto-toastr/auto-toastr.service";
 
 @Component({
 	selector: 'app-login-page',
@@ -22,7 +21,6 @@ export class LoginPageComponent implements OnInit {
 		private authService: AuthenticationService,
 		private accountService: AccountService,
 		private toastr: ToastrService,
-		private autoToastr: AutoToastrService,
 		private router: Router,
 		private permissionsService: NgxPermissionsService,
 		private translateService: TranslateService
