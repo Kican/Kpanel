@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "panel": [
-        "dist/panel/panel",
-        "dist/panel"
+      "k-panel": [
+        "dist/k-panel/panel",
+        "dist/k-panel"
       ]
     }
   }

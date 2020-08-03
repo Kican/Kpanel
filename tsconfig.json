@@ -8,10 +8,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/panel/tsconfig.lib.json"
+      "path": "./projects/k-panel/tsconfig.lib.json"
     },
     {
-      "path": "./projects/panel/tsconfig.spec.json"
+      "path": "./projects/k-panel/tsconfig.spec.json"
     }
 ]
 }

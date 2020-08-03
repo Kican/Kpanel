@@ -3,17 +3,13 @@
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "^10.0.3",
-		"@angular/core": "^10.0.3",
-		"@angular/cdk": "~10.1.1"
-	},
-	"dependencies": {
-		"tslib": "^2.0.0"
+		"@angular/core": "^10.0.3"
 	},
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {
-			"entryFile": "public-api.ts"
+			"entryFile": "src/public-api.ts"
 		},
-		"dest": "../../../dist/data-table"
+		"dest": "../../dist/data-table"
 	}
 }
