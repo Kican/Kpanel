@@ -1,4 +1,4 @@
-import {DtDataSource} from "../../lib/modules/share/modules/data-table/classes/dt-data-source";
+import {DtDataSource} from "../../data-table/classes/dt-data-source";
 import {HttpClient} from "@angular/common/http";
 import {FormGroup} from "@angular/forms";
 import {catchError, finalize} from "rxjs/operators";

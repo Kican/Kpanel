@@ -1,11 +1,11 @@
 import {DataSource} from '@angular/cdk/table';
 import {CollectionViewer} from '@angular/cdk/collections';
 import {BehaviorSubject, Observable, of, Subscription} from 'rxjs';
-import {IService} from '../../../../../common/interfaces/IService';
+import {IService} from '../../lib/common/interfaces/IService';
 import {catchError, finalize} from 'rxjs/operators';
 import {FormGroup} from '@angular/forms';
 import {isNullOrUndefined} from 'util';
-import {ListFilter} from "../../../../../common/models/list-filter.model";
+import {ListFilter} from "../../lib/common/models/list-filter.model";
 
 export abstract class DtDataSource<T> extends DataSource<T> {
 

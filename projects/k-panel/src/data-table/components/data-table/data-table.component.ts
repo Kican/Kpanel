@@ -5,7 +5,7 @@ import {BehaviorSubject} from 'rxjs';
 import {DtDataSource} from '../../classes/dt-data-source';
 import {Sortable} from '../../models/sortable.model';
 import {NgForm} from '@angular/forms';
-import {slideToggle} from "../../../../../../animations/pub-anim";
+import {slideToggle} from "../../../lib/animations/pub-anim";
 
 @Component({
 	selector: 'app-data-table',

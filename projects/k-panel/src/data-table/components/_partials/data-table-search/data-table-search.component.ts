@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime} from 'rxjs/operators';
-import {slideToggle} from "../../../../../../../animations/pub-anim";
+import {slideToggle} from "../../../../lib/animations/pub-anim";
 import {environment} from "../../../../../../../../../../environments/environment";
 
 @Component({

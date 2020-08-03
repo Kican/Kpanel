@@ -12,7 +12,7 @@ import {ModalModule} from "ngx-bootstrap/modal";
 import {WindowSizeService} from "./services/window-size/window-size.service";
 import {ScrollService} from "./services/scroll/scroll.service";
 import {NeoCrumbModule} from "ngx-neocrumb";
-import {DataTableModule} from "./modules/data-table/data-table.module";
+import {DataTableModule} from "../../../data-table/data-table.module";
 import {SideBarModule} from "./modules/side-bar/side-bar.module";
 import {NavBarModule} from "./modules/nav-bar/nav-bar.module";
 import {CoreModule} from "../core/core.module";
