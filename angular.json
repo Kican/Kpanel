@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "panel": {
+    "k-panel": {
       "projectType": "library",
-      "root": "projects/panel",
-      "sourceRoot": "projects/panel/src",
+      "root": "projects/k-panel",
+      "sourceRoot": "projects/k-panel/src",
       "prefix": "k",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/panel/tsconfig.lib.json",
-            "project": "projects/panel/ng-package.json"
+            "tsConfig": "projects/k-panel/tsconfig.lib.json",
+            "project": "projects/k-panel/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/panel/tsconfig.lib.prod.json"
+              "tsConfig": "projects/k-panel/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/panel/src/test.ts",
-            "tsConfig": "projects/panel/tsconfig.spec.json",
-            "karmaConfig": "projects/panel/karma.conf.js"
+            "main": "projects/k-panel/src/test.ts",
+            "tsConfig": "projects/k-panel/tsconfig.spec.json",
+            "karmaConfig": "projects/k-panel/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/panel/tsconfig.lib.json",
-              "projects/panel/tsconfig.spec.json"
+              "projects/k-panel/tsconfig.lib.json",
+              "projects/k-panel/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
