@@ -1,6 +1,9 @@
 {
-	"name": "@ngx-k-panel",
+	"name": "ngx-k-panel",
 	"version": "0.0.1",
+	"scripts": {
+		"postinstall": "ngcc"
+	},
 	"peerDependencies": {
 		"@angular/common": "^10.0.6",
 		"@angular/core": "^10.0.6"

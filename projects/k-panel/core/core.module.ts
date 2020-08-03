@@ -1,9 +1,8 @@
 import {ErrorHandler, NgModule} from '@angular/core';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {CUSTOM_ERROR_MESSAGES} from "ng-bootstrap-form-validation";
-import {ErrorHandlerService} from "../lib/modules/core/providers/error-handler/error-handler.service";
-import {HttpInterceptorService} from "../lib/modules/core/providers/http-interceptor/http-interceptor.service";
-import {FORMS_CUSTOM_ERRORS} from "../lib/modules/core/providers/forms-custom-errors/forms-custom-errors";
+import {HttpInterceptorService} from "../src/lib/modules/core/providers/http-interceptor/http-interceptor.service";
+import {FORMS_CUSTOM_ERRORS} from "../src/lib/modules/core/providers/forms-custom-errors/forms-custom-errors";
 
 
 @NgModule({

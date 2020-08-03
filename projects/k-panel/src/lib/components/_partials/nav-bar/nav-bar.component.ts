@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {User} from "../../../modules/user/models/user";
-import {AuthenticationService} from "../../../../auth/services/authentication.service";
-import {AccountService} from "../../../../auth/services/account.service";
+import {AuthenticationService} from "../../../../../auth/services/authentication.service";
+import {AccountService} from "../../../../../auth/services/account.service";
 import {AutoDialogService} from "../../../modules/share/services/auto-dialog.service";
 
 @Component({

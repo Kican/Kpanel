@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ListPageComponent} from './components/list-page/list-page.component';
 import {Routes} from "@angular/router";
 import {EditPageComponent} from './components/edit-page/edit-page.component';
-import {ShareModule} from "../lib/modules/share/share.module";
+import {ShareModule} from "../src/lib/modules/share/share.module";
 import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 
 export const EntityManagerRoutes: Routes = [

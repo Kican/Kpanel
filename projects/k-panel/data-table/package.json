@@ -1,9 +1,10 @@
 {
-	"name": "@ngx-k-panel/core",
+	"name": "@ngx-k-panel/data-table",
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "^10.0.3",
-		"@angular/core": "^10.0.3"
+		"@angular/core": "^10.0.3",
+		"@angular/cdk": "~10.1.1"
 	},
 	"dependencies": {
 		"tslib": "^2.0.0"
@@ -13,6 +14,6 @@
 		"lib": {
 			"entryFile": "public-api.ts"
 		},
-		"dest": "../../../dist/alert"
+		"dest": "../../../dist/data-table"
 	}
 }

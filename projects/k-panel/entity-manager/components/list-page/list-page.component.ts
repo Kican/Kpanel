@@ -5,9 +5,9 @@ import {DataTableOptions} from '../../../data-table/models/data-table-config.mod
 import {DtDataSource, HttpDtDataSource} from '../../../data-table/classes/dt-data-source';
 import {EntityManagerHttpDataSource} from '../../services/entity-manager-http-data-source';
 import {FormGroup} from '@angular/forms';
-import {AcceptDialogComponent} from '../../../lib/components/_dialogs/accept-dialog/accept-dialog.component';
+import {AcceptDialogComponent} from '../../../src/lib/components/_dialogs/accept-dialog/accept-dialog.component';
 import {filter, take} from 'rxjs/operators';
-import {DialogResult} from '../../../lib/modules/share/enums/dialog-result.enum';
+import {DialogResult} from '../../../src/lib/modules/share/enums/dialog-result.enum';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {ToastService} from "../../../core/services/toast.service";
 

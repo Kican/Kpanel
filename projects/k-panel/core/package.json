@@ -1,10 +1,9 @@
 {
-	"name": "@ngx-k-panel/auth",
+	"name": "@ngx-k-panel/core",
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "^10.0.3",
-		"@angular/core": "^10.0.3",
-		"@angular/router": "^10.0.3"
+		"@angular/core": "^10.0.3"
 	},
 	"dependencies": {
 		"tslib": "^2.0.0"
@@ -14,6 +13,6 @@
 		"lib": {
 			"entryFile": "./public-api.ts"
 		},
-		"dest": "../../../dist/auth"
+		"dest": "../../../dist/core"
 	}
 }
