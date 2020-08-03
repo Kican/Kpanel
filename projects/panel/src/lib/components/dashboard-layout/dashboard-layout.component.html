@@ -1,0 +1,14 @@
+<app-side-bar></app-side-bar>
+<app-nav-bar></app-nav-bar>
+
+<app-panel-content>
+	<nc-neo-crumb [inlineBlock]="true"></nc-neo-crumb>
+	<router-outlet></router-outlet>
+
+	<!--	<main id="panelPage" [@routesFadeAnimation]="o.isActivated ? o.activatedRoute : ''">-->
+	<!--		<router-outlet #o="outlet"></router-outlet>-->
+	<!--	</main>-->
+
+</app-panel-content>
+
+<app-panel-scroll-top></app-panel-scroll-top>
