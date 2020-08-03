@@ -1,0 +1,8 @@
+<div class="search" [@slideToggle]="searchStatus ? 'opened' : 'closed'" (@slideToggle.done)="inputCheck()">
+	<form>
+		<div class="form-group">
+			<i class="mdi mdi-magnify"></i>
+			<input [formControl]="search" class="form-control" type="email" aria-describedby="search" placeholder="{{('search' | translate) + '. .'}}" #searchInput/>
+		</div>
+	</form>
+</div>

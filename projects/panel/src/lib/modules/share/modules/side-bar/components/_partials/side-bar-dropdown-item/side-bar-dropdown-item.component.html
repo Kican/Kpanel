@@ -1,0 +1,7 @@
+<a class="dropdown-btn dropdown-active" (click)="toggle()" [ngClass]="{'dropdown-active': status == 1}">
+	<i [classList]="iconClass"></i>
+	<span>{{label}}</span>
+</a>
+<div class="dropdown-content" [@slideToggle]="status ? 'opened' : 'closed'">
+	<ng-content></ng-content>
+</div>
