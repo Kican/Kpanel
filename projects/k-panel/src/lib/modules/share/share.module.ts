@@ -15,8 +15,6 @@ import {NeoCrumbModule} from "ngx-neocrumb";
 import {DataTableModule} from "../../../data-table/data-table.module";
 import {SideBarModule} from "./modules/side-bar/side-bar.module";
 import {NavBarModule} from "./modules/nav-bar/nav-bar.module";
-import {CoreModule} from "../core/core.module";
-import {AutoToastrService} from "./services/auto-toastr/auto-toastr.service";
 import {HttpClientModule} from "@angular/common/http";
 import {NgxPermissionsModule} from "ngx-permissions";
 import {NgSelectModule} from "@ng-select/ng-select";
@@ -30,7 +28,6 @@ import {CdkTableModule} from "@angular/cdk/table";
 		AuthenticationService,
 		AccountService,
 		AutoDialogService,
-		AutoToastrService,
 		WindowSizeService,
 		ScrollService,
 	],
@@ -46,7 +43,6 @@ import {CdkTableModule} from "@angular/cdk/table";
 		DataTableModule,
 		SideBarModule,
 		NavBarModule,
-		CoreModule,
 		HttpClientModule,
 		NgxPermissionsModule.forRoot(),
 		NgSelectModule,
@@ -65,7 +61,6 @@ import {CdkTableModule} from "@angular/cdk/table";
 		DataTableModule,
 		SideBarModule,
 		NavBarModule,
-		CoreModule,
 		NgxPermissionsModule,
 		NgSelectModule,
 		NgPersianDatepickerModule,
