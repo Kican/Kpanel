@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {AccountService} from "../../../services/account.service";
-import {AppValidators} from "../../../../lib/common/app-validators";
+import {AppValidators} from "../../../../core/common/app-validators";
 
 @Component({
 	selector: 'app-forgot-password',

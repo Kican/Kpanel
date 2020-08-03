@@ -1,16 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {DataTableConfig} from '../../../data-table/models/data-table-config.model';
+import {DataTableOptions} from '../../../data-table/models/data-table-config.model';
 import {DtDataSource, HttpDtDataSource} from '../../../data-table/classes/dt-data-source';
 import {EntityManagerHttpDataSource} from '../../services/entity-manager-http-data-source';
 import {FormGroup} from '@angular/forms';
-import {AutoToastrService} from '../../../lib/modules/share/services/auto-toastr/auto-toastr.service';
-import {AutoDialogService} from '../../../lib/modules/share/services/auto-dialog.service';
 import {AcceptDialogComponent} from '../../../lib/components/_dialogs/accept-dialog/accept-dialog.component';
 import {filter, take} from 'rxjs/operators';
 import {DialogResult} from '../../../lib/modules/share/enums/dialog-result.enum';
 import {BsModalService} from 'ngx-bootstrap/modal';
+import {ToastService} from "../../../core/services/toast.service";
 
 @Component({
 	selector: 'app-list-page',
@@ -21,7 +20,7 @@ export class ListPageComponent implements OnInit {
 	dataSource: DtDataSource<{}>;
 	displayedColumns: string[] = [];
 
-	dtConfig = new DataTableConfig();
+	dtConfig = new DataTableOptions();
 
 	filterForm: FormGroup;
 
@@ -32,7 +31,7 @@ export class ListPageComponent implements OnInit {
 	constructor(
 		private http: HttpClient,
 		private router: ActivatedRoute,
-		private autoToastrService: AutoToastrService,
+		private autoToastrService: ToastService,
 		private modalService: BsModalService,
 	) {
 	}

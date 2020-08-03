@@ -25,7 +25,7 @@ export class NavBarComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this.sub = this.accountService.user$.subscribe(value => {
-			this.user = value;
+			// this.user = value;
 		});
 	}
 

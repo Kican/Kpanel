@@ -4,7 +4,7 @@ import {ToastOption} from "../models/toast/toastOption";
 @Injectable({
 	providedIn: 'root'
 })
-export abstract class ToastServiceService {
+export abstract class ToastService {
 	abstract success();
 	abstract success(message: string);
 

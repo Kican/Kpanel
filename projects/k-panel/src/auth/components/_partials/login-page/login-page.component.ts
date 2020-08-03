@@ -4,7 +4,7 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {NgxPermissionsService} from 'ngx-permissions';
 import {TranslateService} from '@ngx-translate/core';
-import {AppValidators} from "../../../../lib/common/app-validators";
+import {AppValidators} from "@ngx-k-panel/core/core/";
 import {AuthenticationService} from "../../../services/authentication.service";
 import {AccountService} from "../../../services/account.service";
 

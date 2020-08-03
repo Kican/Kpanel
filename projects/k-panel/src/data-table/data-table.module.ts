@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DataTableContainerComponent} from './components/data-table-container/data-table-container.component';
 import {DataTableButtonContainerComponent} from './components/_partials/data-table-button-container/data-table-button-container.component';
@@ -11,6 +11,7 @@ import {DataTableSearchComponent} from './components/_partials/data-table-search
 import {CdkTableModule} from '@angular/cdk/table';
 import {TranslateModule} from '@ngx-translate/core';
 import {PaginationModule} from "ngx-bootstrap/pagination";
+import {DataTableConfig} from "./classes/data-table-config";
 
 @NgModule({
 	declarations: [
@@ -40,4 +41,12 @@ import {PaginationModule} from "ngx-bootstrap/pagination";
 	],
 })
 export class DataTableModule {
+	static forRoot(config: DataTableConfig): ModuleWithProviders<DataTableModule> {
+		return {
+			ngModule: DataTableModule,
+			providers: [
+				{provide: 'config', useValue: config}
+			],
+		};
+	}
 }

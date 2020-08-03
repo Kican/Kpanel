@@ -1,4 +1,4 @@
-export class DataTableConfig {
+export class DataTableOptions {
 	title = 'اطلاعات';
 	countable = true;
 	searchable = true;

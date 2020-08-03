@@ -1,5 +1,5 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ContentChild, Input, OnInit} from '@angular/core';
-import {DataTableConfig} from '../../models/data-table-config.model';
+import {DataTableOptions} from '../../models/data-table-config.model';
 import {DtSortableDirective} from '../../directives/dt-sortable.directive';
 import {BehaviorSubject} from 'rxjs';
 import {DtDataSource} from '../../classes/dt-data-source';
@@ -15,7 +15,7 @@ import {slideToggle} from "../../../lib/animations/pub-anim";
 })
 export class DataTableComponent implements OnInit, AfterViewInit {
 	@Input()
-	config: DataTableConfig = new DataTableConfig();
+	config: DataTableOptions = new DataTableOptions();
 
 	@Input()
 	dataSource: DtDataSource<any>;

@@ -1,5 +1,5 @@
 {
-	"name": "ngx-k-panel",
+	"name": "@ngx-k-panel",
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "^10.0.6",

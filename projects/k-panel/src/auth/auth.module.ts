@@ -5,6 +5,7 @@ import {ForgotPasswordComponent} from "./components/_partials/forgot-password/fo
 import {LoginPageComponent} from "./components/_partials/login-page/login-page.component";
 import {RouterModule, Routes} from "@angular/router";
 import {AuthPageComponent} from "./components/auth-page/auth-page.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const AuthRoutes: Routes = [
 	{
@@ -24,6 +25,8 @@ const AuthRoutes: Routes = [
 	],
 	imports: [
 		CommonModule,
+		ReactiveFormsModule,
+		FormsModule,
 		RouterModule.forRoot(AuthRoutes)
 	],
 	exports: [

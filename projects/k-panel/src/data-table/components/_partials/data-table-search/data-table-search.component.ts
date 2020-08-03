@@ -1,7 +1,7 @@
 import {
 	Component,
 	ElementRef,
-	EventEmitter,
+	EventEmitter, Inject,
 	Input,
 	OnChanges,
 	OnInit,
@@ -12,7 +12,7 @@ import {
 import {FormControl} from '@angular/forms';
 import {debounceTime} from 'rxjs/operators';
 import {slideToggle} from "../../../../lib/animations/pub-anim";
-import {environment} from "../../../../../../../../../../environments/environment";
+import {DataTableConfig} from "../../../classes/data-table-config";
 
 @Component({
 	selector: 'app-data-table-search',
@@ -32,11 +32,11 @@ export class DataTableSearchComponent implements OnInit {
 
 	search = new FormControl(['']);
 
-	constructor() {
+	constructor(@Inject('config') private config: DataTableConfig) {
 	}
 
 	ngOnInit() {
-		this.search.valueChanges.pipe(debounceTime(environment.debounceTime)).subscribe(value => {
+		this.search.valueChanges.pipe(debounceTime(this.config.filterDebounceTime)).subscribe(value => {
 			this.searchChange.emit(value);
 		});
 	}
