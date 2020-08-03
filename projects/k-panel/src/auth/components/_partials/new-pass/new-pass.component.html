@@ -1,0 +1,29 @@
+<div class="d-flex align-items-center mb-2">
+	<a [routerLink]="['/auth/login']" class="text-dark p-1">
+		<i class="mdi mdi-chevron-right mdi-18px"></i>
+	</a>
+	<div class="h6 font-weight-bold mr-1">{{'change_password' | translate}}</div>
+</div>
+
+<form [formGroup]="newPassForm" (validSubmit)="submit()">
+	<div class="form-group">
+		<label for="newPassword">{{'newPassword' | translate}}</label>
+		<input class="form-control" id="newPassword" type="password" formControlName="newPassword" autocomplete="new-password" appAutoFocus>
+	</div>
+	<div class="form-group">
+		<label for="confirmPassword">{{'acceptNewPassword' | translate}}</label>
+		<input class="form-control" id="confirmPassword" type="password" formControlName="confirmPassword" autocomplete="new-password">
+	</div>
+
+	<div class="text-danger small mb-3"
+		 *ngIf="newPassForm.invalid
+		&& (newPassForm.get('newPassword').dirty && newPassForm.get('newPassword').touched)
+		&& (newPassForm.get('confirmPassword').dirty && newPassForm.get('confirmPassword').touched)">
+		{{'password_equality' | translate}}
+	</div>
+
+	<div class="d-flex justify-content-between align-items-baseline mt-2">
+		<button type="submit" class="btn btn-success btn-colored-shadow btn-block">{{'change_password' | translate}}</button>
+	</div>
+
+</form>

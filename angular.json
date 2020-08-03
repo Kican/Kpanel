@@ -1,6 +1,51 @@
 {
-	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-	"version": 1,
-	"newProjectRoot": "projects",
-	"projects": {}
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "k-panel": {
+      "projectType": "library",
+      "root": "projects/k-panel",
+      "sourceRoot": "projects/k-panel/src",
+      "prefix": "k",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/k-panel/tsconfig.lib.json",
+            "project": "projects/k-panel/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/k-panel/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/k-panel/src/test.ts",
+            "tsConfig": "projects/k-panel/tsconfig.spec.json",
+            "karmaConfig": "projects/k-panel/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/k-panel/tsconfig.lib.json",
+              "projects/k-panel/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "0d704465-36d9-4f45-bf8e-6353907e5778"
+  },
+  "defaultProject": "panel"
 }
