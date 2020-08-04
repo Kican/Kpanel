@@ -4,7 +4,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {TranslateService} from '@ngx-translate/core';
 import {AccountService} from "../../../services/account.service";
-import {AppValidators} from "../../../../core/common/app-validators";
 
 @Component({
 	selector: 'app-new-pass',
@@ -33,10 +32,10 @@ export class NewPassComponent implements OnInit {
 	createForm() {
 		this.newPassForm = this.formBuilder.group({
 			resetToken: [null, Validators.required],
-			username: [null, [Validators.required, AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
-			newPassword: [null, [Validators.required, Validators.minLength(8), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
-			confirmPassword: [null, [Validators.required, Validators.minLength(8), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
-		}, {validators: [AppValidators.equal('newPassword', 'confirmPassword')]});
+			username: [null, [Validators.required]],
+			newPassword: [null, [Validators.required, Validators.minLength(8)]],
+			confirmPassword: [null, [Validators.required, Validators.minLength(8),]],
+		}, {validators: []});
 	}
 
 	submit() {

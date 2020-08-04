@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {AccountService} from "../../../services/account.service";
-import {AppValidators} from "../../../../core/common/app-validators";
 
 @Component({
 	selector: 'app-forgot-password',
@@ -26,7 +25,7 @@ export class ForgotPasswordComponent implements OnInit {
 
 	createForms() {
 		this.forgotPassForm = this.formBuilder.group({
-			username: [null, [Validators.required, Validators.minLength(5), AppValidators.noWhiteSpace, AppValidators.asciiOnly]]
+			username: [null, [Validators.required, Validators.minLength(5)]]
 		});
 	}
 

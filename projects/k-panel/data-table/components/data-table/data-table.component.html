@@ -22,7 +22,7 @@
 		<app-data-table-search [searchStatus]="searchStatus"
 							   (searchChange)="searchChange($event)"></app-data-table-search>
 
-		<div class="filter" [@slideToggle]="filterStatus ? 'opened' : 'closed'">
+		<div class="filter">
 			<ng-content select=".filter"></ng-content>
 		</div>
 

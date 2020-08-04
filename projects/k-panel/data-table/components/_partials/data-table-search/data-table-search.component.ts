@@ -11,14 +11,11 @@ import {
 } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime} from 'rxjs/operators';
-import {slideToggle} from "../../../../src/lib/animations/pub-anim";
-import {DataTableConfig} from "../../../classes/data-table-config";
 
 @Component({
 	selector: 'app-data-table-search',
 	templateUrl: './data-table-search.component.html',
 	styleUrls: ['./data-table-search.component.scss'],
-	animations: [slideToggle]
 })
 export class DataTableSearchComponent implements OnInit {
 	@Input()
@@ -32,7 +29,7 @@ export class DataTableSearchComponent implements OnInit {
 
 	search = new FormControl(['']);
 
-	constructor(@Inject('config') private config: DataTableConfig) {
+	constructor(@Inject('config') private config) {
 	}
 
 	ngOnInit() {
