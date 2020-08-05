@@ -39,7 +39,9 @@
 		"ngx-permissions": "^8.0.0"
 	},
 	"optionalDependencies": {
-		"@ngx-k-panel/core": "file:dist/panel"
+		"@ngx-k-panel/core": "file:dist/panel/core",
+		"@ngx-k-panel/auth": "file:dist/panel/auth",
+		"@ngx-k-panel/data-table": "file:dist/panel/data-table"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "~0.1000.5",

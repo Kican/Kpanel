@@ -22,11 +22,13 @@ const AuthRoutes: Routes = [
 		LoginPageComponent,
 		ForgotPasswordComponent,
 		NewPassComponent,
+		AuthPageComponent
 	],
 	imports: [
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
+		RouterModule.forRoot(AuthRoutes)
 	],
 	exports: [
 		RouterModule

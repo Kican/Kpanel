@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {ListPageComponent} from './components/list-page/list-page.component';
-import {Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {EditPageComponent} from './components/edit-page/edit-page.component';
-import { FormBuilderComponent } from './components/form-builder/form-builder.component';
+import {FormBuilderComponent} from './components/form-builder/form-builder.component';
+import {DataTableModule} from "@ngx-k-panel/data-table";
 
 export const EntityManagerRoutes: Routes = [
 	{
@@ -21,6 +22,8 @@ export const EntityManagerRoutes: Routes = [
 		FormBuilderComponent
 	],
 	imports: [
+		DataTableModule,
+		RouterModule.forRoot(EntityManagerRoutes)
 	]
 })
 export class EntityManagerModule {
