@@ -1,13 +1,13 @@
 <data-table-container>
 
-	<app-data-table-button-container>
+	<data-table-button-container>
 		<a class="btn btn-success icon" [routerLink]="['../','new']">
 			<i class="mdi mdi-plus"></i>
 			{{'add' | translate}}
 		</a>
-	</app-data-table-button-container>
+	</data-table-button-container>
 
-	<app-data-table [dataSource]="dataSource" [config]="dtConfig">
+	<data-table [dataSource]="dataSource" [config]="dtConfig">
 
 
 		<table cdk-table [dataSource]="dataSource" class="table table-striped">
@@ -30,5 +30,5 @@
 
 		</table>
 
-	</app-data-table>
+	</data-table>
 </data-table-container>

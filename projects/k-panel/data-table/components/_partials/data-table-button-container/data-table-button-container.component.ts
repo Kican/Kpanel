@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-data-table-button-container',
+  selector: 'data-table-button-container',
   templateUrl: './data-table-button-container.component.html',
   styleUrls: ['./data-table-button-container.component.scss']
 })

@@ -13,7 +13,7 @@ import {FormControl} from '@angular/forms';
 import {debounceTime} from 'rxjs/operators';
 
 @Component({
-	selector: 'app-data-table-search',
+	selector: 'data-table-search',
 	templateUrl: './data-table-search.component.html',
 	styleUrls: ['./data-table-search.component.scss'],
 })

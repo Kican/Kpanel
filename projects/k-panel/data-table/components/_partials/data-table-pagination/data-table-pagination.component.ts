@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
-	selector: 'app-data-table-pagination',
+	selector: 'data-table-pagination',
 	templateUrl: './data-table-pagination.component.html',
 	styleUrls: ['./data-table-pagination.component.scss']
 })

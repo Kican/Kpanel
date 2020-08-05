@@ -7,7 +7,7 @@ import {Sortable} from '../../models/sortable.model';
 import {NgForm} from '@angular/forms';
 
 @Component({
-	selector: 'app-data-table',
+	selector: 'data-table',
 	templateUrl: './data-table.component.html',
 	styleUrls: ['./data-table.component.scss'],
 })

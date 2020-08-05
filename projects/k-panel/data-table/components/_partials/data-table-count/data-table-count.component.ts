@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 @Component({
-	selector: 'app-data-table-count',
+	selector: 'data-table-count',
 	templateUrl: './data-table-count.component.html',
 	styleUrls: ['./data-table-count.component.scss']
 })

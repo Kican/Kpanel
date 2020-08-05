@@ -13,14 +13,14 @@
 					<i class="mdi mdi-magnify" [ngClass]="{'active': searchStatus}"></i>
 				</div>
 
-				<app-data-table-count *ngIf="config.countable"
-									  (valueChange)="countChange($event)"></app-data-table-count>
+				<data-table-count *ngIf="config.countable"
+									  (valueChange)="countChange($event)"></data-table-count>
 
 			</div>
 		</div>
 
-		<app-data-table-search [searchStatus]="searchStatus"
-							   (searchChange)="searchChange($event)"></app-data-table-search>
+		<data-table-search [searchStatus]="searchStatus"
+							   (searchChange)="searchChange($event)"></data-table-search>
 
 		<div class="filter">
 			<ng-content select=".filter"></ng-content>
@@ -35,12 +35,12 @@
 			<span class="spinner-border spinner-border-sm"></span>
 		</div>
 		<div class="text-center text-muted small mb-3" *ngIf="!(dataSource.loading$ | async) && dataSource?.totalCount == 0">{{'not_found' | translate}}</div>
-		<app-data-table-pagination
+		<data-table-pagination
 			*ngIf="config.paginator"
 			[totalItems]="totalItems"
 			[itemPerPage]="itemPerPage"
 			[currentItems]="currentItems"
 			(valueChanges)="pageChange($event)">
-		</app-data-table-pagination>
+		</data-table-pagination>
 	</div>
 </div>
