@@ -1,0 +1,143 @@
+#sidebar {
+    width: $sidebar-width;
+    height: 100%;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    right: -$sidebar-width - 5;
+    overflow: auto;
+	overflow-x: hidden;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .05);
+    transition: $sidebar-transition right;
+
+    &.sidebar-show {
+        right: 0;
+    }
+
+    .btn-new-task {
+        display: block;
+        background-color: $my-primary-color;
+        box-shadow: 0 5px 10px 0 transparentize($my-primary-color, .5);
+
+        &:hover {
+            background-color: lighten($my-primary-color, $btn-lighten);
+            box-shadow: 0 5px 16px 0 transparentize($my-primary-color, .5);
+        }
+
+        &:active {
+            background-color: darken($my-primary-color, $btn-darken) !important;
+            box-shadow: 0 5px 8px 0 transparentize($my-primary-color, .5);
+        }
+    }
+
+    .credit {
+        margin-top: 15px;
+        padding: 0 10px;
+
+        a {
+            color: #838383;
+
+            i, span {
+                font-size: .8em;
+                font-weight: normal;
+            }
+        }
+
+        span {
+            font-size: .8em;
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 10px 0 0 0;
+
+        li {
+            margin-bottom: 2px;
+
+            a {
+                text-align: right;
+                text-decoration: none;
+                display: block;
+                padding: 8px 12px 8px 0;
+                border-radius: 0 11px 11px 0;
+                transition: .3s ease-out background-color;
+                font-size: .9em;
+                margin-left: -10px;
+                color: black;
+
+                span {
+                    margin-right: 10px;
+                }
+            }
+
+            a:hover {
+                background-color: $my-light-color;
+            }
+
+            a.active {
+                background-color: $my-primary-color;
+                color: white;
+
+                span, i {
+                    color: white;
+                }
+            }
+
+            .dropdown-btn {
+                cursor: pointer;
+                &:after {
+                    content: '';
+                    font-family: "Material Design Icons";
+                    float: left;
+                    margin-left: 12px;
+                    transition: $main-transition transform;
+                }
+
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    width: 4px;
+                    height: 25px;
+                    position: absolute;
+                    right: -5px;
+                    border-radius: 4px 0 0 4px;
+                    background-color: $my-primary-color;
+                    transition: $main-transition right;
+                }
+
+                &.dropdown-active {
+                    background-color: $my-light-color;
+
+                    &:after {
+                        transform: rotate(180deg);
+                    }
+
+                    &:before {
+                        right: 0;
+                    }
+                }
+            }
+
+            .dropdown-content {
+                margin-right: 25px;
+				//overflow: hidden;
+
+                a {
+                    margin-bottom: 2px;
+                    margin-top: 2px;
+
+                    &.active {
+                        background-color: unset;
+                        span, i {
+                            color: $my-primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

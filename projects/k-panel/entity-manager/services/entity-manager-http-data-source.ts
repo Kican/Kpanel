@@ -2,21 +2,23 @@ import {HttpClient} from "@angular/common/http";
 import {FormGroup} from "@angular/forms";
 import {catchError, finalize} from "rxjs/operators";
 import {of} from "rxjs";
+import {DtDataSource} from "@ngx-k-panel/data-table";
 
-export class EntityManagerHttpDataSource {
+export class EntityManagerHttpDataSource extends DtDataSource<{}> {
 	constructor(private entityName: string, private httpClient: HttpClient, filterForm?: FormGroup) {
+		super(filterForm);
 	}
 
 	loadData() {
-		// this.loadingSubject.next(true);
-		this.httpClient.get(`api/${this.entityName}` + this.jsonToQueryString({})).pipe(
+		this.loadingSubject.next(true);
+		this.httpClient.get(`api/${this.entityName}` + this.jsonToQueryString(this.filters ?? {})).pipe(
 			catchError(() => of([])),
-			// finalize(() => this.loadingSubject.next(false))
+			finalize(() => this.loadingSubject.next(false))
 		).subscribe(value => {
 			if (value['items']) {
-				// this.currentCount = value['items'].length;
-				// this.totalCount = value['totalCount'];
-				// this.data$.next(value['items']);
+				this.currentCount = value['items'].length;
+				this.totalCount = value['totalCount'];
+				this.data$.next(value['items']);
 			}
 		});
 	}

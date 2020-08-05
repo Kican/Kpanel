@@ -1,0 +1,54 @@
+.user-tst-container {
+	border: 1px solid $my-light-color;
+	border-radius: $main-radius;
+	padding: 2px;
+	height: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include media-breakpoint-down(sm) {
+		font-size: .85em;
+	}
+
+	.user-tst-item {
+		border: none;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		border-radius: $main-radius;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		transition: $main-transition;
+
+		cursor: pointer;
+		color: #4f4f4f;
+
+		&:focus, &:active {
+			outline: none;
+		}
+
+		&.active {
+			color: white;
+			background-color: $my-primary-color;
+			box-shadow: 0 4px 5px 2px transparentize($my-primary-color, .75);
+		}
+	}
+
+	&.disabled {
+		.user-tst-item {
+			cursor: default;
+			color: #8f8f8f;
+
+			&.active {
+				color: white;
+				background-color: transparentize($my-primary-color, .4);
+			}
+		}
+	}
+}

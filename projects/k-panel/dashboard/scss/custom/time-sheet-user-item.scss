@@ -1,0 +1,19 @@
+.time-sheet-user-item {
+	.profile-image {
+		padding-right: 10px;
+		padding-left: 10px;
+		img {
+			width: 55px;
+			height: 55px;
+			object-fit: cover;
+			border: 2px solid $my-light-color;
+		}
+	}
+
+	.user-info {
+		text-align: right;
+		span {
+			font-size: .75em;
+		}
+	}
+}

@@ -1,0 +1,107 @@
+.login-container {
+    background-color: $my-light-color;
+}
+
+.login-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+
+    .card-header {
+        padding: 10px 0;
+        background: unset;
+        border-bottom: 1px solid #dee2e6;
+
+        .nav.nav-tabs li a {
+            padding: 5px 0;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            position: relative;
+            display: block;
+            border-left: 1px solid rgba(0, 0, 0, .125);
+            width: 170px;
+
+            &.active {
+                color: $my-primary-color;
+
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    background-color: $my-primary-color;
+                    width: 50%;
+                    right: 25%;
+                    position: absolute;
+                    bottom: -11px;
+                }
+
+                &:last-child {
+                    a {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .card-footer {
+        border: none;
+        background: linear-gradient(130deg, #2abb9b, #4daf7c);
+
+        span {
+            color: white;
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+.std-code {
+    position: relative;
+
+    input {
+        padding-left: 35px;
+    }
+
+    i {
+        position: absolute;
+        left: 0;
+        top: 28px;
+        transform: rotate(180deg);
+        opacity: .5;
+        cursor: pointer;
+        transition: opacity .25s ease-out;
+        padding: 6px 10px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.login-desc {
+    text-align: justify;
+    font-size: .90em;
+    line-height: 1.8;
+}
+
+.login-desc-items {
+    list-style: none;
+    padding: 0 12px;
+
+    li {
+        text-align: justify;
+        font-size: .8em;
+        line-height: 1.65;
+        margin-bottom: 7px;
+
+        &:before {
+            content: "";
+            font-family: "Material Design Icons";
+            display: inline-block;
+            width: 1.5em;
+        }
+    }
+}

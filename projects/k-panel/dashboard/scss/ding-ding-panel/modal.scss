@@ -1,0 +1,25 @@
+.modal-dialog {
+}
+
+.modal-content {
+    border-radius: $main-radius;
+    border: none;
+    box-shadow: $main-shadow;
+}
+
+.modal-header {
+    background: hsl(0, 0, 97%);
+    border: none;
+    border-radius: 5px;
+
+    .modal-title {
+        font-size: 1.1em;
+    }
+
+    .close {
+        float: left;
+        margin: 0;
+        padding: 0 5px;
+        transition: $main-transition;
+    }
+}

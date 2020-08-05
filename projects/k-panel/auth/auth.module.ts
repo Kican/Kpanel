@@ -1,11 +1,12 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {NewPassComponent} from "./components/_partials/new-pass/new-pass.component";
 import {ForgotPasswordComponent} from "./components/_partials/forgot-password/forgot-password.component";
 import {LoginPageComponent} from "./components/_partials/login-page/login-page.component";
 import {RouterModule, Routes} from "@angular/router";
 import {AuthPageComponent} from "./components/auth-page/auth-page.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CoreModule} from "@ngx-k-panel/core";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AuthHttpInterceptor} from "./providers/auth-http.interceptor";
 
 const AuthRoutes: Routes = [
 	{
@@ -18,6 +19,9 @@ const AuthRoutes: Routes = [
 ];
 
 @NgModule({
+	providers: [
+		{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true},
+	],
 	declarations: [
 		LoginPageComponent,
 		ForgotPasswordComponent,
@@ -25,9 +29,7 @@ const AuthRoutes: Routes = [
 		AuthPageComponent
 	],
 	imports: [
-		CommonModule,
-		ReactiveFormsModule,
-		FormsModule,
+		CoreModule,
 		RouterModule.forRoot(AuthRoutes)
 	],
 	exports: [

@@ -1,10 +1,10 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ContentChild, Input, OnInit} from '@angular/core';
-import {DataTableOptions} from '../../models/data-table-config.model';
 import {DtSortableDirective} from '../../directives/dt-sortable.directive';
 import {BehaviorSubject} from 'rxjs';
 import {DtDataSource} from '../../classes/dt-data-source';
 import {Sortable} from '../../models/sortable.model';
 import {NgForm} from '@angular/forms';
+import {DataTableOptions} from "../../models/data-table-options";
 
 @Component({
 	selector: 'data-table',

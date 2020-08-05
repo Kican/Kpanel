@@ -1,0 +1,19 @@
+.time-sheet-item {
+	width: 400px;
+	max-width: 100%;
+
+	.time-sheet-time {
+		text-align: right;
+		@include media-breakpoint-down(sm) {
+			font-size: .9em;
+		}
+	}
+
+	.time-sheet-option {
+		flex: 0 0 55%;
+	}
+
+	.card-body {
+		padding-left: .6rem !important
+	}
+}

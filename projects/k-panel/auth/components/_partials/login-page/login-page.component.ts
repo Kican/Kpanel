@@ -4,9 +4,9 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {NgxPermissionsService} from 'ngx-permissions';
 import {TranslateService} from '@ngx-translate/core';
-// import {AppValidators} from "@ngx-k-panel/core";
 import {AuthenticationService} from "../../../services/authentication.service";
 import {AccountService} from "../../../services/account.service";
+import {AppValidators} from "@ngx-k-panel/core";
 
 @Component({
 	selector: 'app-login-page',
@@ -43,8 +43,8 @@ export class LoginPageComponent implements OnInit {
 
 	createForm() {
 		this.loginForm = this.fb.group({
-			email: [null, [Validators.required, Validators.email, Validators.minLength(5)]],
-			password: [null, [Validators.required, Validators.minLength(8)]],
+			email: [null, [Validators.required, Validators.email, Validators.minLength(5), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
+			password: [null, [Validators.required, Validators.minLength(8), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
 		});
 	}
 }

@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime} from 'rxjs/operators';
+import {DataTableConfig} from "../../../classes/data-table-config";
 
 @Component({
 	selector: 'data-table-search',
@@ -29,7 +30,7 @@ export class DataTableSearchComponent implements OnInit {
 
 	search = new FormControl(['']);
 
-	constructor(@Inject('config') private config) {
+	constructor(@Inject(DataTableConfig) private config: DataTableConfig) {
 	}
 
 	ngOnInit() {

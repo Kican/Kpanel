@@ -20,13 +20,12 @@ import {CoreModule} from "@ngx-k-panel/core";
 		DataTableCountComponent,
 		DataTablePaginationComponent,
 		DtSortableDirective,
-		DataTableSearchComponent
+		DataTableSearchComponent,
 	],
 	imports: [
 		CoreModule,
 		CdkTableModule,
-		PaginationModule,
-		TranslateModule
+		PaginationModule.forRoot()
 	],
 	exports: [
 		DataTableContainerComponent,

@@ -1,0 +1,17 @@
+.presentation-toggle {
+	display: flex;
+
+	.submit-btn {
+		flex-basis: 100%;
+
+		button.btn-outline-success:disabled {
+			&:hover {
+				color: white;
+			}
+		}
+	}
+
+	.cancel-btn {
+
+	}
+}

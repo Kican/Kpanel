@@ -1,0 +1,63 @@
+.table {
+	td, th {
+		border: none;
+		padding: .6em;
+		font-size: .85em;
+		white-space: nowrap;
+	}
+
+	thead th {
+		border: 1px solid $my_light-color;
+		border-top: 0;
+
+		&:first-child {
+			border-right: 0;
+		}
+
+		&:last-child {
+			border-left: 0;
+		}
+	}
+
+	tbody > tr:nth-child(1) {
+		box-shadow: inset 0 8px 8px -8px rgba(0,0,0,.12);
+	}
+
+	th {
+		font-weight: bold;
+		font-family: $main-font;
+
+		&.sortable {
+			position: relative;
+			padding-left: 30px;
+			cursor: pointer;
+
+			&::after {
+				content: "";
+				font-family: "Material Design Icons";
+				position: absolute;
+				left: 10px;
+				display: inline-block;
+				opacity: .6;
+			}
+
+			&.asc {
+				&::after {
+					content: "";
+					opacity: 1;
+				}
+			}
+
+			&.desc {
+				&::after {
+					content: "";
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: $my-light-color;
+}

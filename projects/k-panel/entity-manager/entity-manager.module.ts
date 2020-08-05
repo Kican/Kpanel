@@ -25,7 +25,7 @@ export const EntityManagerRoutes: Routes = [
 	imports: [
 		DataTableModule,
 		CoreModule,
-		RouterModule.forRoot(EntityManagerRoutes)
+		RouterModule
 	]
 })
 export class EntityManagerModule {

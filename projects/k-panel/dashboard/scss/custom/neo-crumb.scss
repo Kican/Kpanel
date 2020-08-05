@@ -1,0 +1,22 @@
+.neo-breadcrumb-item + .neo-breadcrumb-item::before {
+	content: '\F141';
+	font-family: 'Material Design Icons';
+	background-color: unset;
+	width: unset;
+	height: unset;
+	position: relative;
+	top: 1px;
+}
+
+.neo-breadcrumb {
+	a {
+		&:hover {
+			text-decoration: none;
+			color: black;
+		}
+	}
+
+	.neo-breadcrumb-item {
+		display: inline-block;
+	}
+}

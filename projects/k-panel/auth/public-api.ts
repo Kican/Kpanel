@@ -5,3 +5,5 @@ export * from './components/auth-page/auth-page.component';
 export * from './components/_partials/login-page/login-page.component';
 export * from './components/_partials/forgot-password/forgot-password.component';
 export * from './components/_partials/new-pass/new-pass.component';
+export * from './models/user-dto';
+export * from './gaurds/auth-gaurd/auth.guard'

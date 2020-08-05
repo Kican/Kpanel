@@ -4,7 +4,8 @@
 	"peerDependencies": {
 		"@angular/common": "^10.0.3",
 		"@angular/core": "^10.0.3",
-		"@angular/router": "^10.0.3"
+		"@angular/router": "^10.0.3",
+		"@ngx-k-panel/core": "^0.0.1"
 	},
 	"dependencies": {
 		"tslib": "^2.0.0"

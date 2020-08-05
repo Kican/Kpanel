@@ -3,10 +3,10 @@
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "^10.0.3",
-		"@angular/core": "^10.0.3"
-	},
-	"dependencies": {
-		"tslib": "^2.0.0"
+		"@angular/core": "^10.0.3",
+		"@angular/animations": "^10.0.3",
+		"@ngx-translate/core": "^13.0.0",
+		"ngx-permissions": "^8.0.0"
 	},
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",

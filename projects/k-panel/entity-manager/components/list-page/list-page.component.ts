@@ -3,6 +3,9 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {FormGroup} from '@angular/forms';
 import {BsModalService} from 'ngx-bootstrap/modal';
+import {EntityManagerHttpDataSource} from "../../services/entity-manager-http-data-source";
+import {DtDataSource, DataTableOptions} from "@ngx-k-panel/data-table";
+import {ToastService} from "@ngx-k-panel/core";
 
 @Component({
 	selector: 'app-list-page',
@@ -10,10 +13,10 @@ import {BsModalService} from 'ngx-bootstrap/modal';
 	styleUrls: ['./list-page.component.scss']
 })
 export class ListPageComponent implements OnInit {
-	dataSource: {};
+	dataSource: DtDataSource<{}>;
 	displayedColumns: string[] = [];
 
-	dtConfig = {};
+	dtConfig = new DataTableOptions();
 
 	filterForm: FormGroup;
 
@@ -25,6 +28,7 @@ export class ListPageComponent implements OnInit {
 		private http: HttpClient,
 		private router: ActivatedRoute,
 		private modalService: BsModalService,
+		private toastService: ToastService
 	) {
 	}
 
@@ -44,9 +48,8 @@ export class ListPageComponent implements OnInit {
 			this.displayedColumns.push(...value.children.map(x => x.name));
 			this.displayedColumns.push('options');
 
-			this.dataSource = {entityName};
-
-			// this.dataSource.loadData();
+			this.dataSource = new EntityManagerHttpDataSource(entityName, this.http, this.filterForm);
+			this.dataSource.loadData();
 		});
 
 	}
@@ -62,7 +65,7 @@ export class ListPageComponent implements OnInit {
 		// ).subscribe((reason) => {
 		// 	this.http.delete(`api/${this.entityName}/${id}`).subscribe(value => {
 		// 		this.dataSource.loadData();
-		// 		this.autoToastrService.success();
+		// 		this.toastService.success();
 		// 	});
 		// });
 	}

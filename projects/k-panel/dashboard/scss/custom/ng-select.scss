@@ -1,0 +1,60 @@
+.ng-select {
+	&.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+		border-color: $my-primary-color;
+	}
+
+	.ng-select-container {
+		padding: 9px;
+		@extend .form-control;
+
+		&:hover {
+			box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.02);
+		}
+	}
+
+	&.ng-select-opened {
+		.ng-select-container {
+			border: 1px solid $my-primary-color;
+		}
+	}
+
+	.ng-dropdown-panel {
+		border: none;
+		box-shadow: $main-shadow;
+
+		&.ng-select-bottom {
+			border-radius: 5px !important;
+		}
+
+		.ng-dropdown-panel-items .ng-option.ng-option-marked {
+			background-color: lighten($my-primary-color, 50%);
+		}
+	}
+
+	.ng-dropdown-panel.ng-select-bottom .ng-dropdown-panel-items .ng-option:last-child {
+		border-bottom-right-radius: $main-radius;
+		border-bottom-left-radius: $main-radius;
+	}
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+	padding-right: 10px;
+	padding-left: 50px;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+	background-color: lighten($my-primary-color, 45%);
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+	//white-space: normal;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container
+{
+	flex-wrap: nowrap !important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+	white-space: normal !important;
+}
