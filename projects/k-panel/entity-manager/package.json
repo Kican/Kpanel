@@ -12,6 +12,6 @@
 		"lib": {
 			"entryFile": "public-api.ts"
 		},
-		"dest": "../../../dist/alert"
+		"dest": "../../../dist/entity-manager"
 	}
 }

@@ -2,9 +2,10 @@
 	"name": "@ngx-k-panel/data-table",
 	"version": "0.0.1",
 	"peerDependencies": {
-		"@angular/common": "^10.0.3",
-		"@angular/core": "^10.0.3",
-		"ngx-bootstrap": "^5.6.1"
+		"@angular/common": "^10.0.8",
+		"@angular/core": "^10.0.8",
+		"@angular/cdk": "^10.1.2",
+		"ngx-bootstrap": "^6.0.0"
 	},
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
