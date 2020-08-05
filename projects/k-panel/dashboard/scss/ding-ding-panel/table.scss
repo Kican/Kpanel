@@ -33,7 +33,7 @@
 			cursor: pointer;
 
 			&::after {
-				content: "";
+				content: "\F0E79";
 				font-family: "Material Design Icons";
 				position: absolute;
 				left: 10px;
@@ -43,14 +43,14 @@
 
 			&.asc {
 				&::after {
-					content: "";
+					content: "\F005D";
 					opacity: 1;
 				}
 			}
 
 			&.desc {
 				&::after {
-					content: "";
+					content: "\F0045";
 					opacity: 1;
 				}
 			}
