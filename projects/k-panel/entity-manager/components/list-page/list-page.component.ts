@@ -1,15 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {DataTableOptions} from '../../../data-table/models/data-table-config.model';
-import {DtDataSource, HttpDtDataSource} from '../../../data-table/classes/dt-data-source';
-import {EntityManagerHttpDataSource} from '../../services/entity-manager-http-data-source';
 import {FormGroup} from '@angular/forms';
-import {AcceptDialogComponent} from '../../../src/lib/components/_dialogs/accept-dialog/accept-dialog.component';
-import {filter, take} from 'rxjs/operators';
-import {DialogResult} from '../../../src/lib/modules/share/enums/dialog-result.enum';
 import {BsModalService} from 'ngx-bootstrap/modal';
-import {ToastService} from "../../../core/services/toast.service";
 
 @Component({
 	selector: 'app-list-page',
@@ -17,10 +10,10 @@ import {ToastService} from "../../../core/services/toast.service";
 	styleUrls: ['./list-page.component.scss']
 })
 export class ListPageComponent implements OnInit {
-	dataSource: DtDataSource<{}>;
+	dataSource: {};
 	displayedColumns: string[] = [];
 
-	dtConfig = new DataTableOptions();
+	dtConfig = {};
 
 	filterForm: FormGroup;
 
@@ -31,7 +24,6 @@ export class ListPageComponent implements OnInit {
 	constructor(
 		private http: HttpClient,
 		private router: ActivatedRoute,
-		private autoToastrService: ToastService,
 		private modalService: BsModalService,
 	) {
 	}
@@ -52,27 +44,27 @@ export class ListPageComponent implements OnInit {
 			this.displayedColumns.push(...value.children.map(x => x.name));
 			this.displayedColumns.push('options');
 
-			this.dataSource = new EntityManagerHttpDataSource(entityName, this.http, this.filterForm);
+			this.dataSource = {entityName};
 
-			this.dataSource.loadData();
+			// this.dataSource.loadData();
 		});
 
 	}
 
 	delete(id: number) {
-		this.modalService.show(AcceptDialogComponent, {
-			class: 'modal-sm',
-			initialState: {text: 'آیا برای حذف مطمئن هستید؟', acceptBtnText: 'حذف', declineBtnText: 'انصراف'}
-		});
-		this.modalService.onHide.pipe(
-			take(1),
-			filter(value => value == DialogResult.Confirm)
-		).subscribe((reason) => {
-			this.http.delete(`api/${this.entityName}/${id}`).subscribe(value => {
-				this.dataSource.loadData();
-				this.autoToastrService.success();
-			});
-		});
+		// this.modalService.show(AcceptDialogComponent, {
+		// 	class: 'modal-sm',
+		// 	initialState: {text: 'آیا برای حذف مطمئن هستید؟', acceptBtnText: 'حذف', declineBtnText: 'انصراف'}
+		// });
+		// this.modalService.onHide.pipe(
+		// 	take(1),
+		// 	filter(value => value == DialogResult.Confirm)
+		// ).subscribe((reason) => {
+		// 	this.http.delete(`api/${this.entityName}/${id}`).subscribe(value => {
+		// 		this.dataSource.loadData();
+		// 		this.autoToastrService.success();
+		// 	});
+		// });
 	}
 
 

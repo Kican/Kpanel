@@ -1,11 +1,8 @@
 import {DataSource} from '@angular/cdk/table';
 import {CollectionViewer} from '@angular/cdk/collections';
 import {BehaviorSubject, Observable, of, Subscription} from 'rxjs';
-import {IService} from '../../src/lib/common/interfaces/IService';
 import {catchError, finalize} from 'rxjs/operators';
 import {FormGroup} from '@angular/forms';
-import {isNullOrUndefined} from 'util';
-import {ListFilter} from "../../src/lib/common/models/list-filter.model";
 
 export abstract class DtDataSource<T> extends DataSource<T> {
 
@@ -18,7 +15,7 @@ export abstract class DtDataSource<T> extends DataSource<T> {
 	public loading$ = this.loadingSubject.asObservable();
 
 	sub: Subscription;
-	filters: ListFilter = new ListFilter();
+	filters = {};
 
 	protected constructor(private filterForm?: FormGroup) {
 		super();
@@ -49,11 +46,8 @@ export abstract class DtDataSource<T> extends DataSource<T> {
 
 	addFormValuesToFilterObject(value: string) {
 		for (let key of Object.keys(value)) {
-			if (!isNullOrUndefined(value[key])) {
-				this.filters[key] = value[key];
-			} else {
-				delete this.filters[key];
-			}
+			this.filters[key] = value[key];
+			delete this.filters[key];
 		}
 	}
 
@@ -61,7 +55,7 @@ export abstract class DtDataSource<T> extends DataSource<T> {
 }
 
 export class HttpDtDataSource<T> extends DtDataSource<T> {
-	constructor(private service: IService<T>, filterForm?: FormGroup) {
+	constructor(private service, filterForm?: FormGroup) {
 		super(filterForm);
 	}
 

@@ -11,7 +11,6 @@ import {DataTableSearchComponent} from './components/_partials/data-table-search
 import {CdkTableModule} from '@angular/cdk/table';
 import {TranslateModule} from '@ngx-translate/core';
 import {PaginationModule} from "ngx-bootstrap/pagination";
-import {DataTableConfig} from "./classes/data-table-config";
 import {DataTableContainerComponent} from "./components/data-table-container/data-table-container.component";
 
 @NgModule({
@@ -29,7 +28,7 @@ import {DataTableContainerComponent} from "./components/data-table-container/dat
 		FormsModule,
 		ReactiveFormsModule,
 		CdkTableModule,
-		PaginationModule.forRoot(),
+		PaginationModule,
 		TranslateModule
 	],
 	exports: [

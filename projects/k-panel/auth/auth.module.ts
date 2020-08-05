@@ -27,7 +27,6 @@ const AuthRoutes: Routes = [
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
-		RouterModule.forRoot(AuthRoutes)
 	],
 	exports: [
 		RouterModule

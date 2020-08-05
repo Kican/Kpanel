@@ -5,13 +5,11 @@ import {BehaviorSubject} from 'rxjs';
 import {DtDataSource} from '../../classes/dt-data-source';
 import {Sortable} from '../../models/sortable.model';
 import {NgForm} from '@angular/forms';
-import {slideToggle} from "../../../src/lib/animations/pub-anim";
 
 @Component({
 	selector: 'app-data-table',
 	templateUrl: './data-table.component.html',
 	styleUrls: ['./data-table.component.scss'],
-	animations: [slideToggle]
 })
 export class DataTableComponent implements OnInit, AfterViewInit {
 	@Input()
