@@ -1,0 +1,6 @@
+<div class="form-group">
+	<label for="id-{{componentData.name}}">{{componentData.title}}</label>
+
+	<input type="text" class="form-control" [formControlName]="toLowerCamelCase(componentData.name)"
+		   id="id-{{componentData.name}}" placeholder="{{componentData.title}}">
+</div>

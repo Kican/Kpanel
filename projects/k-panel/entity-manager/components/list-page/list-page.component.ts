@@ -75,12 +75,3 @@ export class ListPageComponent implements OnInit {
 		return text.substring(0, 1).toLowerCase() + text.substring(1);
 	}
 }
-
-export interface IComponent {
-	type: string;
-	name: string;
-}
-
-export interface ILayoutComponent extends IComponent {
-	children: IComponent[];
-}

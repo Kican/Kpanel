@@ -1,0 +1,17 @@
+import {NgModule} from '@angular/core';
+import {CoreModule} from "@ngx-k-panel/core";
+import {FormBuilderModule} from "../form-builder/form-builder.module";
+import { EditTextComponent } from './elements/edit-text/edit-text/edit-text.component';
+
+
+@NgModule({
+	declarations: [
+
+	EditTextComponent],
+	imports: [
+		CoreModule,
+		FormBuilderModule
+	]
+})
+export class FormBuilderBootstrapModule {
+}

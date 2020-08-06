@@ -1,5 +1,5 @@
 {
-	"name": "@ngx-k-panel/form-builder",
+	"name": "@ngx-k-panel/form-builder-bootstrap",
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "^10.0.8",
@@ -11,6 +11,6 @@
 		"lib": {
 			"entryFile": "public-api.ts"
 		},
-		"dest": "../../../dist/form-builder"
+		"dest": "../../../dist/form-builder-bootstrap"
 	}
 }

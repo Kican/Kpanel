@@ -1,10 +1,10 @@
-import {IComponentHandler} from "../../classes/icomponent-handler";
+import {IComponentDescriptor} from "../../classes/i-component-descriptor";
 import {IComponent} from "../../classes/icomponent";
 
 export class ComponentCollection {
-	private componentHandlers: IComponentHandler[];
+	private componentHandlers: IComponentDescriptor[];
 
-	insert(handler: IComponentHandler) {
+	insert(handler: IComponentDescriptor) {
 		this.componentHandlers.push(handler);
 	}
 
