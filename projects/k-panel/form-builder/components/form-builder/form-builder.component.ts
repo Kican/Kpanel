@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import {IComponent} from "../../classes/icomponent";
 import {FormBuilderService} from "../../services/form-builder.service";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
 	selector: 'k-form-builder',
@@ -23,6 +24,9 @@ export class FormBuilderComponent implements OnInit, AfterViewInit {
 	@Input()
 	component: IComponent;
 
+	@Input()
+	form: FormGroup;
+
 	constructor(
 		private formBuilder: FormBuilderService,
 		private componentFactoryResolver: ComponentFactoryResolver,
@@ -34,6 +38,6 @@ export class FormBuilderComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit(): void {
-		this.formBuilder.render(this.component, this.dynamicInsert, this.componentFactoryResolver, this.injector);
+		this.formBuilder.render(this.component, this.form, this.dynamicInsert, this.componentFactoryResolver, this.injector);
 	}
 }

@@ -3,6 +3,9 @@
 		form-builder-test works!
 	</div>
 	<div class="card-body">
-		<k-form-builder [component]="component"></k-form-builder>
+		<form [formGroup]="form" >
+			<k-form-builder [form]="form" [component]="component"></k-form-builder>
+		</form>
+		{{form.value | json}}
 	</div>
 </div>

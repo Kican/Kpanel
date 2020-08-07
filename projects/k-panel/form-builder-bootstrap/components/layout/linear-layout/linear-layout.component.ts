@@ -8,6 +8,7 @@ import {
 	ViewContainerRef
 } from '@angular/core';
 import {FormBuilderService, IElementComponent, ILayoutComponent} from "@ngx-k-panel/form-builder";
+import {FormGroup} from "@angular/forms";
 
 @Component({
 	selector: 'k-linear-layout',
@@ -21,6 +22,9 @@ export class LinearLayoutComponent implements OnInit, IElementComponent, AfterVi
 	@ViewChild('content', {read: ViewContainerRef})
 	dynamicInsert: ViewContainerRef;
 
+	@Input()
+	parentFormGroup: FormGroup;
+
 	constructor(
 		private formBuilder: FormBuilderService,
 		private componentFactoryResolver: ComponentFactoryResolver,
@@ -29,12 +33,12 @@ export class LinearLayoutComponent implements OnInit, IElementComponent, AfterVi
 	}
 
 	ngOnInit(): void {
-	}
-
-	ngAfterViewInit(): void {
 		for (let child of this.componentData.children) {
-			this.formBuilder.render(child, this.dynamicInsert, this.componentFactoryResolver, this.injector);
+			this.formBuilder.render(child, this.parentFormGroup, this.dynamicInsert, this.componentFactoryResolver, this.injector);
 		}
 	}
 
+	ngAfterViewInit(): void {
+
+	}
 }

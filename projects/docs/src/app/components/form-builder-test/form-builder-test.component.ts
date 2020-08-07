@@ -2,6 +2,7 @@ import {
 	Component,
 	OnInit
 } from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
 	selector: 'app-form-builder-test',
@@ -34,9 +35,13 @@ export class FormBuilderTestComponent implements OnInit {
 		"name": null
 	};
 
-	constructor() {
+	form: FormGroup;
+
+	constructor(private formBuilder: FormBuilder) {
+		this.form = this.formBuilder.group({});
 	}
 
 	ngOnInit(): void {
+
 	}
 }
