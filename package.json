@@ -44,7 +44,9 @@
 		"@ngx-k-panel/dashboard": "file:dist/panel/dashboard",
 		"@ngx-k-panel/auth": "file:dist/panel/auth",
 		"@ngx-k-panel/data-table": "file:dist/panel/data-table",
-		"@ngx-k-panel/entity-manager": "file:dist/panel/entity-manager"
+		"@ngx-k-panel/entity-manager": "file:dist/panel/entity-manager",
+		"@ngx-k-panel/form-builder": "file:dist/panel/form-builder",
+		"@ngx-k-panel/form-builder-bootstrap": "file:dist/panel/form-builder-bootstrap"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "~0.1000.5",
