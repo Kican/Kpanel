@@ -11,9 +11,6 @@ export class InputNumberComponent implements OnInit, IElementComponent {
 	@Input()
 	componentData: IEditTextComponent;
 
-	constructor() {
-	}
-
 	ngOnInit(): void {
 	}
 

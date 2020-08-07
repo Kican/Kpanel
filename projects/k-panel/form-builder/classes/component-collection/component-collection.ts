@@ -1,9 +1,8 @@
-import {IElementComponent} from "../ielement-component";
-
 export abstract class ComponentCollection {
-	private components: [string, IElementComponent];
+	public components: { [name: string]:  any; } = {};
 
-	set(name: string, component: IElementComponent) {
-		this.components[name] = component;
+
+	find(name: string): any {
+		return this.components[name];
 	}
 }

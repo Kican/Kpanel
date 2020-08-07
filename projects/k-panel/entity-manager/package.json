@@ -5,7 +5,8 @@
 		"@angular/common": "^10.0.8",
 		"@angular/core": "^10.0.8",
 		"@angular/router": "^10.0.8",
-		"@ngx-k-panel/data-table": "^0.0.1"
+		"@ngx-k-panel/data-table": "^0.0.1",
+		"@ngx-k-panel/form-builder": "^0.0.1"
 	},
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
