@@ -1,13 +1,8 @@
-import {EditTextComponent} from "./edit-text/edit-text.component";
-import {ComponentDescriptorBase} from "../../../form-builder/classes/component-descriptor-base/component-descriptor-base";
 import {IComponent} from "../../../form-builder/classes/icomponent";
+import {IComponentDescriptor} from "../../../form-builder/classes/i-component-descriptor";
 
-export class EditTextDescriptor extends ComponentDescriptorBase<EditTextComponent> {
-	generate(component: IComponent): EditTextComponent {
-		return undefined;
-	}
-
-	isOwner(component: IComponent): boolean {
-		return component.type == 'TextFieldComponent';
+export class EditTextDescriptor implements IComponentDescriptor {
+	isOwner(component: IComponent): string | null {
+		return component.type == 'TextFieldComponent' ? 'TextFieldComponent' : null;
 	}
 }
