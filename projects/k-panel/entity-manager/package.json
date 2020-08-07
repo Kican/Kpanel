@@ -2,9 +2,9 @@
 	"name": "@ngx-k-panel/entity-manager",
 	"version": "0.0.1",
 	"peerDependencies": {
-		"@angular/common": "^10.0.3",
-		"@angular/core": "^10.0.3",
-		"@angular/router": "^10.0.3",
+		"@angular/common": "^10.0.8",
+		"@angular/core": "^10.0.8",
+		"@angular/router": "^10.0.8",
 		"@ngx-k-panel/data-table": "^0.0.1"
 	},
 	"ngPackage": {

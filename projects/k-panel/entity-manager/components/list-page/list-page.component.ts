@@ -6,6 +6,7 @@ import {BsModalService} from 'ngx-bootstrap/modal';
 import {EntityManagerHttpDataSource} from "../../services/entity-manager-http-data-source";
 import {DtDataSource, DataTableOptions} from "@ngx-k-panel/data-table";
 import {ToastService} from "@ngx-k-panel/core";
+import {IComponent, ILayoutComponent} from '@ngx-k-panel/form-builder'
 
 @Component({
 	selector: 'app-list-page',

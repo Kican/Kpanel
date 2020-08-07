@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {IComponent, ILayoutComponent} from "../list-page/list-page.component";
+import {IComponent, ILayoutComponent} from "@ngx-k-panel/form-builder";
 import {FormBuilderComponent} from "../form-builder/form-builder.component";
 
 @Component({

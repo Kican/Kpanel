@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges, EventEmitter, Output} from '@angular/core';
-import {IComponent} from "../list-page/list-page.component";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {IComponent} from '@ngx-k-panel/form-builder'
 
 @Component({
 	selector: 'app-form-builder',
