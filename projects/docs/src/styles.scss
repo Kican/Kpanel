@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@ngx-k-panel/dashboard/scss/styles";
+
+@import "~ngx-k-components/sidebar/scss/sidebar";
+@include k-sidebar();
+
+@import "~ngx-k-components/navbar/scss/navbar";
+@include k-navbar();

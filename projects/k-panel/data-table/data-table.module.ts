@@ -7,10 +7,9 @@ import {DataTablePaginationComponent} from './components/_partials/data-table-pa
 import {DtSortableDirective} from './directives/dt-sortable.directive';
 import {DataTableSearchComponent} from './components/_partials/data-table-search/data-table-search.component';
 import {CdkTableModule} from '@angular/cdk/table';
-import {TranslateModule} from '@ngx-translate/core';
-import {PaginationModule} from "ngx-bootstrap/pagination";
-import {DataTableContainerComponent} from "./components/data-table-container/data-table-container.component";
-import {CoreModule} from "@ngx-k-panel/core";
+import {PaginationModule} from 'ngx-bootstrap/pagination';
+import {DataTableContainerComponent} from './components/data-table-container/data-table-container.component';
+import {CoreModule} from '@ngx-k-panel/core';
 
 @NgModule({
 	declarations: [

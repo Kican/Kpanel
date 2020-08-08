@@ -6,9 +6,11 @@ import {OptionBarContainerComponent} from './components/_partials/option-bar-con
 import {OptionBarProfileComponent} from './components/_partials/option-bar-profile/option-bar-profile.component';
 import {OptionBarActionsContainerComponent} from './components/_partials/option-bar-actions-container/option-bar-actions-container.component';
 import {NavBarActionsItemComponent} from './components/_partials/nav-bar-actions-item/nav-bar-actions-item.component';
-import {TooltipModule} from "ngx-bootstrap/tooltip";
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
 
+export const toolTilModule = TooltipModule.forRoot();
 
+// @dynamic
 @NgModule({
 	declarations: [
 		NavBarContainerComponent,
@@ -20,7 +22,7 @@ import {TooltipModule} from "ngx-bootstrap/tooltip";
 	],
 	imports: [
 		CommonModule,
-		TooltipModule.forRoot()
+		toolTilModule
 	],
 	exports: [
 		NavBarContainerComponent,

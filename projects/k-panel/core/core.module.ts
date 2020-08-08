@@ -1,18 +1,18 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {ScrollService} from "./services/scroll.service";
-import {WindowSizeService} from "./services/window-size.service";
-import {DialogService} from "./services/dialog.service";
-import {TranslateModule} from "@ngx-translate/core";
-import {NgxPermissionsModule} from "ngx-permissions";
-import {NgBootstrapFormValidationModule} from "ng-bootstrap-form-validation";
-import {FixUrlInterceptor} from "./provider/fix-url.interceptor";
-import {KPanelConfig} from "./common/kpanel-config";
-import {ModalModule} from "ngx-bootstrap/modal";
-import {NgSelectModule} from "@ng-select/ng-select";
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ScrollService} from './services/scroll.service';
+import {WindowSizeService} from './services/window-size.service';
+import {DialogService} from './services/dialog.service';
+import {TranslateModule} from '@ngx-translate/core';
+import {NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
+import {FixUrlInterceptor} from './provider/fix-url.interceptor';
+import {KPanelConfig} from './common/kpanel-config';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 @NgModule({
 	providers: [
@@ -29,9 +29,8 @@ import {NgSelectModule} from "@ng-select/ng-select";
 		BrowserAnimationsModule,
 		NgxPermissionsModule.forRoot(),
 		TranslateModule.forRoot(),
-		NgBootstrapFormValidationModule.forRoot(),
-
 		ModalModule.forRoot(),
+		NgBootstrapFormValidationModule.forRoot(),
 		NgSelectModule
 	],
 	exports: [
@@ -43,8 +42,8 @@ import {NgSelectModule} from "@ng-select/ng-select";
 		TranslateModule,
 		NgxPermissionsModule,
 		NgBootstrapFormValidationModule,
-		ModalModule,
-		NgSelectModule
+		NgSelectModule,
+		ModalModule
 	]
 })
 export class CoreModule {

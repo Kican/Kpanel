@@ -1,12 +1,43 @@
-<app-nav-bar-container>
-	<app-side-bar-controller>{{'nav_bar_panel' | translate}}</app-side-bar-controller>
-	<app-option-bar-container>
-		<app-option-bar-profile (profileClick)="openProfile()"
-		>
-		</app-option-bar-profile>
-		<app-option-bar-actions-container>
-			<app-nav-bar-actions-item iconClass="mdi mdi-bell" [tooltip]="'notifications' | translate"></app-nav-bar-actions-item>
-			<app-nav-bar-actions-item iconClass="mdi mdi-logout mdi-rotate-180" [tooltip]="'exit' | translate" (click)="logOut()"></app-nav-bar-actions-item>
-		</app-option-bar-actions-container>
-	</app-option-bar-container>
-</app-nav-bar-container>
+<!--<app-nav-bar-container>-->
+<!--	<app-side-bar-controller>{{'nav_bar_panel' | translate}}</app-side-bar-controller>-->
+<!--	<app-option-bar-container>-->
+<!--		<app-option-bar-profile (profileClick)="openProfile()"-->
+<!--		>-->
+<!--		</app-option-bar-profile>-->
+<!--		<app-option-bar-actions-container>-->
+<!--			<app-nav-bar-actions-item iconClass="mdi mdi-bell" [tooltip]="'notifications' | translate"></app-nav-bar-actions-item>-->
+<!--			<app-nav-bar-actions-item iconClass="mdi mdi-logout mdi-rotate-180" [tooltip]="'exit' | translate" (click)="logOut()"></app-nav-bar-actions-item>-->
+<!--		</app-option-bar-actions-container>-->
+<!--	</app-option-bar-container>-->
+<!--</app-nav-bar-container>-->
+
+
+<nav
+	kNavbar
+	[bgColor]="'#FFFFFF'"
+	[position]="'fixed-top'"
+	style="transition: .3s cubic-bezier(.25,.1,.25,1)"
+	[ngClass]="{'k-sidebar-nav-offset': sidebar.status == 'opened' && sidebar.config.mode == 'push'}">
+	<ul kNavbarNav>
+		<li kNavbarNavItem>
+			<a kNavbarNavLink (click)="sidebar.toggle()" href="javascript:void">
+				<svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 24 12">
+					<g transform="translate(-301 -41)">
+						<line x2="21" transform="translate(302.5 51.5)" fill="none" stroke="#008bff" stroke-linecap="round" stroke-width="3"/>
+						<line x2="21" transform="translate(302.5 42.5)" fill="none" stroke="#008bff" stroke-linecap="round" stroke-width="3"/>
+					</g></svg>
+			</a>
+		</li>
+		<li kNavbarNavItem>
+			<a kNavbarNavLink [routerLink]="['/']" routerLinkActive="active">پیشخوان</a>
+		</li>
+	</ul>
+	<ul kNavbarOption>
+		<li kNavbarOptionItem>
+			<a kNavbarOptionLink href="javascript:void" (click)="openProfile()"><i class="mdi mdi-account mdi-24px"></i></a>
+		</li>
+		<li kNavbarOptionItem>
+			<a kNavbarOptionLink href="javascript:void" (click)="logOut()"><i class="mdi mdi-logout mdi-24px"></i></a>
+		</li>
+	</ul>
+</nav>

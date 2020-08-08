@@ -12,14 +12,8 @@ export class AppValidators {
 	}
 
 	static equal(...controls: string[]): ValidatorFn {
-		return (control: FormGroup): { [key: string]: any } | null => {
-			for (let i = 0; i < controls.length - 1; i++) {
-				if (control.get(controls[i]).value !== control.get(controls[i + 1]).value) {
-					return {equal: {value: [controls[i], controls[i + 1]]}};
-				}
-			}
 			return null;
-		};
+
 	}
 
 	static nationalCode(control: AbstractControl): { [key: string]: any } | null {

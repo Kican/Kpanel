@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
-import {NewPassComponent} from "./components/_partials/new-pass/new-pass.component";
-import {ForgotPasswordComponent} from "./components/_partials/forgot-password/forgot-password.component";
-import {LoginPageComponent} from "./components/_partials/login-page/login-page.component";
-import {RouterModule, Routes} from "@angular/router";
-import {AuthPageComponent} from "./components/auth-page/auth-page.component";
-import {CoreModule} from "@ngx-k-panel/core";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {AuthHttpInterceptor} from "./providers/auth-http.interceptor";
+import {NewPassComponent} from './components/_partials/new-pass/new-pass.component';
+import {ForgotPasswordComponent} from './components/_partials/forgot-password/forgot-password.component';
+import {LoginPageComponent} from './components/_partials/login-page/login-page.component';
+import {RouterModule, Routes} from '@angular/router';
+import {AuthPageComponent} from './components/auth-page/auth-page.component';
+import {CoreModule} from '@ngx-k-panel/core';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {AuthHttpInterceptor} from './providers/auth-http.interceptor';
 
-const AuthRoutes: Routes = [
+const authRoutes: Routes = [
 	{
 		path: 'auth', component: AuthPageComponent, children: [
 			{path: 'login', component: LoginPageComponent},
@@ -17,6 +17,8 @@ const AuthRoutes: Routes = [
 		]
 	}
 ];
+
+export const routerModule = RouterModule.forRoot(authRoutes);
 
 @NgModule({
 	providers: [
@@ -30,7 +32,7 @@ const AuthRoutes: Routes = [
 	],
 	imports: [
 		CoreModule,
-		RouterModule.forRoot(AuthRoutes)
+		routerModule
 	],
 	exports: [
 		RouterModule

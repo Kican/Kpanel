@@ -1,8 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
-import {AccountService, UserDto, AuthenticationService} from "@ngx-k-panel/auth";
-import {DialogService} from "@ngx-k-panel/core";
+import {AccountService, UserDto, AuthenticationService} from '@ngx-k-panel/auth';
+import {DialogService} from '@ngx-k-panel/core';
+import {SidebarContainerComponent} from 'ngx-k-components/sidebar';
 
 @Component({
 	selector: 'app-nav-bar',
@@ -12,6 +13,9 @@ import {DialogService} from "@ngx-k-panel/core";
 export class NavBarComponent implements OnInit, OnDestroy {
 	user: UserDto;
 	sub: Subscription;
+
+	@Input()
+	sidebar: SidebarContainerComponent;
 
 	constructor(
 		public authService: AuthenticationService,
