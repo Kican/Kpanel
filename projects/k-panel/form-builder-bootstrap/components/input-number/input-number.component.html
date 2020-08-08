@@ -1,6 +1,6 @@
 <div class="form-group">
 	<label for="id-{{componentData.name}}">{{componentData.title}}</label>
 
-	<input type="number" class="form-control" [formControlName]="toLowerCamelCase(componentData.name)"
+	<input type="number" class="form-control" [formControl]="control"
 		   id="id-{{componentData.name}}" placeholder="{{componentData.title}}">
 </div>

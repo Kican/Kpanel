@@ -14,8 +14,14 @@ export class InputTextComponent implements OnInit, IElementComponent {
 	@Input()
 	parentFormGroup: FormGroup;
 
+	control: FormControl;
+
+	constructor() {
+		this.control = new FormControl('', Validators.required);
+	}
+
 	ngOnInit(): void {
-		this.parentFormGroup.addControl(this.toLowerCamelCase(this.componentData.name), new FormControl('', Validators.required))
+		this.parentFormGroup.addControl(this.toLowerCamelCase(this.componentData.name), this.control);
 	}
 
 	toLowerCamelCase(text: string): string {
