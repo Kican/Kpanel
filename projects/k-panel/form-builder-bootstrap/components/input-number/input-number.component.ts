@@ -14,10 +14,14 @@ export class InputNumberComponent implements OnInit, IElementComponent {
 	@Input()
 	componentData: IEditTextComponent;
 
+	control: FormControl;
+
+	constructor() {
+		this.control = new FormControl(null, []);
+	}
 
 	ngOnInit(): void {
-		console.log('form-group', this.parentFormGroup)
-		this.parentFormGroup.addControl(this.toLowerCamelCase(this.componentData.name), new FormControl('', Validators.required))
+		this.parentFormGroup.addControl(this.toLowerCamelCase(this.componentData.name), this.control)
 	}
 
 	toLowerCamelCase(text: string): string {

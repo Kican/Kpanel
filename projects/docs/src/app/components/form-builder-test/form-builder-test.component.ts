@@ -44,4 +44,8 @@ export class FormBuilderTestComponent implements OnInit {
 	ngOnInit(): void {
 
 	}
+
+	onSubmit($event) {
+		console.log($event);
+	}
 }
