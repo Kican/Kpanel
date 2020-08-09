@@ -11,6 +11,8 @@ import {PaginationModule} from 'ngx-bootstrap/pagination';
 import {DataTableContainerComponent} from './components/data-table-container/data-table-container.component';
 import {CoreModule} from '@ngx-k-panel/core';
 
+export const pagination = PaginationModule.forRoot();
+
 @NgModule({
 	declarations: [
 		DataTableContainerComponent,
@@ -24,7 +26,7 @@ import {CoreModule} from '@ngx-k-panel/core';
 	imports: [
 		CoreModule,
 		CdkTableModule,
-		PaginationModule.forRoot()
+		pagination
 	],
 	exports: [
 		DataTableContainerComponent,

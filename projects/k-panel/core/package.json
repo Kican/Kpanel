@@ -11,7 +11,14 @@
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {
-			"entryFile": "./public-api.ts"
+			"entryFile": "./public-api.ts",
+			"umdModuleIds": {
+				"ngx-permissions": "ngxPermissions$1",
+				"@ngx-translate/core": "core",
+				"ng-bootstrap-form-validation": "ngBootstrapFormValidation$1",
+				"ngx-bootstrap/modal": "modal",
+				"@ng-select/ng-select": "ngSelect"
+			}
 		},
 		"dest": "../../../dist/core"
 	}

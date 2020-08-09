@@ -18,20 +18,20 @@ import {KSidebarModule, SidebarMode, SidebarStatus} from 'ngx-k-components/sideb
 @NgModule({
 	declarations: [
 		AppComponent,
-		FormBuilderTestComponent
+		// FormBuilderTestComponent
 	],
 	imports: [
 		BrowserModule,
-		AuthModule,
-		EntityManagerModule,
-		KSidebarModule.forRoot({
-			initialState: SidebarStatus.Opened,
-			hasBackdrop: false,
-			isFixed: true,
-			mode: SidebarMode.Push
-		}),
-		DashboardModule,
-		FormBuilderModule,
+		// AuthModule,
+		// EntityManagerModule,
+		// KSidebarModule.forRoot({
+		// 	initialState: SidebarStatus.Opened,
+		// 	hasBackdrop: false,
+		// 	isFixed: true,
+		// 	mode: SidebarMode.Push
+		// }),
+		// DashboardModule,
+		// FormBuilderModule,
 		CoreModule.forRoot({base_url: 'http://erp.vistath.com/'}),
 		AppRoutingModule,
 		TooltipModule.forRoot(),

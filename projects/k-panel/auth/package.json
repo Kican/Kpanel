@@ -13,7 +13,13 @@
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {
-			"entryFile": "public-api.ts"
+			"entryFile": "public-api.ts",
+			"umdModuleIds": {
+				"ngx-toastr": "ngxToastr",
+				"@ngx-translate/core": "core",
+				"ngx-permissions": "ngxPermissions",
+				"@auth0/angular-jwt": "angularJwt"
+			}
 		},
 		"dest": "../../../dist/auth"
 	}

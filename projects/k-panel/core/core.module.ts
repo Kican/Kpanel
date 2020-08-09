@@ -14,6 +14,11 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
+export const ngxPermissions = NgxPermissionsModule.forRoot();
+export const translateModule = TranslateModule.forRoot();
+export const modalModule = ModalModule.forRoot();
+export const ngBootstrapFormValidation = NgBootstrapFormValidationModule.forRoot();
+
 @NgModule({
 	providers: [
 		ScrollService,
@@ -27,10 +32,10 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 		ReactiveFormsModule,
 		HttpClientModule,
 		BrowserAnimationsModule,
-		NgxPermissionsModule.forRoot(),
-		TranslateModule.forRoot(),
-		ModalModule.forRoot(),
-		NgBootstrapFormValidationModule.forRoot(),
+		ngxPermissions,
+		translateModule,
+		modalModule,
+		ngBootstrapFormValidation,
 		NgSelectModule
 	],
 	exports: [

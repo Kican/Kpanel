@@ -11,7 +11,10 @@
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {
-			"entryFile": "public-api.ts"
+			"entryFile": "public-api.ts",
+			"umdModuleIds": {
+				"ngx-bootstrap/modal": "modal"
+			}
 		},
 		"dest": "../../../dist/entity-manager"
 	}
