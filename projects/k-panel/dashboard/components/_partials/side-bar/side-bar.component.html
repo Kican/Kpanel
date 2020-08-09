@@ -14,12 +14,18 @@
 		</li>
 		<li k-sidebar-dropdown-item [label]="'موجودیت ها'" [iconClass]="'mdi mdi-view-list'">
 			<ul k-sidebar-items-container>
-				<li><a [routerLink]="'/entity/airlineAgency/list'" [routerLinkActive]="'active'" k-sidebar-item
+				<li>
+					<a [routerLink]="'/entity/airlineAgency/list'" [routerLinkActive]="'active'" k-sidebar-item
 					   [label]="'آژانس هواپیمایی'" [iconClass]="'mdi mdi-airplane'"></a></li>
-				<li><a [routerLink]="'/entity/airlineTerminal/list'" [routerLinkActive]="'active'"
+				<li>
+					<a [routerLink]="'/entity/airportTerminal/list'" [routerLinkActive]="'active'"
 					   k-sidebar-item [label]="'پایانه هواپیمایی'" [iconClass]="'mdi mdi-airplane-takeoff'"></a>
 				</li>
-				<li><a [routerLink]="'/entity/cities/list'" [routerLinkActive]="'active'" k-sidebar-item
+				<li>
+					<a [routerLink]="'/entity/airport/list'" [routerLinkActive]="'active'"
+					   k-sidebar-item [label]="'پایانه هواپیمایی'" [iconClass]="'mdi mdi-airplane-takeoff'"></a>
+				</li>
+				<li><a [routerLink]="'/entity/city/list'" [routerLinkActive]="'active'" k-sidebar-item
 					   [label]="'شهر ها'" [iconClass]="'mdi mdi-city'"></a></li>
 				<li><a [routerLink]="'/entity/countries/list'" [routerLinkActive]="'active'" k-sidebar-item
 					   [label]="'کشور ها'" [iconClass]="'mdi mdi-flag'"></a></li>
