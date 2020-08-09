@@ -1,17 +1,15 @@
 {
-	"name": "@ngx-k-panel/core",
+	"name": "ngx-k-panel/core",
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "^10.0.8",
 		"@angular/core": "^10.0.8",
-		"@angular/animations": "^10.0.8",
-		"@ngx-translate/core": "^13.0.0",
 		"ngx-permissions": "^8.0.0"
 	},
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {
-			"entryFile": "./public-api.ts"
+			"entryFile": "./src/public-api.ts"
 		},
 		"dest": "../../../dist/core"
 	}

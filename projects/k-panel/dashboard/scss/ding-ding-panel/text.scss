@@ -1,9 +1,0 @@
-.text-my-primary {
-    color: $my-primary-color !important;
-}
-
-@each $key, $color in $colors {
-    .text-#{$key} {
-        color: $color !important;
-    }
-}

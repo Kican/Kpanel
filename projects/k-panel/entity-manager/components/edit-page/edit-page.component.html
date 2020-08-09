@@ -1,8 +1,0 @@
-<div class="card">
-	<div class="card-header">
-		Featured <a [routerLink]="['../','list']" class="pr-3">{{'back' | translate}}</a>
-	</div>
-	<div class="card-body">
-		<app-form-builder (onFormSubmit)="onSubmit($event)" #form_builder [components]="fields"></app-form-builder>
-	</div>
-</div>
