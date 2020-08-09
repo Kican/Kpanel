@@ -32,7 +32,7 @@ import {KSidebarModule, SidebarMode, SidebarStatus} from 'ngx-k-components/sideb
 		// }),
 		// DashboardModule,
 		// FormBuilderModule,
-		CoreModule.forRoot({base_url: 'http://erp.vistath.com/'}),
+		CoreModule,
 		AppRoutingModule,
 		TooltipModule.forRoot(),
 		ToastrModule.forRoot()

@@ -26,7 +26,7 @@ export const pagination = PaginationModule.forRoot();
 	imports: [
 		CoreModule,
 		CdkTableModule,
-		pagination
+		// PaginationModule
 	],
 	exports: [
 		DataTableContainerComponent,
@@ -34,7 +34,7 @@ export const pagination = PaginationModule.forRoot();
 		DataTableComponent,
 		DtSortableDirective,
 		CdkTableModule,
-		PaginationModule
+		// PaginationModule
 	],
 })
 export class DataTableModule {

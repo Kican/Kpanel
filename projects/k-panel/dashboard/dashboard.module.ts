@@ -7,7 +7,6 @@ import {PanelContentComponent} from './components/panel-content/panel-content.co
 import {NavBarComponent} from './components/_partials/nav-bar/nav-bar.component';
 import {SideBarComponent} from './components/_partials/side-bar/side-bar.component';
 import {PanelScrollTopComponent} from './components/_partials/panel-scroll-top/panel-scroll-top.component';
-import {KSidebarModule} from 'ngx-k-components/sidebar';
 import {KNavbarModule} from 'ngx-k-components/navbar';
 
 export function getPanelRoutes(routes: Routes): Routes {
@@ -31,7 +30,6 @@ export function getPanelRoutes(routes: Routes): Routes {
 	imports: [
 		CoreModule,
 		AuthModule,
-		KSidebarModule,
 		KNavbarModule
 	],
 	exports: []

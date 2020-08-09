@@ -32,10 +32,10 @@ export const ngBootstrapFormValidation = NgBootstrapFormValidationModule.forRoot
 		ReactiveFormsModule,
 		HttpClientModule,
 		BrowserAnimationsModule,
-		ngxPermissions,
-		translateModule,
-		modalModule,
-		ngBootstrapFormValidation,
+		// ngxPermissions,
+		// translateModule,
+		// modalModule,
+		// ngBootstrapFormValidation,
 		NgSelectModule
 	],
 	exports: [
@@ -48,7 +48,7 @@ export const ngBootstrapFormValidation = NgBootstrapFormValidationModule.forRoot
 		NgxPermissionsModule,
 		NgBootstrapFormValidationModule,
 		NgSelectModule,
-		ModalModule
+		// ModalModule
 	]
 })
 export class CoreModule {

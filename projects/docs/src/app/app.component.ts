@@ -1,12 +1,11 @@
 import {Component} from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
-import {NeoCrumbService} from "ngx-neocrumb";
-import {NgxPermissionsService} from "ngx-permissions";
-import {NgSelectConfig} from "@ng-select/ng-select";
-import {AuthenticationService} from "@ngx-k-panel/auth";
-import {Router} from "@angular/router";
-import {ToastrService} from "ngx-toastr";
-import {FA} from "./langs/fa/_fa";
+import {TranslateService} from '@ngx-translate/core';
+import {NgxPermissionsService} from 'ngx-permissions';
+import {NgSelectConfig} from '@ng-select/ng-select';
+import {AuthenticationService} from '@ngx-k-panel/auth';
+import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {FA} from './langs/fa/_fa';
 
 @Component({
 	selector: 'app-root',
@@ -17,7 +16,6 @@ export class AppComponent {
 
 	constructor(
 		private translateService: TranslateService,
-		private neoCrumbService: NeoCrumbService,
 		private permissionService: NgxPermissionsService,
 		private ngSelectConfig: NgSelectConfig,
 		private authService: AuthenticationService,
@@ -56,10 +54,5 @@ export class AppComponent {
 	}
 
 	translateNeoCrumb() {
-		this.neoCrumbService.onChange.subscribe(value => {
-			value.map(bc => {
-				bc.text = this.translateService.instant(bc.text);
-			});
-		});
 	}
 }
