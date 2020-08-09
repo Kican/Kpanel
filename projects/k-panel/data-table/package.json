@@ -7,6 +7,7 @@
 		"@angular/cdk": "^10.1.2",
 		"ngx-bootstrap": "^6.0.0"
 	},
+	"private": false,
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {

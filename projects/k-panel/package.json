@@ -7,6 +7,7 @@
 	"scripts": {
 		"postinstall": "ngcc"
 	},
+	"private": true,
 	"peerDependencies": {
 		"@angular/common": "^10.0.6",
 		"@angular/core": "^10.0.6"

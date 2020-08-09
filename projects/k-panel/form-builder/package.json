@@ -6,6 +6,7 @@
 		"@angular/core": "^10.0.8",
 		"@ngx-k-panel/core": "^0.0.1"
 	},
+	"private": false,
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {

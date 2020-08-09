@@ -8,6 +8,7 @@
 		"@ngx-k-panel/data-table": "^0.0.1",
 		"@ngx-k-panel/form-builder": "^0.0.1"
 	},
+	"private": false,
 	"ngPackage": {
 		"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
 		"lib": {
