@@ -9,16 +9,21 @@ import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {ToastrModule} from 'ngx-toastr';
 import {DashboardModule} from '@ngx-k-panel/dashboard';
 import {CoreModule} from '@ngx-k-panel/core';
-import {DataTableConfig} from '@ngx-k-panel/data-table';
+import {DataTableConfig, DataTableModule} from '@ngx-k-panel/data-table';
 import {FormBuilderTestComponent} from './components/form-builder-test/form-builder-test.component';
 import {ComponentCollection, ComponentDescriptorCollection, FormBuilderModule} from '@ngx-k-panel/form-builder';
 import {BootstrapComponentCollection} from '@ngx-k-panel/form-builder-bootstrap';
 import {KSidebarModule, SidebarMode, SidebarStatus} from 'ngx-k-components/sidebar';
+import { RoomListPageComponent } from './components/room-list-page/room-list-page.component';
+import { EditRoomPageComponent } from './components/edit-room-page/edit-room-page.component';
+import {NgPersianDatepickerModule} from 'ng-persian-datepicker';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		FormBuilderTestComponent
+		FormBuilderTestComponent,
+		RoomListPageComponent,
+		EditRoomPageComponent
 	],
 	imports: [
 		BrowserModule,
@@ -32,10 +37,12 @@ import {KSidebarModule, SidebarMode, SidebarStatus} from 'ngx-k-components/sideb
 		}),
 		DashboardModule,
 		FormBuilderModule,
-		CoreModule.forRoot({base_url: 'http://127.0.0.1:5000/'}),
+		DataTableModule,
+		CoreModule.forRoot({base_url: '/'}),
 		AppRoutingModule,
 		TooltipModule.forRoot(),
-		ToastrModule.forRoot()
+		ToastrModule.forRoot(),
+		NgPersianDatepickerModule
 	],
 	providers: [
 		{provide: DataTableConfig, useClass: DataTableConfig},

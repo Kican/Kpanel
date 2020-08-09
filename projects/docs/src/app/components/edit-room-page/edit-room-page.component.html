@@ -1,0 +1,56 @@
+<div class="card">
+	<div class="card-header">
+		اتاق {{form.value.title}}
+	</div>
+	<div class="card-body">
+		<form [formGroup]="form" (validSubmit)="onSubmit($event)">
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="title">عنوان</label>
+					<input type="text" formControlName="title" class="form-control" id="title">
+				</div>
+				<div class="form-group  col-md-6">
+					<label for="description">توضیحات</label>
+					<input type="text" formControlName="description" class="form-control" id="description">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="startTransactionTime">ساعت شروع فعالیت</label>
+					<input type="time" formControlName="startTransactionTime" placeholder="10:20" class="form-control"
+						   id="startTransactionTime">
+				</div>
+				<div class="form-group  col-md-4">
+					<label for="endTransactionTime">ساعت پایان فعالیت</label>
+					<input type="time" formControlName="endTransactionTime" placeholder="18:00" class="form-control"
+						   id="endTransactionTime">
+				</div>
+				<div class="form-group  col-md-4">
+					<label for="roomGroupId">کد گروه</label>
+					<input type="number" formControlName="roomGroupId" class="form-control"
+						   id="roomGroupId">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="transactionLifeSpanInMinutes">مدت زمان معامله به دقیقه</label>
+					<input type="number" formControlName="transactionLifeSpanInMinutes" class="form-control"
+						   id="transactionLifeSpanInMinutes">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="unitType">واحد</label>
+					<select class="form-control" id="unitType" formControlName="unitType">
+						<option [ngValue]="0">کیلوگرم</option>
+						<option [ngValue]="1">گرم</option>
+					</select>
+				</div>
+				<div class="form-group  col-md-4">
+					<label for="unitSeedValue">میزان افزایش واحد</label>
+					<input type="number" formControlName="unitSeedValue" placeholder="1500" class="form-control"
+						   id="unitSeedValue">
+				</div>
+			</div>
+			<button class="btn btn-primary" type="submit" [disabled]="!form.valid">ثبت</button>
+		</form>
+	</div>
+</div>

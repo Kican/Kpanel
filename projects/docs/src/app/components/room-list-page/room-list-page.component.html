@@ -1,0 +1,52 @@
+<data-table-container>
+
+	<data-table-button-container>
+		<a class="btn btn-success icon" [routerLink]="['../','new']">
+			<i class="mdi mdi-plus"></i>
+			{{'add' | translate}}
+		</a>
+	</data-table-button-container>
+
+	<data-table [dataSource]="dataSource" [config]="dtConfig">
+
+
+		<table cdk-table [dataSource]="dataSource" class="table table-striped">
+
+			<ng-container cdkColumnDef="title">
+				<th cdk-header-cell *cdkHeaderCellDef dtSortable="title"> عنوان</th>
+				<td cdk-cell *cdkCellDef="let element">{{element.title}}</td>
+			</ng-container>
+
+			<ng-container cdkColumnDef="transactionLifeSpanInMinutes">
+				<th cdk-header-cell *cdkHeaderCellDef> زمان معامله</th>
+				<td cdk-cell *cdkCellDef="let element">{{element.transactionLifeSpanInMinutes}} دقیقه </td>
+			</ng-container>
+			<ng-container cdkColumnDef="startTransactionTime">
+				<th cdk-header-cell *cdkHeaderCellDef> زمان فعال سازی</th>
+				<td cdk-cell *cdkCellDef="let element">
+					<span class="badge badge-success">{{element.startTransactionTime}}</span>
+				</td>
+			</ng-container>
+
+			<ng-container cdkColumnDef="endTransactionTime">
+				<th cdk-header-cell *cdkHeaderCellDef> زمان غیر فعال شدن</th>
+				<td cdk-cell *cdkCellDef="let element">
+					<span class="badge badge-danger">{{element.endTransactionTime}}</span>
+				</td>
+			</ng-container>
+
+			<ng-container cdkColumnDef="options">
+				<th cdk-header-cell *cdkHeaderCellDef> {{'options' | translate}} </th>
+				<td cdk-cell *cdkCellDef="let element">
+					<!--					<a class="btn-icon" (click)="delete(element.id)"><i class="mdi mdi-delete"></i></a>-->
+					<a class="btn-icon" [routerLink]="['../','edit',element['id']]"><i class="mdi mdi-pencil"></i></a>
+				</td>
+			</ng-container>
+
+			<tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+			<tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+
+		</table>
+
+	</data-table>
+</data-table-container>

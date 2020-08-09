@@ -7,17 +7,12 @@ import {ScrollService} from './services/scroll.service';
 import {WindowSizeService} from './services/window-size.service';
 import {DialogService} from './services/dialog.service';
 import {TranslateModule} from '@ngx-translate/core';
-import {NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
+import {BootstrapVersion, NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
 import {FixUrlInterceptor} from './provider/fix-url.interceptor';
 import {KPanelConfig} from './common/kpanel-config';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {NgxPermissionsModule} from 'ngx-permissions';
-
-export const ngxPermissions = NgxPermissionsModule.forRoot();
-export const translateModule = TranslateModule.forRoot();
-export const modalModule = ModalModule.forRoot();
-export const ngBootstrapFormValidation = NgBootstrapFormValidationModule.forRoot();
 
 @NgModule({
 	providers: [
@@ -32,10 +27,10 @@ export const ngBootstrapFormValidation = NgBootstrapFormValidationModule.forRoot
 		ReactiveFormsModule,
 		HttpClientModule,
 		BrowserAnimationsModule,
-		ngxPermissions,
-		translateModule,
-		modalModule,
-		ngBootstrapFormValidation,
+		NgxPermissionsModule.forRoot(),
+		TranslateModule.forRoot(),
+		ModalModule.forRoot(),
+		NgBootstrapFormValidationModule.forRoot(),
 		NgSelectModule
 	],
 	exports: [

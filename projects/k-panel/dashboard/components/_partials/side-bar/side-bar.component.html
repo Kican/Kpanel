@@ -9,26 +9,15 @@
 		<li><a [routerLink]="['/']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" k-sidebar-item
 			   [label]="'پیشخوان' | translate" [iconClass]="'mdi mdi-view-dashboard'"></a>
 		</li>
-		<li><a [routerLink]="['/sms-notification']" [routerLinkActive]="'active'" k-sidebar-item
-			   [label]="'اطلاعیه پیامکی' | translate" [iconClass]="'mdi mdi-message-alert'"></a>
-		</li>
-		<li k-sidebar-dropdown-item [label]="'موجودیت ها'" [iconClass]="'mdi mdi-view-list'">
+		<li k-sidebar-dropdown-item label="اتاق های معاملاتی" [iconClass]="'mdi mdi-view-list'">
 			<ul k-sidebar-items-container>
 				<li>
-					<a [routerLink]="'/entity/airlineAgency/list'" [routerLinkActive]="'active'" k-sidebar-item
-					   [label]="'آژانس هواپیمایی'" [iconClass]="'mdi mdi-airplane'"></a></li>
+					<a [routerLink]="'/entity/RoomGroup/list'" [routerLinkActive]="'active'" k-sidebar-item
+					   [label]="'گروه بندی'" [iconClass]="'mdi mdi-airplane'"></a></li>
 				<li>
-					<a [routerLink]="'/entity/airportTerminal/list'" [routerLinkActive]="'active'"
-					   k-sidebar-item [label]="'پایانه هواپیمایی'" [iconClass]="'mdi mdi-airplane-takeoff'"></a>
+					<a [routerLink]="'/rooms/list'" [routerLinkActive]="'active'"
+					   k-sidebar-item [label]="'اتاق ها'" [iconClass]="'mdi mdi-airplane-takeoff'"></a>
 				</li>
-				<li>
-					<a [routerLink]="'/entity/airport/list'" [routerLinkActive]="'active'"
-					   k-sidebar-item [label]="'پایانه هواپیمایی'" [iconClass]="'mdi mdi-airplane-takeoff'"></a>
-				</li>
-				<li><a [routerLink]="'/entity/city/list'" [routerLinkActive]="'active'" k-sidebar-item
-					   [label]="'شهر ها'" [iconClass]="'mdi mdi-city'"></a></li>
-				<li><a [routerLink]="'/entity/countries/list'" [routerLinkActive]="'active'" k-sidebar-item
-					   [label]="'کشور ها'" [iconClass]="'mdi mdi-flag'"></a></li>
 			</ul>
 		</li>
 	</ul>
