@@ -36,9 +36,11 @@ export class NavBarComponent implements OnInit, OnDestroy {
 	}
 
 	logOut() {
-		this.autoDialog.accept().subscribe(value => {
-			this.authService.logOut();
-			this.router.navigate(['/auth/login']);
+		this.autoDialog.confirm({size: 'small'}).onResult().subscribe(value => {
+			if (value == true) {
+				this.authService.logOut();
+				this.router.navigate(['/auth/login']);
+			}
 		});
 	}
 
