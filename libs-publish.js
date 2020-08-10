@@ -1,5 +1,5 @@
-const {readFileSync, writeFileSync} = require('fs');
-const {execSync, exec, spawnSync} = require("child_process");
+const {readFileSync} = require('fs');
+const {execSync} = require("child_process");
 
 const getLibraries = () => {
 	const items = [];
@@ -15,8 +15,14 @@ for (let library of getLibraries()) {
 	try {
 		console.log(`start building [${library.key}] ...`)
 		execSync(`ng build --project ${library.key} --prod`)
-		execSync(`npm i`)
-		execSync(`npm publish dist/${library.key}`)
+		if (process.argv.includes('--install')) {
+			console.log(`npm install [${library.key}] ...`)
+			execSync(`npm i`)
+		}
+		if (process.argv.includes('--publish')) {
+			console.log(`publishing package [${library.key}] ...`)
+			execSync(`npm publish dist/${library.key}`)
+		}
 	} catch (e) {
 		console.error(e);
 	}

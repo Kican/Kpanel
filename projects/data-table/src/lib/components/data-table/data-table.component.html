@@ -27,14 +27,14 @@
 		</div>
 
 	</div>
-	<div class="card-tbody">
+	<div class="card-tbody" *ngIf="dataSource else no_data_source">
 		<div class="table-responsive">
 			<ng-content select="[cdk-table]"></ng-content>
 		</div>
 		<div class="text-center" *ngIf="dataSource.totalCount == undefined || dataSource.totalCount == null">
 			<span class="spinner-border spinner-border-sm"></span>
 		</div>
-		<div class="text-center text-muted small mb-3" *ngIf="!(dataSource.loading$ | async) && dataSource?.totalCount == 0">{{'not_found' | translate}}</div>
+		<div class="text-center text-muted small mb-3" *ngIf="!(dataSource.loading$ | async) && dataSource.totalCount == 0">{{'not_found' | translate}}</div>
 		<data-table-pagination
 			*ngIf="config.paginator"
 			[totalItems]="totalItems"
@@ -43,4 +43,7 @@
 			(valueChanges)="pageChange($event)">
 		</data-table-pagination>
 	</div>
+	<ng-template #no_data_source>
+		<p>please provide datasource for this table</p>
+	</ng-template>
 </div>

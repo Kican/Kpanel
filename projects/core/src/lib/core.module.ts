@@ -5,25 +5,22 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ScrollService} from './services/scroll.service';
 import {WindowSizeService} from './services/window-size.service';
-import {DialogService} from './services/dialog.service';
 import {TranslateModule} from '@ngx-translate/core';
-import {BootstrapVersion, NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
+import {NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
 import {FixUrlInterceptor} from './provider/fix-url.interceptor';
 import {KPanelConfig} from './common/kpanel-config';
-import {ModalModule} from 'ngx-bootstrap/modal';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {NgxPermissionsModule} from 'ngx-permissions';
+import {NgxKPanelDialogModule} from './_modules/ngx-kpanel-dialog/ngx-kpanel-dialog.module';
 
 export const ngxPermissionsModule = NgxPermissionsModule.forRoot();
 export const translateModule = TranslateModule.forRoot();
-export const modalModule = ModalModule.forRoot();
 export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.forRoot();
 
 @NgModule({
 	providers: [
 		ScrollService,
 		WindowSizeService,
-		DialogService,
 		{provide: HTTP_INTERCEPTORS, useClass: FixUrlInterceptor, multi: true},
 	],
 	imports: [
@@ -34,8 +31,8 @@ export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.f
 		BrowserAnimationsModule,
 		ngxPermissionsModule,
 		translateModule,
-		modalModule,
 		ngBootstrapFormValidationModule,
+		NgxKPanelDialogModule,
 		NgSelectModule
 	],
 	exports: [
@@ -48,8 +45,16 @@ export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.f
 		NgxPermissionsModule,
 		NgBootstrapFormValidationModule,
 		NgSelectModule,
-		ModalModule
+		NgxKPanelDialogModule,
 	]
 })
 export class CoreModule {
+	static forRoot(config: KPanelConfig): ModuleWithProviders<CoreModule> {
+		return {
+			ngModule: CoreModule,
+			providers: [
+				{provide: KPanelConfig, useValue: config}
+			]
+		};
+	}
 }

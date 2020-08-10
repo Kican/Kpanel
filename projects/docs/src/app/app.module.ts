@@ -8,7 +8,7 @@ import {EntityManagerModule} from '@ngx-k-panel/entity-manager';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {ToastrModule} from 'ngx-toastr';
 import {DashboardModule} from '@ngx-k-panel/dashboard';
-import {CoreModule, KPanelConfig} from '@ngx-k-panel/core';
+import {CoreModule} from '@ngx-k-panel/core';
 import {DataTableConfig, DataTableModule} from '@ngx-k-panel/data-table';
 import {FormBuilderTestComponent} from './components/form-builder-test/form-builder-test.component';
 import {ComponentCollection, ComponentDescriptorCollection, FormBuilderModule} from '@ngx-k-panel/form-builder';
@@ -38,14 +38,13 @@ import {NgPersianDatepickerModule} from 'ng-persian-datepicker';
 		DashboardModule,
 		FormBuilderModule,
 		DataTableModule,
-		CoreModule,
+		CoreModule.forRoot({base_url: 'http://127.0.0.1:5000/'}),
 		AppRoutingModule,
 		TooltipModule.forRoot(),
 		ToastrModule.forRoot(),
 		NgPersianDatepickerModule
 	],
 	providers: [
-		{provide: KPanelConfig, useValue: {base_url: '/'}},
 		{provide: DataTableConfig, useClass: DataTableConfig},
 		{provide: ComponentCollection, useClass: BootstrapComponentCollection},
 		{provide: ComponentDescriptorCollection, useClass: ComponentDescriptorCollection},

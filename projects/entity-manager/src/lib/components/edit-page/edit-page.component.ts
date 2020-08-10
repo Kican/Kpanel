@@ -1,8 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {IComponent, ILayoutComponent} from "@ngx-k-panel/form-builder";
-import {FormBuilderComponent} from "../form-builder/form-builder.component";
+import {IComponent, ILayoutComponent} from '@ngx-k-panel/form-builder';
+import {FormBuilderComponent} from '../form-builder/form-builder.component';
+import {ToastService} from '@ngx-k-panel/core';
 
 @Component({
 	selector: 'app-edit-page',
@@ -20,6 +21,7 @@ export class EditPageComponent implements OnInit {
 	constructor(
 		private http: HttpClient,
 		private router: ActivatedRoute,
+		private toastService: ToastService
 	) {
 	}
 
@@ -45,12 +47,12 @@ export class EditPageComponent implements OnInit {
 	onSubmit(data) {
 		if (data['id']) {
 			this.http.put(`api/${this.entityName}/${data['id']}`, data).subscribe(value => {
-				// this.toastService.success();
+				this.toastService.success();
 			});
 		} else {
 			delete data['id'];
 			this.http.post(`api/${this.entityName}`, data).subscribe(value => {
-				// this.toastService.success();
+				this.toastService.success();
 			});
 		}
 	}
