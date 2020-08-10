@@ -1,0 +1,13 @@
+{
+    "name": "@ngx-k-panel/data-table",
+    "version": "0.0.4",
+    "peerDependencies": {
+        "@angular/common": "^10.0.8",
+        "@angular/core": "^10.0.8",
+        "@angular/cdk": "^10.1.2",
+        "ngx-bootstrap": "^6.0.0"
+    },
+    "dependencies": {
+        "tslib": "^2.0.0"
+    }
+}

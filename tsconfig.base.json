@@ -1,25 +1,53 @@
 {
-	"compileOnSave": false,
-	"compilerOptions": {
-		"baseUrl": "./",
-		"outDir": "./dist/out-tsc",
-		"sourceMap": true,
-		"declaration": false,
-		"downlevelIteration": true,
-		"experimentalDecorators": true,
-		"moduleResolution": "node",
-		"importHelpers": true,
-		"target": "es2015",
-		"module": "es2020",
-		"lib": [
-			"es2018",
-			"dom"
-		],
-		"paths": {
-			"k-panel": [
-				"dist/k-panel/panel",
-				"dist/k-panel"
-			]
-		}
-	}
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "k-panel": [
+        "dist/k-panel/panel",
+        "dist/k-panel"
+      ],
+      "core": [
+        "dist/core/core",
+        "dist/core"
+      ],
+      "auth": [
+        "dist/auth/auth",
+        "dist/auth"
+      ],
+      "data-table": [
+        "dist/data-table/data-table",
+        "dist/data-table"
+      ],
+      "dashboard": [
+        "dist/dashboard/dashboard",
+        "dist/dashboard"
+      ],
+      "entity-manager": [
+        "dist/entity-manager/entity-manager",
+        "dist/entity-manager"
+      ],
+      "form-builder": [
+        "dist/form-builder/form-builder",
+        "dist/form-builder"
+      ],
+      "form-builder-bootstrap": [
+        "dist/form-builder-bootstrap/form-builder-bootstrap",
+        "dist/form-builder-bootstrap"
+      ]
+    }
+  }
 }

@@ -1,0 +1,9 @@
+<a (click)="onProfileClick()" class="cursor-pointer">
+	<div class="profile">
+		<img class="profile-image" src="../../../../../assets../../../assets/img/def-image.jpg" [src]="profileImage" [alt]="fullName">
+		<div class="profile-details">
+			<p>{{fullName}}</p>
+			<span>{{role}}</span>
+		</div>
+	</div>
+</a>

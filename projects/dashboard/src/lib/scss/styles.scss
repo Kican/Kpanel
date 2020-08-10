@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "app-bootstrap/bootstrap";
+@import "~@mdi/font/css/materialdesignicons.min.css";
+@import "~ngx-neocrumb/lib/styles/neo-crumb-min.css";
+@import '~ngx-toastr/toastr.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "ding-ding-panel/core";
+//@import "~bootstrap-v4-rtl/scss/rtl";
+// Custom Styles
+@import "custom/neo-crumb";
+@import "custom/pagination";
+@import "custom/toastr";
+@import "custom/ng-select";
+@import "custom/ngb-time-picker";
+@import "custom/dashboard";
+@import "custom/time-sheet-presentation-item";
+//@import "scss/custom/scrollbar";
+//@import "scss/custom/router";
+.ng-select {
+	.ng-select-container, .ng-option {
+		font-size: 0.8rem;
+	}
+}
+
+.ng-select.custom .ng-control {
+	min-height: 20px;
+	height: 20px;
+}

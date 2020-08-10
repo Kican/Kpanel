@@ -5,6 +5,7 @@
 		"ng": "ng",
 		"start": "ng serve",
 		"build": "ng build",
+		"publish": "node libs-update.js && node libs-publish.js",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e"
@@ -42,13 +43,13 @@
 		"bootstrap-v4-rtl": "^4.4.1-2"
 	},
 	"optionalDependencies": {
-		"@ngx-k-panel/core": "file:dist/panel/core",
-		"@ngx-k-panel/dashboard": "file:dist/panel/dashboard",
-		"@ngx-k-panel/auth": "file:dist/panel/auth",
-		"@ngx-k-panel/data-table": "file:dist/panel/data-table",
-		"@ngx-k-panel/entity-manager": "file:dist/panel/entity-manager",
-		"@ngx-k-panel/form-builder": "file:dist/panel/form-builder",
-		"@ngx-k-panel/form-builder-bootstrap": "file:dist/panel/form-builder-bootstrap"
+		"@ngx-k-panel/auth": "file:dist/auth",
+		"@ngx-k-panel/core": "file:dist/core",
+		"@ngx-k-panel/dashboard": "file:dist/dashboard",
+		"@ngx-k-panel/data-table": "file:dist/data-table",
+		"@ngx-k-panel/entity-manager": "file:dist/entity-manager",
+		"@ngx-k-panel/form-builder": "file:dist/form-builder",
+		"@ngx-k-panel/form-builder-bootstrap": "file:dist/form-builder-bootstrap"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "~0.1000.5",
