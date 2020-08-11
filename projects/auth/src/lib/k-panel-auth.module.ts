@@ -1,11 +1,12 @@
 import {NgModule} from '@angular/core';
+import {KPanelCoreModule} from '@ngx-k-panel/core';
+import {KAuthModule} from '@ngx-k/auth';
 import {NewPassComponent} from './components/_partials/new-pass/new-pass.component';
 import {ForgotPasswordComponent} from './components/_partials/forgot-password/forgot-password.component';
 import {LoginPageComponent} from './components/_partials/login-page/login-page.component';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthPageComponent} from './components/auth-page/auth-page.component';
-import {CoreModule} from '@ngx-k-panel/core';
-import {NgxKAuthModule} from '@ngx-k/auth';
+
 
 const authRoutes: Routes = [
 	{
@@ -27,14 +28,14 @@ export const routerModule = RouterModule.forRoot(authRoutes);
 		AuthPageComponent
 	],
 	imports: [
-		CoreModule,
+		KPanelCoreModule,
 		routerModule,
-		NgxKAuthModule
+		KAuthModule
 	],
 	exports: [
 		RouterModule,
-		NgxKAuthModule
+		KAuthModule
 	]
 })
-export class AuthModule {
+export class KPanelAuthModule {
 }

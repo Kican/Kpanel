@@ -1,10 +1,10 @@
 {
     "name": "@ngx-k-panel/dashboard",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "peerDependencies": {
         "@angular/common": "^10.0.8",
         "@angular/core": "^10.0.8",
-        "@ngx-k-panel/core": "^0.0.4",
+        "@ngx-k-panel/core": "^0.0.6",
         "ngx-neocrumb": "^0.1.6",
         "@mdi/font": "^5.4.55"
     },

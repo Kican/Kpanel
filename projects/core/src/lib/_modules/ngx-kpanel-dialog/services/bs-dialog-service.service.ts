@@ -1,12 +1,9 @@
 import {Injectable, TemplateRef} from '@angular/core';
 import {take} from 'rxjs/operators';
 import {ComponentType} from '@angular/cdk/overlay';
-import {DialogService} from './dialog.service';
 import {BsModalService} from 'ngx-bootstrap/modal';
-import {DialogConfig} from '../models/dialog-config';
-import {DialogRef} from '../models/dialog-ref';
-import {ConfirmDialogBase} from '../components/confirm-dialog-base';
 import {ConfirmDialogComponent} from '../components/confirm-dialog/confirm-dialog.component';
+import {ConfirmDialogBase, DialogConfig, DialogRef, DialogService} from '@ngx-k/components/dialog';
 
 @Injectable({
 	providedIn: 'root'

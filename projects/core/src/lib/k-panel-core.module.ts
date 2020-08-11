@@ -3,15 +3,13 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ScrollService} from './services/scroll.service';
-import {WindowSizeService} from './services/window-size.service';
 import {TranslateModule} from '@ngx-translate/core';
 import {NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
 import {FixUrlInterceptor} from './provider/fix-url.interceptor';
 import {KPanelConfig} from './common/kpanel-config';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {NgxPermissionsModule} from 'ngx-permissions';
-import {NgxKPanelDialogModule} from './_modules/ngx-kpanel-dialog/ngx-kpanel-dialog.module';
+import {KPanelDialogModule} from './_modules/ngx-kpanel-dialog/k-panel-dialog.module';
 
 export const ngxPermissionsModule = NgxPermissionsModule.forRoot();
 export const translateModule = TranslateModule.forRoot();
@@ -19,8 +17,6 @@ export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.f
 
 @NgModule({
 	providers: [
-		ScrollService,
-		WindowSizeService,
 		{provide: HTTP_INTERCEPTORS, useClass: FixUrlInterceptor, multi: true},
 	],
 	imports: [
@@ -32,7 +28,7 @@ export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.f
 		ngxPermissionsModule,
 		translateModule,
 		ngBootstrapFormValidationModule,
-		NgxKPanelDialogModule,
+		KPanelDialogModule,
 		NgSelectModule
 	],
 	exports: [
@@ -45,13 +41,13 @@ export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.f
 		NgxPermissionsModule,
 		NgBootstrapFormValidationModule,
 		NgSelectModule,
-		NgxKPanelDialogModule,
+		KPanelDialogModule,
 	]
 })
-export class CoreModule {
-	static forRoot(config: KPanelConfig): ModuleWithProviders<CoreModule> {
+export class KPanelCoreModule {
+	static forRoot(config: KPanelConfig): ModuleWithProviders<KPanelCoreModule> {
 		return {
-			ngModule: CoreModule,
+			ngModule: KPanelCoreModule,
 			providers: [
 				{provide: KPanelConfig, useValue: config}
 			]

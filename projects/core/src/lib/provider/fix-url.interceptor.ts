@@ -6,7 +6,7 @@ import {
 	HttpInterceptor
 } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {KPanelConfig} from "../common/kpanel-config";
+import {KPanelConfig} from '../common/kpanel-config';
 
 @Injectable()
 export class FixUrlInterceptor implements HttpInterceptor {

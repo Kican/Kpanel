@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {SideBarStatus} from "../../modules/side-bar/enums/side-bar-status.enum";
-import {SideBarService} from "../../modules/side-bar/services/side-bar/side-bar.service";
-import {WindowSizeService} from "@ngx-k-panel/core";
+import {SideBarStatus} from '../../modules/side-bar/enums/side-bar-status.enum';
+import {SideBarService} from '../../modules/side-bar/services/side-bar/side-bar.service';
+import {WindowSizeService} from '@ngx-k/core';
 
 @Component({
 	selector: 'app-panel-content',
@@ -14,7 +14,7 @@ export class PanelContentComponent implements OnInit {
 	}
 
 	get indented() {
-		return this.sidebarStatus === SideBarStatus.Opened && !this.windowSizeService.isSmallScreen();
+		return this.sidebarStatus === SideBarStatus.Opened && !this.windowSizeService.isSmallScreen;
 	}
 
 	ngOnInit() {

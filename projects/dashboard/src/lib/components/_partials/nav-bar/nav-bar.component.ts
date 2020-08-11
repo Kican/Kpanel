@@ -1,9 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
-import {AccountService, UserDto, AuthenticationService} from '@ngx-k-panel/auth';
-import {DialogService} from '@ngx-k-panel/core';
-import {SidebarContainerComponent} from 'ngx-k-components/sidebar';
+import {KAccountService, KAuthenticationService, UserDto} from '@ngx-k/auth';
+import {SidebarContainerComponent} from '@ngx-k/components/sidebar';
+import {DialogService} from '@ngx-k/components/dialog';
 
 @Component({
 	selector: 'app-nav-bar',
@@ -18,10 +18,10 @@ export class NavBarComponent implements OnInit, OnDestroy {
 	sidebar: SidebarContainerComponent;
 
 	constructor(
-		public authService: AuthenticationService,
+		public authService: KAuthenticationService,
 		public router: Router,
 		private autoDialog: DialogService,
-		private accountService: AccountService,
+		private accountService: KAccountService,
 	) {
 	}
 
@@ -31,11 +31,11 @@ export class NavBarComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	openProfile() {
+	openProfile(): void {
 		this.router.navigate(['/profile']);
 	}
 
-	logOut() {
+	logOut(): void {
 		this.autoDialog.confirm({size: 'small'}).onResult().subscribe(value => {
 			if (value == true) {
 				this.authService.logOut();

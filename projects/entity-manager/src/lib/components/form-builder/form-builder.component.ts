@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges, EventEmitter, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {IComponent} from '@ngx-k-panel/form-builder'
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {IComponent} from '@ngx-k/form-builder';
 
 @Component({
 	selector: 'app-form-builder',
@@ -43,8 +43,9 @@ export class FormBuilderComponent implements OnInit, OnChanges {
 
 	getValidators(items: any[]): any[] {
 		const validators = [];
-		if (!items)
+		if (!items) {
 			return validators;
+		}
 
 		items.forEach(value => {
 			switch (value.name) {

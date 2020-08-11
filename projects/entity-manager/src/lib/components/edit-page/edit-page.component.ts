@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {IComponent, ILayoutComponent} from '@ngx-k-panel/form-builder';
 import {FormBuilderComponent} from '../form-builder/form-builder.component';
-import {ToastService} from '@ngx-k-panel/core';
+import {IComponent, ILayoutComponent} from '@ngx-k/form-builder';
+import {ToastService} from '@ngx-k/components/toast';
 
 @Component({
 	selector: 'app-edit-page',

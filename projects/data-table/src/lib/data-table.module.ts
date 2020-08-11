@@ -9,7 +9,7 @@ import {DataTableSearchComponent} from './components/_partials/data-table-search
 import {CdkTableModule} from '@angular/cdk/table';
 import {PaginationModule} from 'ngx-bootstrap/pagination';
 import {DataTableContainerComponent} from './components/data-table-container/data-table-container.component';
-import {CoreModule} from '@ngx-k-panel/core';
+import {KPanelCoreModule} from '@ngx-k-panel/core';
 
 export const pagination = PaginationModule.forRoot();
 
@@ -24,7 +24,7 @@ export const pagination = PaginationModule.forRoot();
 		DataTableSearchComponent,
 	],
 	imports: [
-		CoreModule,
+		KPanelCoreModule,
 		CdkTableModule,
 		pagination
 	],

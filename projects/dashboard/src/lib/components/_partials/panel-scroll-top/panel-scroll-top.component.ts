@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ViewportScroller} from '@angular/common';
-import {ScrollService} from "@ngx-k-panel/core";
+import { ScrollService } from '@ngx-k/core';
 
 @Component({
 	selector: 'app-panel-scroll-top',

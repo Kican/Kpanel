@@ -4,8 +4,8 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {NgxPermissionsService} from 'ngx-permissions';
 import {TranslateService} from '@ngx-translate/core';
-import {AppValidators} from '@ngx-k-panel/core';
-import {NgxKAccountService, NgxKAuthenticationService} from '@ngx-k/auth';
+import {AppValidators} from '@ngx-k/core/common';
+import {KAccountService, KAuthenticationService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-login-page',
@@ -17,8 +17,8 @@ export class LoginPageComponent implements OnInit {
 
 	constructor(
 		private fb: FormBuilder,
-		private authService: NgxKAuthenticationService,
-		private accountService: NgxKAccountService,
+		private authService: KAuthenticationService,
+		private accountService: KAccountService,
 		private toastr: ToastrService,
 		private router: Router,
 		private permissionsService: NgxPermissionsService,

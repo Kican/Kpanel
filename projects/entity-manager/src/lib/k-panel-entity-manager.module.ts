@@ -4,8 +4,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {EditPageComponent} from './components/edit-page/edit-page.component';
 import {FormBuilderComponent} from './components/form-builder/form-builder.component';
 import {DataTableModule} from '@ngx-k-panel/data-table';
-import {CoreModule} from '@ngx-k-panel/core';
-import {FormBuilderModule} from '@ngx-k-panel/form-builder';
+import {KPanelCoreModule} from '@ngx-k-panel/core';
+import {KPanelFormBuilderModule} from '@ngx-k-panel/form-builder';
 
 export const EntityManagerRoutes: Routes = [
 	{
@@ -25,10 +25,10 @@ export const EntityManagerRoutes: Routes = [
 	],
 	imports: [
 		DataTableModule,
-		CoreModule,
+		KPanelCoreModule,
 		RouterModule,
-		FormBuilderModule
+		KPanelFormBuilderModule
 	]
 })
-export class EntityManagerModule {
+export class KPanelEntityManagerModule {
 }

@@ -5,8 +5,9 @@ import {FormGroup} from '@angular/forms';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {EntityManagerHttpDataSource} from '../../services/entity-manager-http-data-source';
 import {DtDataSource, DataTableOptions} from '@ngx-k-panel/data-table';
-import {DialogService, ToastService} from '@ngx-k-panel/core';
-import {IComponent, ILayoutComponent} from '@ngx-k-panel/form-builder';
+import {IComponent, ILayoutComponent} from '@ngx-k/form-builder';
+import {DialogService} from '@ngx-k/components/dialog';
+import {ToastService} from '@ngx-k/components/toast';
 
 @Component({
 	selector: 'app-list-page',

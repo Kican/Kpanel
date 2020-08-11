@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
-import {NgxKAccountService} from '@ngx-k/auth';
+import {KAccountService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-forgot-password',
@@ -14,7 +14,7 @@ export class ForgotPasswordComponent implements OnInit {
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private accountService: NgxKAccountService,
+		private accountService: KAccountService,
 		private toastr: ToastrService
 	) {
 	}

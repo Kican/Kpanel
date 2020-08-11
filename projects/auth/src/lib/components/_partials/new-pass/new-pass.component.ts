@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {TranslateService} from '@ngx-translate/core';
-import {NgxKAccountService} from '@ngx-k/auth';
+import {KAccountService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-new-pass',
@@ -18,7 +18,7 @@ export class NewPassComponent implements OnInit {
 		private route: ActivatedRoute,
 		private formBuilder: FormBuilder,
 		private toastr: ToastrService,
-		private accountService: NgxKAccountService,
+		private accountService: KAccountService,
 		private translateService: TranslateService
 	) {
 	}

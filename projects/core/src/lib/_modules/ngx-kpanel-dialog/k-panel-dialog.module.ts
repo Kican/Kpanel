@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ConfirmDialogComponent} from './components/confirm-dialog/confirm-dialog.component';
-import {DialogService} from './services/dialog.service';
 import {BsDialogServiceService} from './services/bs-dialog-service.service';
 import {ModalModule} from 'ngx-bootstrap/modal';
+import {DialogService, NgxKDialogModule} from '@ngx-k/components/dialog';
 
 export const modalModule = ModalModule.forRoot();
 
@@ -16,8 +16,9 @@ export const modalModule = ModalModule.forRoot();
 	],
 	imports: [
 		CommonModule,
-		modalModule
+		modalModule,
+		NgxKDialogModule
 	]
 })
-export class NgxKPanelDialogModule {
+export class KPanelDialogModule {
 }

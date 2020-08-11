@@ -21,10 +21,11 @@
 		"@angular/platform-browser-dynamic": "~10.0.8",
 		"@angular/router": "~10.0.8",
 		"@angular/cdk": "~10.1.2",
-		"@ngx-k/components": "^0.0.3",
-		"@ngx-k/auth": "^0.0.3",
-		"@ngx-k/form-builder": "^0.0.3",
-		"@ngx-k/form-builder-bootstrap": "^0.0.3",
+		"@ngx-k/core": "^0.0.9",
+		"@ngx-k/components": "^0.0.9",
+		"@ngx-k/auth": "^0.0.9",
+		"@ngx-k/form-builder": "^0.0.9",
+		"@ngx-k/form-builder-bootstrap": "^0.0.9",
 		"rxjs": "~6.6.2",
 		"tslib": "^2.0.1",
 		"zone.js": "~0.10.3",
@@ -43,7 +44,6 @@
 		"ng-bootstrap-form-validation": "^5.0.0",
 		"ngx-permissions": "^8.0.0",
 		"@mdi/font": "^5.4.55",
-		"ngx-k-components": "^0.0.1",
 		"bootstrap-v4-rtl": "^4.4.1-2"
 	},
 	"optionalDependencies": {
@@ -52,8 +52,7 @@
 		"@ngx-k-panel/dashboard": "file:dist/dashboard",
 		"@ngx-k-panel/data-table": "file:dist/data-table",
 		"@ngx-k-panel/entity-manager": "file:dist/entity-manager",
-		"@ngx-k-panel/form-builder": "file:dist/form-builder",
-		"@ngx-k-panel/form-builder-bootstrap": "file:dist/form-builder-bootstrap"
+		"@ngx-k-panel/form-builder": "file:dist/form-builder"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "~0.1000.5",

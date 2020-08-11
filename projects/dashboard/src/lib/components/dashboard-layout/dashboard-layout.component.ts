@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AccountService} from "@ngx-k-panel/auth";
+import {KAccountService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-dashboard-layout',
@@ -7,7 +7,7 @@ import {AccountService} from "@ngx-k-panel/auth";
 })
 export class DashboardLayoutComponent implements OnInit {
 
-	constructor(private accountService: AccountService) {
+	constructor(private accountService: KAccountService) {
 	}
 
 	ngOnInit(): void {
