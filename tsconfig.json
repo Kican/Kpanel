@@ -56,16 +56,22 @@
 			"path": "./projects/entity-manager/tsconfig.spec.json"
 		},
 		{
-			"path": "./projects/form-builder/tsconfig.lib.json"
+			"path": "../ngx-k/projects/form-builder/tsconfig.lib.json"
 		},
 		{
-			"path": "./projects/form-builder/tsconfig.spec.json"
+			"path": "../ngx-k/projects/form-builder/tsconfig.spec.json"
 		},
 		{
-			"path": "./projects/form-builder-bootstrap/tsconfig.lib.json"
+			"path": "../ngx-k/projects/form-builder-bootstrap/tsconfig.lib.json"
 		},
 		{
-			"path": "./projects/form-builder-bootstrap/tsconfig.spec.json"
-		}
+			"path": "../ngx-k/projects/form-builder-bootstrap/tsconfig.spec.json"
+		},
+    {
+      "path": "./projects/form-builder/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/form-builder/tsconfig.spec.json"
+    }
 	]
 }

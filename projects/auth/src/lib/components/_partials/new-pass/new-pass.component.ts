@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {TranslateService} from '@ngx-translate/core';
-import {AccountService} from "../../../services/account.service";
+import {NgxKAccountService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-new-pass',
@@ -18,18 +18,18 @@ export class NewPassComponent implements OnInit {
 		private route: ActivatedRoute,
 		private formBuilder: FormBuilder,
 		private toastr: ToastrService,
-		private accountService: AccountService,
+		private accountService: NgxKAccountService,
 		private translateService: TranslateService
 	) {
 	}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.createForm();
 		this.newPassForm.get('username').setValue(this.route.snapshot.paramMap.get('username'));
 		this.newPassForm.get('resetToken').setValue(this.route.snapshot.paramMap.get('token'));
 	}
 
-	createForm() {
+	createForm(): void {
 		this.newPassForm = this.formBuilder.group({
 			resetToken: [null, Validators.required],
 			username: [null, [Validators.required]],
@@ -38,7 +38,7 @@ export class NewPassComponent implements OnInit {
 		}, {validators: []});
 	}
 
-	submit() {
+	submit(): void {
 		this.accountService.newPassword(this.newPassForm.value).subscribe(value => {
 			this.router.navigate(['/auth/login']);
 			this.toastr.success(this.translateService.instant('success_new_pass'));

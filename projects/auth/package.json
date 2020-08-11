@@ -5,7 +5,8 @@
         "@angular/common": "^10.0.8",
         "@angular/core": "^10.0.8",
         "@angular/router": "^10.0.8",
-        "@ngx-k-panel/core": "^0.0.4"
+        "@ngx-k-panel/core": "^0.0.4",
+        "@ngx-k/auth": "^0.0.3"
     },
     "dependencies": {
         "tslib": "^2.0.0"

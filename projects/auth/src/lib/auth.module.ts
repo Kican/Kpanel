@@ -5,8 +5,7 @@ import {LoginPageComponent} from './components/_partials/login-page/login-page.c
 import {RouterModule, Routes} from '@angular/router';
 import {AuthPageComponent} from './components/auth-page/auth-page.component';
 import {CoreModule} from '@ngx-k-panel/core';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
-import {AuthHttpInterceptor} from './providers/auth-http.interceptor';
+import {NgxKAuthModule} from '@ngx-k/auth';
 
 const authRoutes: Routes = [
 	{
@@ -21,9 +20,6 @@ const authRoutes: Routes = [
 export const routerModule = RouterModule.forRoot(authRoutes);
 
 @NgModule({
-	providers: [
-		{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true},
-	],
 	declarations: [
 		LoginPageComponent,
 		ForgotPasswordComponent,
@@ -32,10 +28,12 @@ export const routerModule = RouterModule.forRoot(authRoutes);
 	],
 	imports: [
 		CoreModule,
-		routerModule
+		routerModule,
+		NgxKAuthModule
 	],
 	exports: [
-		RouterModule
+		RouterModule,
+		NgxKAuthModule
 	]
 })
 export class AuthModule {

@@ -363,50 +363,15 @@
 					}
 				}
 			}
-		},
-		"form-builder-bootstrap": {
-			"projectType": "library",
-			"root": "projects/form-builder-bootstrap",
-			"sourceRoot": "projects/form-builder-bootstrap/src",
-			"prefix": "lib",
-			"architect": {
-				"build": {
-					"builder": "@angular-devkit/build-ng-packagr:build",
-					"options": {
-						"tsConfig": "projects/form-builder-bootstrap/tsconfig.lib.json",
-						"project": "projects/form-builder-bootstrap/ng-package.json"
-					},
-					"configurations": {
-						"production": {
-							"tsConfig": "projects/form-builder-bootstrap/tsconfig.lib.prod.json"
-						}
-					}
-				},
-				"test": {
-					"builder": "@angular-devkit/build-angular:karma",
-					"options": {
-						"main": "projects/form-builder-bootstrap/src/test.ts",
-						"tsConfig": "projects/form-builder-bootstrap/tsconfig.spec.json",
-						"karmaConfig": "projects/form-builder-bootstrap/karma.conf.js"
-					}
-				},
-				"lint": {
-					"builder": "@angular-devkit/build-angular:tslint",
-					"options": {
-						"tsConfig": [
-							"projects/form-builder-bootstrap/tsconfig.lib.json",
-							"projects/form-builder-bootstrap/tsconfig.spec.json"
-						],
-						"exclude": [
-							"**/node_modules/**"
-						]
-					}
-				}
-			}
+		}
+	},
+	"schematics": {
+		"@schematics/angular:component": {
+			"style": "scss"
 		}
 	},
 	"cli": {
 		"analytics": "0d704465-36d9-4f45-bf8e-6353907e5778"
 	},
-	"defaultProject": "panel"
+	"defaultProject": "docs"
 }

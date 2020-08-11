@@ -1,18 +1,12 @@
-import {NgModule} from '@angular/core';
-import {CoreModule} from '@ngx-k-panel/core';
-import {FormBuilderComponent} from './components/form-builder/form-builder.component';
+import { NgModule } from '@angular/core';
+import { FormBuilderComponent } from './form-builder.component';
+
+
 
 @NgModule({
-	declarations: [
-		FormBuilderComponent
-	],
-	imports: [
-		CoreModule
-	],
-	exports: [
-		CoreModule,
-		FormBuilderComponent
-	]
+  declarations: [FormBuilderComponent],
+  imports: [
+  ],
+  exports: [FormBuilderComponent]
 })
-export class FormBuilderModule {
-}
+export class FormBuilderModule { }

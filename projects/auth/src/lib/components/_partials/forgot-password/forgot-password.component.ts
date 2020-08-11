@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
-import {AccountService} from "../../../services/account.service";
+import {NgxKAccountService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-forgot-password',
@@ -14,22 +14,22 @@ export class ForgotPasswordComponent implements OnInit {
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private accountService: AccountService,
+		private accountService: NgxKAccountService,
 		private toastr: ToastrService
 	) {
 	}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.createForms();
 	}
 
-	createForms() {
+	createForms(): void {
 		this.forgotPassForm = this.formBuilder.group({
 			username: [null, [Validators.required, Validators.minLength(5)]]
 		});
 	}
 
-	submit() {
+	submit(): void {
 		this.accountService.forgotPassword(this.forgotPassForm.get('username').value).subscribe(value => {
 			this.emailSent = true;
 			this.forgotPassForm.disable();

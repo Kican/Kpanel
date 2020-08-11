@@ -4,9 +4,8 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {NgxPermissionsService} from 'ngx-permissions';
 import {TranslateService} from '@ngx-translate/core';
-import {AuthenticationService} from "../../../services/authentication.service";
-import {AccountService} from "../../../services/account.service";
-import {AppValidators} from "@ngx-k-panel/core";
+import {AppValidators} from '@ngx-k-panel/core';
+import {NgxKAccountService, NgxKAuthenticationService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-login-page',
@@ -18,8 +17,8 @@ export class LoginPageComponent implements OnInit {
 
 	constructor(
 		private fb: FormBuilder,
-		private authService: AuthenticationService,
-		private accountService: AccountService,
+		private authService: NgxKAuthenticationService,
+		private accountService: NgxKAccountService,
 		private toastr: ToastrService,
 		private router: Router,
 		private permissionsService: NgxPermissionsService,
@@ -31,7 +30,7 @@ export class LoginPageComponent implements OnInit {
 		this.createForm();
 	}
 
-	submit() {
+	submit(): void {
 		this.authService.login(this.loginForm.value).subscribe(value => {
 			this.accountService.user$.next(value['user']);
 			this.router.navigate(['/']).then(() => {
@@ -41,7 +40,7 @@ export class LoginPageComponent implements OnInit {
 		});
 	}
 
-	createForm() {
+	createForm(): void {
 		this.loginForm = this.fb.group({
 			email: [null, [Validators.required, Validators.email, Validators.minLength(5), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
 			password: [null, [Validators.required, Validators.minLength(8), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],

@@ -9,10 +9,18 @@ const versions = [
 			"@ngx-k-panel/dashboard",
 			"@ngx-k-panel/data-table",
 			"@ngx-k-panel/entity-manager",
-			"@ngx-k-panel/form-builder",
-			"@ngx-k-panel/form-builder-bootstrap"
+			"@ngx-k-panel/form-builder"
 		],
 		version: "^" + appVer
+	},
+	{
+		packages: [
+			"@ngx-k/components",
+			"@ngx-k/auth",
+			"@ngx-k/form-builder",
+			"@ngx-k/form-builder-bootstrap",
+		],
+		version: "^0.0.3"
 	},
 	{
 		packages: ["@angular/cdk"],
@@ -53,6 +61,6 @@ const updatePackageJson = (path) => {
 }
 
 for (let library of getLibraries()) {
-	updatePackageJson(x)
+	updatePackageJson(library)
 }
 console.log("packages updated ...")
