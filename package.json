@@ -52,6 +52,7 @@
 		"@ngx-k-panel/dashboard": "file:dist/dashboard",
 		"@ngx-k-panel/data-table": "file:dist/data-table",
 		"@ngx-k-panel/entity-manager": "file:dist/entity-manager",
+		"@ngx-k-panel/users-manager": "file:dist/users-manager",
 		"@ngx-k-panel/form-builder": "file:dist/form-builder"
 	},
 	"devDependencies": {

@@ -72,6 +72,12 @@
     },
     {
       "path": "./projects/form-builder/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/users-manager/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/users-manager/tsconfig.spec.json"
     }
 	]
 }
