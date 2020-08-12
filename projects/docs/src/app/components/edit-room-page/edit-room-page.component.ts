@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {ILayoutComponent} from '@ngx-k-panel/form-builder';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({

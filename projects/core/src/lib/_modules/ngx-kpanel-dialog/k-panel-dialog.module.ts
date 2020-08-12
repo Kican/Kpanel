@@ -18,6 +18,9 @@ export const modalModule = ModalModule.forRoot();
 		CommonModule,
 		modalModule,
 		NgxKDialogModule
+	],
+	exports: [
+		ModalModule
 	]
 })
 export class KPanelDialogModule {

@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
-import {NeoCrumbService} from "ngx-neocrumb";
-import {NgxPermissionsService} from "ngx-permissions";
-import {NgSelectConfig} from "@ng-select/ng-select";
-import {AuthenticationService} from "@ngx-k-panel/auth";
-import {Router} from "@angular/router";
-import {ToastrService} from "ngx-toastr";
-import {FA} from "./langs/fa/_fa";
+import {TranslateService} from '@ngx-translate/core';
+import {NeoCrumbService} from 'ngx-neocrumb';
+import {NgxPermissionsService} from 'ngx-permissions';
+import {NgSelectConfig} from '@ng-select/ng-select';
+import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {FA} from './langs/fa/_fa';
+import {KAuthenticationService} from '@ngx-k/auth';
 
 @Component({
 	selector: 'app-root',
@@ -20,7 +20,7 @@ export class AppComponent {
 		private neoCrumbService: NeoCrumbService,
 		private permissionService: NgxPermissionsService,
 		private ngSelectConfig: NgSelectConfig,
-		private authService: AuthenticationService,
+		private authService: KAuthenticationService,
 		private router: Router,
 		private toastr: ToastrService
 	) {

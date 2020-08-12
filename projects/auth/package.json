@@ -1,14 +1,17 @@
 {
-    "name": "@ngx-k-panel/auth",
-    "version": "0.0.6",
-    "peerDependencies": {
-        "@angular/common": "^10.0.8",
-        "@angular/core": "^10.0.8",
-        "@angular/router": "^10.0.8",
-        "@ngx-k-panel/core": "^0.0.6",
-        "@ngx-k/auth": "^0.0.9"
-    },
-    "dependencies": {
-        "tslib": "^2.0.0"
-    }
+	"name": "@ngx-k-panel/auth",
+	"version": "0.0.6",
+	"peerDependencies": {
+		"@angular/common": "^10.0.8",
+		"@angular/core": "^10.0.8",
+		"@angular/router": "^10.0.8",
+		"@ngx-k-panel/core": "^0.0.6",
+		"@ngx-k/auth": "^0.0.9"
+	},
+	"dependencies": {
+		"tslib": "^2.0.0"
+	},
+	"scripts": {
+		"postinstall": "ngcc"
+	}
 }
