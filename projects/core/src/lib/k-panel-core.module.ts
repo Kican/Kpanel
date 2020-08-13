@@ -9,7 +9,6 @@ import {FixUrlInterceptor} from './provider/fix-url.interceptor';
 import {KPanelConfig} from './common/kpanel-config';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {NgxPermissionsModule} from 'ngx-permissions';
-import {KPanelDialogModule} from './_modules/ngx-kpanel-dialog/k-panel-dialog.module';
 
 export const ngxPermissionsModule = NgxPermissionsModule.forRoot();
 export const translateModule = TranslateModule.forRoot();
@@ -28,7 +27,6 @@ export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.f
 		ngxPermissionsModule,
 		translateModule,
 		ngBootstrapFormValidationModule,
-		KPanelDialogModule,
 		NgSelectModule
 	],
 	exports: [
@@ -41,7 +39,6 @@ export const ngBootstrapFormValidationModule = NgBootstrapFormValidationModule.f
 		NgxPermissionsModule,
 		NgBootstrapFormValidationModule,
 		NgSelectModule,
-		KPanelDialogModule,
 	]
 })
 export class KPanelCoreModule {

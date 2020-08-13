@@ -4,8 +4,8 @@
     "peerDependencies": {
         "@angular/common": "^10.0.8",
         "@angular/core": "^10.0.8",
-        "@ngx-k/form-builder": "^0.0.9",
-        "@ngx-k/form-builder-bootstrap": "^0.0.9"
+        "@ngx-k/form-builder": "^0.0.11",
+        "@ngx-k/form-builder-bootstrap": "^0.0.11"
     },
     "dependencies": {
         "tslib": "^2.0.0"

@@ -67,17 +67,17 @@
 		{
 			"path": "../ngx-k/projects/form-builder-bootstrap/tsconfig.spec.json"
 		},
-    {
-      "path": "./projects/form-builder/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/form-builder/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/users-manager/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/users-manager/tsconfig.spec.json"
-    }
+		{
+			"path": "./projects/form-builder/tsconfig.lib.json"
+		},
+		{
+			"path": "./projects/form-builder/tsconfig.spec.json"
+		},
+		{
+			"path": "./projects/users-manager/tsconfig.lib.json"
+		},
+		{
+			"path": "./projects/users-manager/tsconfig.spec.json"
+		}
 	]
 }

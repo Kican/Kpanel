@@ -46,10 +46,6 @@
         "dist/form-builder/form-builder",
         "dist/form-builder"
       ],
-      "form-builder-bootstrap": [
-        "dist/form-builder-bootstrap/form-builder-bootstrap",
-        "dist/form-builder-bootstrap"
-      ],
       "users-manager": [
         "dist/users-manager/users-manager",
         "dist/users-manager"

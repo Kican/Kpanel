@@ -16,9 +16,9 @@ import {KSidebarModule, SidebarMode, SidebarStatus} from '@ngx-k/components/side
 import {KPanelDashboardModule} from '@ngx-k-panel/dashboard';
 import {KPanelFormBuilderModule} from '@ngx-k-panel/form-builder';
 import {KPanelCoreModule} from '@ngx-k-panel/core';
-import {ComponentCollection, ComponentDescriptorCollection} from '@ngx-k/form-builder';
-import {BootstrapComponentCollection} from '@ngx-k/form-builder-bootstrap';
 import {ModalModule} from 'ngx-bootstrap/modal';
+import {KPanelUsersManagerModule} from '@ngx-k-panel/users-manager';
+import {KComponentsBootstrapModule} from '@ngx-k/components-bootstrap';
 
 @NgModule({
 	declarations: [
@@ -39,18 +39,18 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 		}),
 		KPanelDashboardModule,
 		KPanelFormBuilderModule,
+		KPanelUsersManagerModule,
+		KComponentsBootstrapModule,
 		DataTableModule,
 		KPanelCoreModule.forRoot({base_url: 'http://127.0.0.1:5000/'}),
 		AppRoutingModule,
 		TooltipModule.forRoot(),
 		ToastrModule.forRoot(),
 		ModalModule.forRoot(),
-		NgPersianDatepickerModule
+		NgPersianDatepickerModule,
 	],
 	providers: [
 		{provide: DataTableConfig, useClass: DataTableConfig},
-		{provide: ComponentCollection, useClass: BootstrapComponentCollection},
-		{provide: ComponentDescriptorCollection, useClass: ComponentDescriptorCollection},
 	],
 	bootstrap: [AppComponent]
 })

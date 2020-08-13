@@ -5,9 +5,11 @@ import {FormBuilderTestComponent} from './components/form-builder-test/form-buil
 import {getPanelRoutes} from '@ngx-k-panel/dashboard';
 import {RoomListPageComponent} from './components/room-list-page/room-list-page.component';
 import {EditRoomPageComponent} from './components/edit-room-page/edit-room-page.component';
+import {usersManagerRoutes} from '@ngx-k-panel/users-manager';
 
 const routes: Routes = [
 	...EntityManagerRoutes,
+	...usersManagerRoutes,
 	{path: 'form-builder-test', component: FormBuilderTestComponent},
 	{
 		path: 'rooms', children: [

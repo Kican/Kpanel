@@ -16,11 +16,13 @@ const versions = [
 	{
 		packages: [
 			"@ngx-k/components",
+			"@ngx-k/components-bootstrap",
+			"@ngx-k/core",
 			"@ngx-k/auth",
 			"@ngx-k/form-builder",
 			"@ngx-k/form-builder-bootstrap",
 		],
-		version: "^0.0.9"
+		version: "^0.0.11"
 	},
 	{
 		packages: ["@angular/cdk"],

@@ -1,12 +1,12 @@
 {
-	"name": "@ngx-k-panel/users-manager",
-	"version": "0.0.6",
-	"peerDependencies": {
-		"@angular/common": "^10.0.8",
-		"@angular/core": "^10.0.8",
-		"@ngx-k-panel/entity-manager": "^0.0.6"
-	},
-	"dependencies": {
-		"tslib": "^2.0.0"
-	}
+    "name": "@ngx-k-panel/users-manager",
+    "version": "0.0.6",
+    "peerDependencies": {
+        "@angular/common": "^10.0.8",
+        "@angular/core": "^10.0.8",
+        "@ngx-k-panel/entity-manager": "^0.0.6"
+    },
+    "dependencies": {
+        "tslib": "^2.0.0"
+    }
 }
