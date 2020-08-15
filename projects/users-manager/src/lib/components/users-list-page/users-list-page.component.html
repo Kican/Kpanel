@@ -21,7 +21,9 @@
 				<th cdk-header-cell *cdkHeaderCellDef> {{'options' | translate}} </th>
 				<td cdk-cell *cdkCellDef="let element">
 					<a class="btn-icon" (click)="delete(element.id)"><i class="mdi mdi-delete"></i></a>
-					<a class="btn-icon"  [routerLink]="['../','edit',element['id']]"><i class="mdi mdi-pencil"></i></a>
+					<a class="btn-icon" (click)="openChangePasswordDialog(element.id)"><i class="mdi mdi-form-textbox-password"></i></a>
+					<a class="btn-icon" (click)="openRolesDialog(element.id)"><i class="mdi mdi-account-supervisor"></i></a>
+					<a class="btn-icon"  [routerLink]="['edit', element['id']]"><i class="mdi mdi-pencil"></i></a>
 				</td>
 			</ng-container>
 

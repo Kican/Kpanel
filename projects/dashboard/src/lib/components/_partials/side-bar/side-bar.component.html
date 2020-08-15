@@ -9,16 +9,6 @@
 		<li><a [routerLink]="['/']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" k-sidebar-item
 			   [label]="'پیشخوان' | translate" [iconClass]="'mdi mdi-view-dashboard'"></a>
 		</li>
-		<li k-sidebar-dropdown-item label="اتاق های معاملاتی" [iconClass]="'mdi mdi-view-list'">
-			<ul k-sidebar-items-container>
-				<li>
-					<a [routerLink]="'/entity/RoomGroup/list'" [routerLinkActive]="'active'" k-sidebar-item
-					   [label]="'گروه بندی'" [iconClass]="'mdi mdi-airplane'"></a></li>
-				<li>
-					<a [routerLink]="'/rooms/list'" [routerLinkActive]="'active'"
-					   k-sidebar-item [label]="'اتاق ها'" [iconClass]="'mdi mdi-airplane-takeoff'"></a>
-				</li>
-			</ul>
-		</li>
 	</ul>
 </k-sidebar-group>
+<k-sidebar-dynamic-menu sidebarId="main-sidebar"></k-sidebar-dynamic-menu>

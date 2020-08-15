@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {FormGroup} from '@angular/forms';
-import {BsModalService} from 'ngx-bootstrap/modal';
 import {EntityManagerHttpDataSource} from '../../services/entity-manager-http-data-source';
 import {DtDataSource, DataTableOptions} from '@ngx-k-panel/data-table';
 import {IComponent, ILayoutComponent} from '@ngx-k/form-builder';
@@ -30,7 +29,6 @@ export class ListPageComponent implements OnInit {
 		private http: HttpClient,
 		private router: ActivatedRoute,
 		private dialogService: DialogService,
-		private modalService: BsModalService,
 		private toastService: ToastService
 	) {
 	}

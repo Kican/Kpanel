@@ -1,1 +1,20 @@
-<p>dialog-set-user-roles works!</p>
+<div class="modal-header">
+	<h4 class="modal-title pull-left">ویرایش نقش</h4>
+	<button type="button" class="close pull-right" aria-label="Close" (click)="modal.dismiss()">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<div class="modal-body">
+	<form [formGroup]="form" (validSubmit)="submit()">
+
+		<div class="form-group">
+			<label>نقش</label>
+			<ng-select
+				formControlName="roles"
+				[items]="roles" bindLabel="name" bindValue="name" [multiple]="true"
+			></ng-select>
+		</div>
+		<button type="button" class="btn btn-default" (click)="modal.dismiss()">بستن</button>
+		<button type="submit" class="btn btn-primary" >ثبت</button>
+	</form>
+</div>

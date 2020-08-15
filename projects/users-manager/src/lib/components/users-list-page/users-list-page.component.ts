@@ -4,9 +4,10 @@ import {FormGroup} from '@angular/forms';
 import {IComponent, ILayoutComponent} from '@ngx-k/form-builder';
 import {HttpClient} from '@angular/common/http';
 import {DialogService} from '@ngx-k/components/dialog';
-import {BsModalService} from 'ngx-bootstrap/modal';
 import {ToastService} from '@ngx-k/components/toast';
 import {EntityManagerHttpDataSource} from '@ngx-k-panel/entity-manager';
+import {DialogSetUserRolesComponent} from '../_dialogs/dialog-set-user-roles/dialog-set-user-roles.component';
+import {DialogUpdatePasswordComponent} from '../_dialogs/dialog-update-password/dialog-update-password.component';
 
 @Component({
 	selector: 'lib-users-list-page',
@@ -23,12 +24,11 @@ export class UsersListPageComponent implements OnInit {
 
 	fields: IComponent[];
 
-	entityName: string = 'users';
+	entityName: string = 'UsersManager';
 
 	constructor(
 		private http: HttpClient,
 		private dialogService: DialogService,
-		private modalService: BsModalService,
 		private toastService: ToastService
 	) {
 	}
@@ -69,6 +69,16 @@ export class UsersListPageComponent implements OnInit {
 		});
 	}
 
+	openRolesDialog(userId: number): void {
+		const dialogRef = this.dialogService.open<DialogSetUserRolesComponent, boolean>(DialogSetUserRolesComponent, {size: 'mid'});
+		dialogRef.componentInstance.userId = userId;
+
+	}
+
+	openChangePasswordDialog(userId: number): void {
+		const dialogRef = this.dialogService.open<DialogUpdatePasswordComponent, boolean>(DialogUpdatePasswordComponent, {size: 'small'});
+		dialogRef.componentInstance.userId = userId;
+	}
 
 	toLowerCamelCase(text: string): string {
 		return text.substring(0, 1).toLowerCase() + text.substring(1);

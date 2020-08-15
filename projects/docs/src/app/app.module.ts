@@ -46,7 +46,6 @@ import {KComponentsBootstrapModule} from '@ngx-k/components-bootstrap';
 		AppRoutingModule,
 		TooltipModule.forRoot(),
 		ToastrModule.forRoot(),
-		ModalModule.forRoot(),
 		NgPersianDatepickerModule,
 	],
 	providers: [

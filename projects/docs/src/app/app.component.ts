@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {NeoCrumbService} from 'ngx-neocrumb';
 import {NgxPermissionsService} from 'ngx-permissions';
@@ -7,12 +7,13 @@ import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {FA} from './langs/fa/_fa';
 import {KAuthenticationService} from '@ngx-k/auth';
+import {SidebarDynamicMenuService} from '@ngx-k/components/sidebar';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 	title = 'docs';
 
 	constructor(
@@ -22,7 +23,8 @@ export class AppComponent {
 		private ngSelectConfig: NgSelectConfig,
 		private authService: KAuthenticationService,
 		private router: Router,
-		private toastr: ToastrService
+		private toastr: ToastrService,
+		private sidebarDynamicMenuService: SidebarDynamicMenuService
 	) {
 	}
 
@@ -61,5 +63,17 @@ export class AppComponent {
 				bc.text = this.translateService.instant(bc.text);
 			});
 		});
+	}
+
+	ngAfterViewInit(): void {
+		setTimeout(() => {
+			this.sidebarDynamicMenuService.addGroup('main-sidebar', {
+					groupId: 'rooms', title: 'اتاق های معاملاتی', items: [
+						{iconClass: 'mdi mdi-account-multiple-outline', itemId: 'rooms-group-list', label: 'گروه بندی', routerLink: '/entity/RoomGroup/list', type: 'single'},
+						{iconClass: 'mdi mdi-account-plus-outline', itemId: 'rooms-list', label: 'اتاق ها', routerLink: '/rooms/list', type: 'single'}
+					]
+				}
+			);
+		}, 1);
 	}
 }

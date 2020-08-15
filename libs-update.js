@@ -22,7 +22,7 @@ const versions = [
 			"@ngx-k/form-builder",
 			"@ngx-k/form-builder-bootstrap",
 		],
-		version: "^0.0.11"
+		version: "^0.0.13"
 	},
 	{
 		packages: ["@angular/cdk"],
