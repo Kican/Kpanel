@@ -12,14 +12,18 @@ export class UsersManagerService {
 	}
 
 	setPassword(userId: number, password: string): Observable<any> {
-		return this.http.put(`api/UsersManager/$password/${userId}`, {password});
+		return this.http.put(`api/UsersManager/${userId}/$password`, {password});
 	}
 
 	getRoles(): Observable<RolePartialDto[]> {
 		return this.http.get<RolePartialDto[]>('api/UsersManager/$roles');
 	}
 
+	getUserRoles(userId: number): Observable<RolePartialDto[]> {
+		return this.http.get<RolePartialDto[]>(`api/UsersManager/${userId}/$roles`);
+	}
+
 	setRoles(userId: number, roles: string[]): Observable<any> {
-		return this.http.put(`api/UsersManager/$roles/${userId}`, {roleNames: roles});
+		return this.http.put(`api/UsersManager/${userId}/$roles`, {roleNames: roles});
 	}
 }

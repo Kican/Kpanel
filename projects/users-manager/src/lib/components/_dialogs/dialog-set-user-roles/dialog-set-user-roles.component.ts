@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UsersManagerService} from '../../../services/users-manager.service';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {RolePartialDto} from '../../../models/role-partial-dto';
+import {ToastService} from '@ngx-k/components/toast';
 
 @Component({
 	selector: 'lib-dialog-set-user-roles',
@@ -18,6 +19,7 @@ export class DialogSetUserRolesComponent implements OnInit {
 	constructor(
 		private usersService: UsersManagerService,
 		private modal: NgbActiveModal,
+		private toastService: ToastService,
 		private formBuilder: FormBuilder
 	) {
 		this.form = formBuilder.group({
@@ -28,6 +30,9 @@ export class DialogSetUserRolesComponent implements OnInit {
 	getRoles(): void {
 		this.usersService.getRoles().subscribe(value => {
 			this.roles = value;
+			this.usersService.getUserRoles(this.userId).subscribe(userRoles => {
+				this.form.patchValue({roles: userRoles});
+			});
 		});
 	}
 
@@ -37,7 +42,7 @@ export class DialogSetUserRolesComponent implements OnInit {
 
 	submit(): void {
 		this.usersService.setRoles(this.userId, this.form.value.roles).subscribe(value => {
-			console.log(value);
+			this.toastService.success();
 			this.modal.close(true);
 		});
 	}

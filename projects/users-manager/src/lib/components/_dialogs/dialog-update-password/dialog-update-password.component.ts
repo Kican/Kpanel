@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UsersManagerService} from '../../../services/users-manager.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {ToastService} from '@ngx-k/components/toast';
 
 @Component({
 	selector: 'lib-dialog-update-password',
@@ -16,6 +17,7 @@ export class DialogUpdatePasswordComponent implements OnInit {
 	constructor(
 		private usersService: UsersManagerService,
 		private modal: NgbActiveModal,
+		private toastService: ToastService,
 		private formBuilder: FormBuilder
 	) {
 		this.form = formBuilder.group({
@@ -28,7 +30,7 @@ export class DialogUpdatePasswordComponent implements OnInit {
 
 	submit(): void {
 		this.usersService.setPassword(this.userId, this.form.value.password).subscribe(value => {
-			console.log(value);
+			this.toastService.success();
 			this.modal.close(true);
 		});
 	}

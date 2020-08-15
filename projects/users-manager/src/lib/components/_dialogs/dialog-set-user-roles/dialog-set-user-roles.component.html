@@ -9,12 +9,9 @@
 
 		<div class="form-group">
 			<label>نقش</label>
-			<ng-select
-				formControlName="roles"
-				[items]="roles" bindLabel="name" bindValue="name" [multiple]="true"
-			></ng-select>
+			<ng-select formControlName="roles" [items]="roles" bindLabel="name" bindValue="name" [multiple]="true"></ng-select>
 		</div>
 		<button type="button" class="btn btn-default" (click)="modal.dismiss()">بستن</button>
-		<button type="submit" class="btn btn-primary" >ثبت</button>
+		<button type="submit" class="btn btn-primary">ثبت</button>
 	</form>
 </div>
