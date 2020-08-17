@@ -1,14 +1,14 @@
 {
     "name": "@ngx-k-panel/core",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "peerDependencies": {
-        "@angular/common": "^10.0.8",
-        "@angular/core": "^10.0.8",
-        "@angular/animations": "^10.0.8",
+        "@angular/common": "^10.0.9",
+        "@angular/core": "^10.0.9",
+        "@angular/animations": "^10.0.9",
         "@ngx-translate/core": "^13.0.0",
         "ngx-permissions": "^8.0.0",
         "ngx-bootstrap": "^6.0.0",
-        "@ngx-k/components": "^0.0.11"
+        "@ngx-k/components": "^0.0.13"
     },
     "dependencies": {
         "tslib": "^2.0.0"
