@@ -4,7 +4,7 @@ import {EntityManagerConfig, EntityManagerInfoDto} from '../models';
 import {SidebarDynamicMenuService} from '@ngx-k/components/sidebar';
 import {SidebarItem} from '@ngx-k/components/sidebar/models/sidebar-item.model';
 import {Observable, ReplaySubject} from 'rxjs';
-import {filter, first, map} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'

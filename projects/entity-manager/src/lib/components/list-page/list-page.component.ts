@@ -43,7 +43,6 @@ export class ListPageComponent implements OnInit {
 		this.router.params.subscribe(value => {
 			this.entityName = value.type;
 			this.entityManagerService.getByName(this.entityName).subscribe(x => {
-				console.log(x);
 				this.info = x;
 				this.dataSource = new EntityManagerHttpDataSource(this.info.url, this.http, this.filterForm);
 				this.init();
