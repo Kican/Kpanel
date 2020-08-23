@@ -5,17 +5,17 @@ import {of} from 'rxjs';
 import {DtDataSource} from '@ngx-k-panel/data-table';
 
 export class EntityManagerHttpDataSource extends DtDataSource<{}> {
-	constructor(private entityName: string, private httpClient: HttpClient, filterForm?: FormGroup) {
+	constructor(private url: string, private httpClient: HttpClient, filterForm?: FormGroup) {
 		super(filterForm);
 	}
 
-	setEntityName(entityName: string): void {
-		this.entityName = entityName;
+	setUrl(url: string): void {
+		this.url = url;
 	}
 
 	loadData(): void {
 		this.loadingSubject.next(true);
-		this.httpClient.get(`api/${this.entityName}` + this.jsonToQueryString(this.filters ?? {})).pipe(
+		this.httpClient.get(this.url + this.jsonToQueryString(this.filters ?? {})).pipe(
 			catchError(() => of([])),
 			finalize(() => this.loadingSubject.next(false))
 		).subscribe(value => {

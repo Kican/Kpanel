@@ -7,6 +7,8 @@ import {DtDataSource, DataTableOptions} from '@ngx-k-panel/data-table';
 import {IComponent, ILayoutComponent} from '@ngx-k/form-builder';
 import {DialogService} from '@ngx-k/components/dialog';
 import {ToastService} from '@ngx-k/components/toast';
+import {EntityManagerService} from '../../services/entity-manager.service';
+import {EntityManagerInfoDto} from '../../models';
 
 @Component({
 	selector: 'app-list-page',
@@ -23,28 +25,32 @@ export class ListPageComponent implements OnInit {
 
 	fields: IComponent[];
 
+	info: EntityManagerInfoDto;
+
 	entityName: string = null;
 
 	constructor(
 		private http: HttpClient,
 		private router: ActivatedRoute,
 		private dialogService: DialogService,
-		private toastService: ToastService
+		private toastService: ToastService,
+		private entityManagerService: EntityManagerService
 	) {
 	}
 
 	ngOnInit(): void {
 		this.router.params.subscribe(value => {
-			this.dataSource = new EntityManagerHttpDataSource(value.type, this.http, this.filterForm);
-			this.init(value.type);
+			this.entityName = value.type;
+			this.info = this.entityManagerService.getByName(this.entityName);
+			this.dataSource = new EntityManagerHttpDataSource(this.info.url, this.http, this.filterForm);
+			this.init();
 		});
 	}
 
-	init(entityName: string): void {
-		this.entityName = entityName;
+	init(): void {
 		this.displayedColumns = [];
 		this.fields = [];
-		this.http.get<ILayoutComponent>(`api/${entityName}/$fields/list`).subscribe(value => {
+		this.http.get<ILayoutComponent>(this.info.url + `/$fields/list`).subscribe(value => {
 			this.fields = value.children;
 			this.displayedColumns.push(...value.children.map(x => x.name));
 			this.displayedColumns.push('options');
@@ -65,7 +71,7 @@ export class ListPageComponent implements OnInit {
 				return;
 			}
 
-			this.http.delete(`api/${this.entityName}/${id}`).subscribe(_ => {
+			this.http.delete(this.info.url + `/${id}`).subscribe(_ => {
 				this.dataSource.loadData();
 				this.toastService.success();
 			});

@@ -2,12 +2,12 @@ import {Inject, ModuleWithProviders, NgModule} from '@angular/core';
 import {ListPageComponent} from './components/list-page/list-page.component';
 import {RouterModule, Routes} from '@angular/router';
 import {EditPageComponent} from './components/edit-page/edit-page.component';
-import {FormBuilderComponent} from './components/form-builder/form-builder.component';
 import {DataTableModule} from '@ngx-k-panel/data-table';
 import {KPanelCoreModule} from '@ngx-k-panel/core';
 import {KPanelFormBuilderModule} from '@ngx-k-panel/form-builder';
 import {EntityManagerConfig} from './models';
 import {EntityManagerService} from './services/entity-manager.service';
+import {KFormBuilderModule} from '@ngx-k/form-builder';
 
 export const EntityManagerRoutes: Routes = [
 	{
@@ -23,13 +23,13 @@ export const EntityManagerRoutes: Routes = [
 	declarations: [
 		ListPageComponent,
 		EditPageComponent,
-		FormBuilderComponent
 	],
 	imports: [
 		DataTableModule,
 		KPanelCoreModule,
 		RouterModule,
-		KPanelFormBuilderModule
+		KPanelFormBuilderModule,
+		KFormBuilderModule
 	]
 })
 export class KPanelEntityManagerModule {

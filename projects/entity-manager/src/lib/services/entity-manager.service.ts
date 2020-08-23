@@ -17,6 +17,10 @@ export class EntityManagerService {
 	) {
 	}
 
+	getByName(name: string): EntityManagerInfoDto {
+		return this.managers.filter(x => x.name == name)[0];
+	}
+
 	fetchAllEntityManagers(): void {
 		this.http.get<EntityManagerInfoDto[]>(this.config.discovery_url).subscribe(x => {
 			this.managers = x;
@@ -25,16 +29,14 @@ export class EntityManagerService {
 				this.managers.forEach(value => {
 					sideBarItems.push({
 						type: 'single',
-						routerLink: value.url,
+						routerLink: `entity/${value.name}/list`,
 						label: value.title,
-						itemId: value.url,
-						iconClass: 'mdi mdi-account-multiple-outline'
+						itemId: value.name,
+						iconClass: value.icon == null ? 'mdi mdi-database-edit' : value.icon
 					});
 				});
 				this.sidebarService.addGroup('main-sidebar', {groupId: 'entities', title: 'موجودیت ها', items: sideBarItems});
 			});
-
-			console.log(`entity-managers`, x);
 		});
 	}
 }
