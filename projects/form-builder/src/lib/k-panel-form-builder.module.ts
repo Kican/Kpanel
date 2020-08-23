@@ -4,8 +4,12 @@ import {KFormBuilderModule} from '@ngx-k/form-builder';
 
 @NgModule({
 	declarations: [],
-	imports: [KFormBuilderModule],
-	exports: [KFormBuilderModule]
+	imports: [
+		KFormBuilderModule
+	],
+	exports: [
+		KFormBuilderModule
+	]
 })
 export class KPanelFormBuilderModule {
 }

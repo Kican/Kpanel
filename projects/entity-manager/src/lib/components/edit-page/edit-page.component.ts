@@ -30,13 +30,16 @@ export class EditPageComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.info = null;
 		this.router.params.subscribe(routeData => {
 			this.entityName = routeData.type;
-			this.info = this.entityManagerService.getByName(this.entityName);
 
-			this.http.get<ILayoutComponent>(this.info.url + `/$fields/edit`).subscribe(value => {
-				this.fields = value;
-				this.init(routeData.id);
+			this.entityManagerService.getByName(this.entityName).subscribe(value => {
+				this.info = value;
+				this.http.get<ILayoutComponent>(this.info.url + `/$fields/edit`).subscribe(value => {
+					this.fields = value;
+					this.init(routeData.id);
+				});
 			});
 		});
 	}
@@ -52,12 +55,12 @@ export class EditPageComponent implements OnInit {
 	onSubmit(data): void {
 		if (data['id']) {
 			this.http.put(this.info.url + `/${data['id']}`, data).subscribe(value => {
-				this.toastService.success();
+				this.toastService.success({message: 'موجودیت مورد نظر با موفقیت ثبت شد', title: null, position: 'left-down', action: null});
 			});
 		} else {
 			delete data['id'];
 			this.http.post(this.info.url, data).subscribe(value => {
-				this.toastService.success();
+				this.toastService.success({message: 'موجودیت مورد نظر با موفقیت ویرایش شد', title: null, position: 'left-down', action: null});
 			});
 		}
 	}

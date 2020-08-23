@@ -3,12 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {EntityManagerConfig, EntityManagerInfoDto} from '../models';
 import {SidebarDynamicMenuService} from '@ngx-k/components/sidebar';
 import {SidebarItem} from '@ngx-k/components/sidebar/models/sidebar-item.model';
+import {Observable, ReplaySubject} from 'rxjs';
+import {filter, first, map} from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class EntityManagerService {
-	managers: EntityManagerInfoDto[] = [];
+	managers = new ReplaySubject<EntityManagerInfoDto[]>();
 
 	constructor(
 		private http: HttpClient,
@@ -17,16 +19,16 @@ export class EntityManagerService {
 	) {
 	}
 
-	getByName(name: string): EntityManagerInfoDto {
-		return this.managers.filter(x => x.name == name)[0];
+	getByName(name: string): Observable<EntityManagerInfoDto> {
+		return this.managers.pipe(map(x => x.find(y => y.name == name)));
 	}
 
 	fetchAllEntityManagers(): void {
-		this.http.get<EntityManagerInfoDto[]>(this.config.discovery_url).subscribe(x => {
-			this.managers = x;
+		this.http.get<EntityManagerInfoDto[]>(this.config.discovery_url).subscribe(data => {
+			this.managers.next(data);
 			setTimeout(() => {
 				const sideBarItems: SidebarItem[] = [];
-				this.managers.forEach(value => {
+				data.forEach(value => {
 					sideBarItems.push({
 						type: 'single',
 						routerLink: `entity/${value.name}/list`,

@@ -39,11 +39,15 @@ export class ListPageComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.info = null;
 		this.router.params.subscribe(value => {
 			this.entityName = value.type;
-			this.info = this.entityManagerService.getByName(this.entityName);
-			this.dataSource = new EntityManagerHttpDataSource(this.info.url, this.http, this.filterForm);
-			this.init();
+			this.entityManagerService.getByName(this.entityName).subscribe(x => {
+				console.log(x);
+				this.info = x;
+				this.dataSource = new EntityManagerHttpDataSource(this.info.url, this.http, this.filterForm);
+				this.init();
+			});
 		});
 	}
 
@@ -73,7 +77,7 @@ export class ListPageComponent implements OnInit {
 
 			this.http.delete(this.info.url + `/${id}`).subscribe(_ => {
 				this.dataSource.loadData();
-				this.toastService.success();
+				this.toastService.warning({message: 'موجودیت مورد نظر با موفقیت حذف شد', title: null, position: 'left-down', action: null});
 			});
 		});
 	}
