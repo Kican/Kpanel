@@ -1,6 +1,6 @@
 const {readFileSync, writeFileSync} = require('fs');
 
-const appVer = '0.0.10'
+const appVer = '0.0.11'
 const versions = [
 	{
 		packages: [
@@ -22,7 +22,7 @@ const versions = [
 			"@ngx-k/form-builder",
 			"@ngx-k/form-builder-bootstrap",
 		],
-		version: "^0.0.16"
+		version: "^0.0.17"
 	},
 	{
 		packages: ["@angular/cdk"],

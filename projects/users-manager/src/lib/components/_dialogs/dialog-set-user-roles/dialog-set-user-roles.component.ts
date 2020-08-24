@@ -42,7 +42,7 @@ export class DialogSetUserRolesComponent implements OnInit {
 
 	submit(): void {
 		this.usersService.setRoles(this.userId, this.form.value.roles).subscribe(value => {
-			this.toastService.success();
+			this.toastService.success({message: 'نقش ها با موفقیت ثبت شد', position: 'left-down', action: null, title: null});
 			this.modal.close(true);
 		});
 	}

@@ -64,7 +64,7 @@ export class UsersListPageComponent implements OnInit {
 
 			this.http.delete(`api/${this.entityName}/${id}`).subscribe(_ => {
 				this.dataSource.loadData();
-				this.toastService.success();
+				this.toastService.success({message: 'کاربر با موفقیت حذف شد', position: 'left-down', action: null, title: null});
 			});
 		});
 	}

@@ -30,7 +30,7 @@ export class DialogUpdatePasswordComponent implements OnInit {
 
 	submit(): void {
 		this.usersService.setPassword(this.userId, this.form.value.password).subscribe(value => {
-			this.toastService.success();
+			this.toastService.success({message: 'کلمه عبور با موفقیت تغییر کرد', position: 'left-down', action: null, title: null});
 			this.modal.close(true);
 		});
 	}

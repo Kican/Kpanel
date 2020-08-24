@@ -15,6 +15,7 @@ import {KPanelCoreModule} from '@ngx-k-panel/core';
 import {KPanelUsersManagerModule} from '@ngx-k-panel/users-manager';
 import {KComponentsBootstrapModule} from '@ngx-k/components-bootstrap';
 import {KFormBuilderBootstrapModule} from '@ngx-k/form-builder-bootstrap';
+import {KBootstrapToastModule} from '@ngx-k/components-bootstrap/toast';
 
 @NgModule({
 	declarations: [
@@ -35,6 +36,7 @@ import {KFormBuilderBootstrapModule} from '@ngx-k/form-builder-bootstrap';
 		KPanelUsersManagerModule,
 		KComponentsBootstrapModule,
 		KFormBuilderBootstrapModule,
+		KBootstrapToastModule,
 		DataTableModule,
 		KPanelCoreModule.forRoot({base_url: 'http://127.0.0.1:5000/'}),
 		AppRoutingModule,
