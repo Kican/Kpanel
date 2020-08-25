@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ViewportScroller} from '@angular/common';
-import { ScrollService } from '@ngx-k/core';
+import {WindowScrollService} from '@ngx-k/core';
 
 @Component({
 	selector: 'app-panel-scroll-top',
@@ -9,14 +9,14 @@ import { ScrollService } from '@ngx-k/core';
 })
 export class PanelScrollTopComponent {
 
-	constructor(public scrollService: ScrollService, private viewportScroller: ViewportScroller) {
+	constructor(public scrollService: WindowScrollService, private viewportScroller: ViewportScroller) {
 	}
 
 	get scrolledDown() {
 		return this.scrollService.scrolledDown();
 	}
 
-	goToTop() {
+	goToTop(): void {
 		this.viewportScroller.scrollToPosition([0, 0]);
 	}
 }
