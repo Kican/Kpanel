@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {SideBarStatus} from '../../modules/side-bar/enums/side-bar-status.enum';
-import {SideBarService} from '../../modules/side-bar/services/side-bar/side-bar.service';
-import {WindowSizeService} from '@ngx-k/core';
 
 @Component({
 	selector: 'app-panel-content',
@@ -10,16 +8,19 @@ import {WindowSizeService} from '@ngx-k/core';
 export class PanelContentComponent implements OnInit {
 	sidebarStatus: SideBarStatus;
 
-	constructor(private sidebarService: SideBarService, public windowSizeService: WindowSizeService) {
+	constructor(
+		// private sidebarService: SideBarService,
+		// public windowSizeService: WindowSizeService
+	) {
 	}
 
-	get indented() {
-		return this.sidebarStatus === SideBarStatus.Opened && !this.windowSizeService.isSmallScreen;
-	}
-
-	ngOnInit() {
-		this.sidebarService.sidebarStatusChange$.subscribe(value => {
-			this.sidebarStatus = value;
-		});
-	}
+	// get indented() {
+	// 	return this.sidebarStatus === SideBarStatus.Opened && !this.windowSizeService.isSmallScreen;
+	// }
+	//
+	// ngOnInit() {
+	// 	this.sidebarService.sidebarStatusChange$.subscribe(value => {
+	// 		this.sidebarStatus = value;
+	// 	});
+	// }
 }
