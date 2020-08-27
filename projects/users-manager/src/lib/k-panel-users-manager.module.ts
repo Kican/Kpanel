@@ -40,14 +40,21 @@ export const usersManagerRoutes: Routes = [
 export class KPanelUsersManagerModule {
 	constructor(private sidebarDynamicMenuService: SidebarDynamicMenuService) {
 		setTimeout(() => {
-			this.sidebarDynamicMenuService.setMenu('main-sidebar', [
-				{
-					groupId: 'users', title: 'کاربران', items: [
+			this.sidebarDynamicMenuService.addGroup('main-sidebar', {
+				title: 'مدیریت کاربران',
+				groupId: '',
+				items: [{
+					itemId: 'users',
+					label: 'کاربران',
+					iconClass: '',
+					routerLink: '',
+					type: 'dropdown',
+					items: [
 						{iconClass: 'mdi mdi-account-multiple-outline', itemId: 'users-list', label: 'لیست کاربران', routerLink: '/users-manager/list', type: 'single'},
 						{iconClass: 'mdi mdi-account-plus-outline', itemId: 'users-add', label: 'ثبت کاربر', routerLink: '/users-manager/new', type: 'single'}
 					]
-				}
-			]);
+				}]
+			});
 		}, 1);
 	}
 }

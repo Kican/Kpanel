@@ -14,6 +14,9 @@ export class PanelContentComponent implements OnInit {
 	) {
 	}
 
+	ngOnInit(): void {
+	}
+
 	// get indented() {
 	// 	return this.sidebarStatus === SideBarStatus.Opened && !this.windowSizeService.isSmallScreen;
 	// }
