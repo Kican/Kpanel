@@ -1,83 +1,32 @@
-/*
-  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
-  It is not intended to be used to perform a compilation.
-
-  To learn more about this file see: https://angular.io/config/solution-tsconfig.
-*/
 {
-	"files": [],
-	"references": [
-		{
-			"path": "./projects/k-panel/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/k-panel/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/docs/tsconfig.app.json"
-		},
-		{
-			"path": "./projects/docs/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/core/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/core/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/core/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/core/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/auth/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/auth/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/data-table/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/data-table/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/dashboard/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/dashboard/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/entity-manager/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/entity-manager/tsconfig.spec.json"
-		},
-		{
-			"path": "../ngx-k/projects/form-builder/tsconfig.lib.json"
-		},
-		{
-			"path": "../ngx-k/projects/form-builder/tsconfig.spec.json"
-		},
-		{
-			"path": "../ngx-k/projects/form-builder-bootstrap/tsconfig.lib.json"
-		},
-		{
-			"path": "../ngx-k/projects/form-builder-bootstrap/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/form-builder/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/form-builder/tsconfig.spec.json"
-		},
-		{
-			"path": "./projects/users-manager/tsconfig.lib.json"
-		},
-		{
-			"path": "./projects/users-manager/tsconfig.spec.json"
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./dist/out-tsc",
+		"sourceMap": true,
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "es2015",
+		"module": "es2020",
+		"lib": [
+			"es2018",
+			"dom"
+		],
+		"paths": {
+			"@ngx-k-panel/core": ["dist/core"],
+			"@ngx-k-panel/auth": ["dist/auth"],
+			"@ngx-k-panel/data-table": ["dist/data-table"],
+			"@ngx-k-panel/dashboard": ["dist/dashboard"],
+			"@ngx-k-panel/entity-manager": ["dist/entity-manager"],
+			"@ngx-k-panel/form-builder": ["dist/form-builder"],
+			"@ngx-k-panel/users-manager": ["dist/users-manager"]
 		}
-	]
+	},
+	"angularCompilerOptions": {
+		"fullTemplateTypeCheck": true,
+		"strictInjectionParameters": true
+	}
 }

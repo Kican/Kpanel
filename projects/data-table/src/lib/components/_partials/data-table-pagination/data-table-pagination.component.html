@@ -1,18 +1,21 @@
 <div class="row">
 	<div class="col-md-6 col-sm-12">
-		<pagination
-			[totalItems]="totalItems"
-			[itemsPerPage]="itemPerPage"
-			(pageChanged)="pageChanged($event)"
+		<ngb-pagination
+			[collectionSize]="totalItems"
+			[pageSize]="itemPerPage"
+			(pageChange)="pageChanged($event)"
 			[rotate]="true"
 			[maxSize]="3"
-			nextText="󰅁"
-			previousText="󰅂"
-			firstText="󰘁"
-			lastText="󰘀"
 			boundaryLinks="true"
-			[(ngModel)]="currentPage">
-		</pagination>
+			[(page)]="currentPage">
+
+			<ng-template ngbPaginationFirst>󰘁</ng-template>
+			<ng-template ngbPaginationLast>󰘀</ng-template>
+			<ng-template ngbPaginationPrevious>󰅂</ng-template>
+			<ng-template ngbPaginationNext>󰅁</ng-template>
+			<ng-template ngbPaginationEllipsis>...</ng-template>
+			<ng-template ngbPaginationNumber let-page>{{ page }}</ng-template>
+		</ngb-pagination>
 	</div>
 	<div class="col-md-6 col-sm-12">
 		<p class="pagination-data">{{paginationDescription}}</p>

@@ -16,7 +16,7 @@ export class DialogUpdatePasswordComponent implements OnInit {
 
 	constructor(
 		private usersService: UsersManagerService,
-		private modal: NgbActiveModal,
+		public modal: NgbActiveModal,
 		private toastService: ToastService,
 		private formBuilder: FormBuilder
 	) {
