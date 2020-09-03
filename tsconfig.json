@@ -19,14 +19,14 @@
 			"@ngx-k-panel/core": ["dist/core"],
 			"@ngx-k-panel/auth": ["dist/auth"],
 			"@ngx-k-panel/data-table": ["dist/data-table"],
+			"@ngx-k-panel/form-builder": ["dist/form-builder"],
 			"@ngx-k-panel/dashboard": ["dist/dashboard"],
 			"@ngx-k-panel/entity-manager": ["dist/entity-manager"],
-			"@ngx-k-panel/form-builder": ["dist/form-builder"],
 			"@ngx-k-panel/users-manager": ["dist/users-manager"]
 		}
 	},
 	"angularCompilerOptions": {
 		"fullTemplateTypeCheck": true,
-		"strictInjectionParameters": true
+		"strictInjectionParameters": false
 	}
 }
