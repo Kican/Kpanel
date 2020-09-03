@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {EntityManagerConfig, EntityManagerInfoDto} from '../models';
+import {ENTITY_MANAGER_CONFIG, EntityManagerConfig, EntityManagerInfoDto} from '../models';
 import {SidebarDynamicMenuService} from '@ngx-k/components/sidebar';
 import {SidebarItem} from '@ngx-k/components/sidebar/models/sidebar-item.model';
 import {Observable, ReplaySubject} from 'rxjs';
@@ -15,7 +15,7 @@ export class EntityManagerService {
 	constructor(
 		private http: HttpClient,
 		private sidebarService: SidebarDynamicMenuService,
-		@Inject(EntityManagerConfig) private config: EntityManagerConfig
+		@Inject(ENTITY_MANAGER_CONFIG) private config: EntityManagerConfig
 	) {
 	}
 
