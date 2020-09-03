@@ -9,6 +9,7 @@ import {DialogUpdatePasswordComponent} from './components/_dialogs/dialog-update
 import {DialogSetUserRolesComponent} from './components/_dialogs/dialog-set-user-roles/dialog-set-user-roles.component';
 import {EditUserPageComponent} from './components/edit-user-page/edit-user-page.component';
 import {SidebarDynamicMenuService} from '@ngx-k/components/sidebar';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
 export const usersManagerRoutes: Routes = [
 	{
@@ -33,7 +34,8 @@ export const usersManagerRoutes: Routes = [
 		KPanelEntityManagerModule,
 		DataTableModule,
 		KPanelFormBuilderModule,
-		RouterModule
+		RouterModule,
+		NgbModalModule
 	],
 	exports: []
 })

@@ -24,6 +24,9 @@ export class EntityManagerService {
 	}
 
 	fetchAllEntityManagers(): void {
+		if (!this.config.useDiscovery) {
+			return;
+		}
 		this.http.get<EntityManagerInfoDto[]>(this.config.discovery_url).subscribe(data => {
 			this.managers.next(data);
 			setTimeout(() => {

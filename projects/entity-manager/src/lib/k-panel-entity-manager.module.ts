@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {EditPageComponent} from './components/edit-page/edit-page.component';
 import {KPanelCoreModule} from '@ngx-k-panel/core';
 import {KPanelFormBuilderModule} from '@ngx-k-panel/form-builder';
-import {EntityManagerConfig} from './models';
+import {DefaultEntityManagerConfig, ENTITY_MANAGER_CONFIG, EntityManagerConfig} from './models';
 import {EntityManagerService} from './services/entity-manager.service';
 import {KFormBuilderModule} from '@ngx-k/form-builder';
 import {KFormBuilderBootstrapModule} from '@ngx-k/form-builder-bootstrap';
@@ -35,20 +35,15 @@ export const EntityManagerRoutes: Routes = [
 	]
 })
 export class KPanelEntityManagerModule {
-	constructor(
-		entityManagerService: EntityManagerService,
-		@Inject(EntityManagerConfig) config: EntityManagerConfig
-	) {
-		if (config.useDiscovery) {
-			entityManagerService.fetchAllEntityManagers();
-		}
+	constructor(entityManagerService: EntityManagerService) {
+		entityManagerService.fetchAllEntityManagers();
 	}
 
-	static forRoot(config: EntityManagerConfig): ModuleWithProviders<KPanelEntityManagerModule> {
+	static forRoot(config: Partial<EntityManagerConfig>): ModuleWithProviders<KPanelEntityManagerModule> {
 		return {
 			ngModule: KPanelEntityManagerModule,
 			providers: [
-				{provide: EntityManagerConfig, useValue: config}
+				{provide: ENTITY_MANAGER_CONFIG, useValue: {...DefaultEntityManagerConfig, ...config}}
 			]
 		};
 	}
