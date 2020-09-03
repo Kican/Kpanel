@@ -13,7 +13,7 @@
 		<table cdk-table [dataSource]="dataSource" class="table table-striped">
 
 			<ng-container *ngFor="let field of fields" [cdkColumnDef]="field.name">
-				<th cdk-header-cell *cdkHeaderCellDef [dtSortable]="field.name"> {{field.name}} </th>
+				<th cdk-header-cell *cdkHeaderCellDef [dtSortable]="field.name"> {{field.title}} </th>
 				<td cdk-cell *cdkCellDef="let element"> {{element[toLowerCamelCase(field.name)]}} </td>
 			</ng-container>
 
