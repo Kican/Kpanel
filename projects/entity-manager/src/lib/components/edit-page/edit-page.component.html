@@ -5,7 +5,7 @@
 	<div class="card-body">
 		<form [formGroup]="formGroup" (validSubmit)="onSubmit($event)">
 			<k-form-builder [component]="fields" [form]="formGroup"></k-form-builder>
-			<hr/>
+			<br/>
 			<button [disabled]="!formGroup.valid" class="btn btn-success" type="submit">{{'save' | translate}}</button>
 		</form>
 	</div>
