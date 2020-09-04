@@ -1,12 +1,12 @@
 {
     "name": "@ngx-k-panel/auth",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "peerDependencies": {
         "@angular/common": "^10.1.0",
         "@angular/core": "^10.1.0",
         "@angular/router": "^10.1.0",
-        "@ngx-k-panel/core": "^0.0.14",
-        "@ngx-k/auth": "^0.0.21"
+        "@ngx-k-panel/core": "^0.0.15",
+        "@ngx-k/auth": "^0.0.24"
     },
     "dependencies": {
         "tslib": "^2.0.0"
