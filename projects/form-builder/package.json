@@ -1,11 +1,11 @@
 {
     "name": "@ngx-k-panel/form-builder",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "peerDependencies": {
         "@angular/common": "^10.1.0",
         "@angular/core": "^10.1.0",
-        "@ngx-k/form-builder": "^0.0.21",
-        "@ngx-k/form-builder-bootstrap": "^0.0.21"
+        "@ngx-k/form-builder": "^0.0.24",
+        "@ngx-k/form-builder-bootstrap": "^0.0.24"
     },
     "dependencies": {
         "tslib": "^2.0.0"

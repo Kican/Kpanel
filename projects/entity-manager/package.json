@@ -1,12 +1,12 @@
 {
     "name": "@ngx-k-panel/entity-manager",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "peerDependencies": {
         "@angular/common": "^10.1.0",
         "@angular/core": "^10.1.0",
         "@angular/router": "^10.1.0",
-        "@ngx-k/components": "^0.0.21",
-        "@ngx-k-panel/form-builder": "^0.0.14"
+        "@ngx-k/components": "^0.0.24",
+        "@ngx-k-panel/form-builder": "^0.0.15"
     },
     "dependencies": {
         "tslib": "^2.0.0"

@@ -1,0 +1,28 @@
+name: Angular
+
+on:
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@main
+            -   uses: actions/setup-node@v1
+                with:
+                    node-version: '12'
+                    registry-url: 'https://registry.npmjs.org'
+                    scope: '@ngx-k-panel'
+
+            -   name: install deps
+                run: npm i
+
+            -   name: build packages
+                run: npm run build
+
+            -   name: Publish NPM
+                run: npm run publish
+                env:
+                    NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}
