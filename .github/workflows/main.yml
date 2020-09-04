@@ -19,6 +19,8 @@ jobs:
             -   name: install deps
                 run: npm i
 
+            -   name: ngcc
+                run: ngcc
             -   name: build packages
                 run: npm run build
 
