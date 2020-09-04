@@ -14,7 +14,10 @@
 
 			<ng-container *ngFor="let field of fields" [cdkColumnDef]="field.name">
 				<th cdk-header-cell *cdkHeaderCellDef [dtSortable]="field.name"> {{field.title}} </th>
-				<td cdk-cell *cdkCellDef="let element"> {{element[toLowerCamelCase(field.name)]}} </td>
+				<td cdk-cell *cdkCellDef="let element">
+					<span *ngIf="field.type == 'DateTimeComponent'"> {{element[toLowerCamelCase(field.name)] | kDate}}</span>
+					<span *ngIf="field.type != 'DateTimeComponent'"> {{element[toLowerCamelCase(field.name)]}}</span>
+				</td>
 			</ng-container>
 
 			<ng-container cdkColumnDef="options">

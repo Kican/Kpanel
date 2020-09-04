@@ -9,6 +9,7 @@ import {EntityManagerService} from './services/entity-manager.service';
 import {KFormBuilderModule} from '@ngx-k/form-builder';
 import {KFormBuilderBootstrapModule} from '@ngx-k/form-builder-bootstrap';
 import {DataTableModule} from '@ngx-k/components/data-table';
+import {KCoreCommonModule} from '@ngx-k/core/common';
 
 export const EntityManagerRoutes: Routes = [
 	{
@@ -31,7 +32,8 @@ export const EntityManagerRoutes: Routes = [
 		RouterModule,
 		KPanelFormBuilderModule,
 		KFormBuilderModule,
-		KFormBuilderBootstrapModule
+		KFormBuilderBootstrapModule,
+		KCoreCommonModule
 	]
 })
 export class KPanelEntityManagerModule {
