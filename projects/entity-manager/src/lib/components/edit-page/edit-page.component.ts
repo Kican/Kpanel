@@ -1,16 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {IComponent, ILayoutComponent} from '@ngx-k/form-builder';
+import {ComponentDescriptorCollection, IComponent, ILayoutComponent} from '@ngx-k/form-builder';
 import {ToastService} from '@ngx-k/components/toast';
 import {EntityManagerService} from '../../services/entity-manager.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {EntityManagerInfoDto} from '../../models';
+import {EditComponentsDescriptorCollection} from '../../components-descriptor-collection/edit-components-descriptor-collection';
 
 @Component({
 	selector: 'app-edit-page',
 	templateUrl: './edit-page.component.html',
-	styleUrls: ['./edit-page.component.scss']
+	styleUrls: ['./edit-page.component.scss'],
+	providers: [{provide: ComponentDescriptorCollection, useClass: EditComponentsDescriptorCollection}]
 })
 export class EditPageComponent implements OnInit {
 	fields: IComponent;
