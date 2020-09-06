@@ -1,6 +1,6 @@
 {
     "name": "@ngx-k-panel/core",
-    "version": "0.0.17",
+    "version": "0.0.24",
     "peerDependencies": {
         "@angular/common": "^10.1.0",
         "@angular/core": "^10.1.0",
@@ -8,7 +8,7 @@
         "@ngx-translate/core": "^13.0.0",
         "ngx-permissions": "^8.0.0",
         "ngx-bootstrap": "^6.0.0",
-        "@ngx-k/components": "^0.0.26"
+        "@ngx-k/components": "^0.0.36"
     },
     "dependencies": {
         "tslib": "^2.0.0"

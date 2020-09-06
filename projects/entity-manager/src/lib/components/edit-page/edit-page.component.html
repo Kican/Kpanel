@@ -1,6 +1,7 @@
 <div class="card" *ngIf="info">
 	<div class="card-header">
-		{{info.title}} <a [routerLink]="['../','list']" class="pr-3">{{'back' | translate}}</a>
+		{{info.title}}
+		<a [routerLink]="['../','list']" class="pr-3">{{'back' | translate}}</a>
 	</div>
 	<div class="card-body">
 		<form [formGroup]="formGroup" (validSubmit)="onSubmit($event)">
