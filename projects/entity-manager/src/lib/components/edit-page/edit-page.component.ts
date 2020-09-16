@@ -1,18 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {ComponentDescriptorCollection, IComponent, ILayoutComponent} from '@ngx-k/form-builder';
+import {COMPONENTS_DESCRIPTOR, FormBuilderService, IComponent, ILayoutComponent} from '@ngx-k/form-builder';
 import {ToastService} from '@ngx-k/components/toast';
 import {EntityManagerService} from '../../services/entity-manager.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {EntityManagerInfoDto} from '../../models';
-import {EditComponentsDescriptorCollection} from '../../components-descriptor-collection/edit-components-descriptor-collection';
+import {EditComponentsDescriptor} from '../../components-descriptor-collection/edit-components-descriptor';
+import {shareReplay} from 'rxjs/operators';
 
 @Component({
 	selector: 'app-edit-page',
 	templateUrl: './edit-page.component.html',
 	styleUrls: ['./edit-page.component.scss'],
-	providers: [{provide: ComponentDescriptorCollection, useClass: EditComponentsDescriptorCollection}]
+	providers: [
+		{provide: COMPONENTS_DESCRIPTOR, useClass: EditComponentsDescriptor},
+		FormBuilderService
+	]
 })
 export class EditPageComponent implements OnInit {
 	fields: IComponent;
@@ -38,10 +42,12 @@ export class EditPageComponent implements OnInit {
 
 			this.entityManagerService.getByName(this.entityName).subscribe(value => {
 				this.info = value;
-				this.http.get<ILayoutComponent>(this.info.url + `/$fields/edit`).subscribe(value => {
-					this.fields = value;
-					this.init(routeData.id);
-				});
+				this.http.get<ILayoutComponent>(this.info.url + `/$fields/edit`)
+					.pipe(shareReplay({refCount: true, bufferSize: 1}))
+					.subscribe(value => {
+						this.fields = value;
+						this.init(routeData.id);
+					});
 			});
 		});
 	}

@@ -1,7 +1,7 @@
-import { EditComponentsDescriptorCollection } from './edit-components-descriptor-collection';
+import { EditComponentsDescriptor } from './edit-components-descriptor';
 
 describe('ComponentsDescriptorCollection', () => {
   it('should create an instance', () => {
-    expect(new EditComponentsDescriptorCollection()).toBeTruthy();
+    expect(new EditComponentsDescriptor()).toBeTruthy();
   });
 });
