@@ -21,10 +21,17 @@
 			</ng-container>
 
 			<ng-container cdkColumnDef="options">
-				<th cdk-header-cell *cdkHeaderCellDef> {{'options' | translate}} </th>
+				<th cdk-header-cell *cdkHeaderCellDef width="15%"> {{'options' | translate}} </th>
 				<td cdk-cell *cdkCellDef="let element">
-					<a class="btn-icon" (click)="delete(element.id)"><i class="mdi mdi-delete"></i></a>
-					<a class="btn-icon"  [routerLink]="['../','edit',element['id']]"><i class="mdi mdi-pencil"></i></a>
+					<a class="btn btn-sm btn-warning btn-icon" [routerLink]="['../','edit',element['id']]">
+						{{'edit' | translate}}
+						<i class="mdi mdi-pencil"></i>
+					</a>
+
+					<a class="btn btn-sm btn-danger btn-icon mr-2" (click)="delete(element.id)">
+						{{'remove' | translate}}
+						<i class="mdi mdi-delete"></i>
+					</a>
 				</td>
 			</ng-container>
 

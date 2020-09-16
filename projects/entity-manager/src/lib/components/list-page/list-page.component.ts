@@ -9,6 +9,7 @@ import {DialogService} from '@ngx-k/components/dialog';
 import {ToastService} from '@ngx-k/components/toast';
 import {EntityManagerService} from '../../services/entity-manager.service';
 import {EntityManagerInfoDto} from '../../models';
+import {refCount, shareReplay} from 'rxjs/operators';
 
 @Component({
 	selector: 'app-list-page',
@@ -53,13 +54,16 @@ export class ListPageComponent implements OnInit {
 	init(): void {
 		this.displayedColumns = [];
 		this.fields = [];
-		this.http.get<ILayoutComponent>(this.info.url + `/$fields/list`).subscribe(value => {
-			this.fields = value.children;
-			this.displayedColumns.push(...value.children.map(x => x.name));
-			this.displayedColumns.push('options');
+		this.http
+			.get<ILayoutComponent>(this.info.url + `/$fields/list`)
+			.pipe(shareReplay({refCount: true, bufferSize: 1}))
+			.subscribe(value => {
+				this.fields = value.children;
+				this.displayedColumns.push(...value.children.map(x => x.name));
+				this.displayedColumns.push('options');
 
-			this.dataSource.loadData();
-		});
+				this.dataSource.loadData();
+			});
 
 	}
 

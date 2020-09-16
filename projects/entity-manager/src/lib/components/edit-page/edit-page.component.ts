@@ -7,6 +7,7 @@ import {EntityManagerService} from '../../services/entity-manager.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {EntityManagerInfoDto} from '../../models';
 import {EditComponentsDescriptor} from '../../components-descriptor-collection/edit-components-descriptor';
+import {shareReplay} from 'rxjs/operators';
 
 @Component({
 	selector: 'app-edit-page',
@@ -41,10 +42,12 @@ export class EditPageComponent implements OnInit {
 
 			this.entityManagerService.getByName(this.entityName).subscribe(value => {
 				this.info = value;
-				this.http.get<ILayoutComponent>(this.info.url + `/$fields/edit`).subscribe(value => {
-					this.fields = value;
-					this.init(routeData.id);
-				});
+				this.http.get<ILayoutComponent>(this.info.url + `/$fields/edit`)
+					.pipe(shareReplay({refCount: true, bufferSize: 1}))
+					.subscribe(value => {
+						this.fields = value;
+						this.init(routeData.id);
+					});
 			});
 		});
 	}

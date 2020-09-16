@@ -44,7 +44,7 @@ export class KPanelUsersManagerModule {
 		setTimeout(() => {
 			this.sidebarDynamicMenuService.addGroup('main-sidebar', {
 				title: 'مدیریت کاربران',
-				groupId: '',
+				groupId: 'users-manager',
 				items: [{
 					itemId: 'users',
 					label: 'کاربران',
