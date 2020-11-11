@@ -29,19 +29,26 @@ export class EntityManagerService {
 		}
 		this.http.get<EntityManagerInfoDto[]>(this.config.discovery_url).subscribe(data => {
 			this.managers.next(data);
-			setTimeout(() => {
-				const sideBarItems: SidebarItem[] = [];
-				data.forEach(value => {
-					sideBarItems.push({
-						type: 'single',
-						routerLink: `entity/${value.name}/list`,
-						label: value.title,
-						itemId: value.name,
-						iconClass: value.icon == null ? 'mdi mdi-database-edit' : value.icon
-					});
+
+			if (this.config.showInSidebar) {
+				this.showInSidebar(data);
+			}
+		});
+	}
+
+	showInSidebar(data: EntityManagerInfoDto[]): void {
+		setTimeout(() => {
+			const sideBarItems: SidebarItem[] = [];
+			data.forEach(value => {
+				sideBarItems.push({
+					type: 'single',
+					routerLink: `entity/${value.name}/list`,
+					label: value.title,
+					itemId: value.name,
+					iconClass: value.icon == null ? 'mdi mdi-database-edit' : value.icon
 				});
-				this.sidebarService.addGroup('main-sidebar', {groupId: 'entities', title: 'موجودیت ها', items: sideBarItems});
 			});
+			this.sidebarService.addGroup('main-sidebar', {groupId: 'entities', title: 'موجودیت ها', items: sideBarItems});
 		});
 	}
 }

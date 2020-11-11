@@ -42,7 +42,7 @@ export class LoginPageComponent implements OnInit {
 
 	createForm(): void {
 		this.loginForm = this.fb.group({
-			email: [null, [Validators.required, Validators.email, Validators.minLength(5), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
+			email: [null, [Validators.required, Validators.minLength(5), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
 			password: [null, [Validators.required, Validators.minLength(8), AppValidators.noWhiteSpace, AppValidators.asciiOnly]],
 		});
 	}
